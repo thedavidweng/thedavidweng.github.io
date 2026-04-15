@@ -1,2 +1,3 @@
 # thedavidweng.github.io
-GitHub Pages
+
+Personal homepage — [davidweng.eu](https://davidweng.eu/)
