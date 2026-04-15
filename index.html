@@ -305,53 +305,9 @@
       </div>
     </a>
 
-    <ul class="project-list" style="margin-top: 2rem;">
-      <li>
-        <a href="https://github.com/thedavidweng/koe" target="_blank" rel="noopener" class="project-item">
-          <div>
-            <div class="project-name">koe</div>
-            <div class="project-meta">Zero-GUI macOS voice input. Hotkey → speak → paste.</div>
-          </div>
-          <span class="project-stars">★ 321</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/thedavidweng/screenize" target="_blank" rel="noopener" class="project-item">
-          <div>
-            <div class="project-name">screenize</div>
-            <div class="project-meta">macOS screen recorder with auto-zoom and cursor effects.</div>
-          </div>
-          <span class="project-stars">★</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/thedavidweng/apfel" target="_blank" rel="noopener" class="project-item">
-          <div>
-            <div class="project-name">apfel</div>
-            <div class="project-meta">Apple Intelligence from the terminal. On-device LLM, no API keys.</div>
-          </div>
-          <span class="project-stars">★</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/thedavidweng/Sink" target="_blank" rel="noopener" class="project-item">
-          <div>
-            <div class="project-name">Sink</div>
-            <div class="project-meta">Link shortener with analytics. 100% Cloudflare.</div>
-          </div>
-          <span class="project-stars">★</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/thedavidweng/BroadcastChannel" target="_blank" rel="noopener" class="project-item">
-          <div>
-            <div class="project-name">BroadcastChannel</div>
-            <div class="project-meta">Turn your Telegram channel into a microblog.</div>
-          </div>
-          <span class="project-stars">★</span>
-        </a>
-      </li>
-    </ul>
+    <p style="font-size: 1.3rem; color: var(--color-muted); margin-top: 1.6rem;">
+      More projects on <a href="https://github.com/thedavidweng?tab=repositories" target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: 2px;">GitHub</a>.
+    </p>
   </section>
 
   <!-- Video Work -->
@@ -414,34 +370,15 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Fetch live star counts from GitHub API
+  // Fetch live star count for OpenKara
   async function fetchStars() {
-    const repos = ['OpenKara', 'koe', 'screenize', 'apfel', 'Sink', 'BroadcastChannel'];
-    const items = document.querySelectorAll('.project-item, .featured');
     try {
-      const res = await fetch('https://api.github.com/users/thedavidweng/repos?per_page=100&sort=updated');
+      const res = await fetch('https://api.github.com/repos/thedavidweng/OpenKara');
       const data = await res.json();
-      if (!Array.isArray(data)) return;
-      const starMap = {};
-      data.forEach(r => { starMap[r.name] = r.stargazers_count; });
-
-      // Update featured
-      const okStars = starMap['OpenKara'];
-      if (okStars !== undefined) {
-        document.getElementById('openkara-stars').textContent = '★ ' + okStars;
+      if (data.stargazers_count !== undefined) {
+        document.getElementById('openkara-stars').textContent = '★ ' + data.stargazers_count;
       }
-
-      // Update list items
-      document.querySelectorAll('.project-item').forEach(item => {
-        const nameEl = item.querySelector('.project-name');
-        const starsEl = item.querySelector('.project-stars');
-        if (!nameEl || !starsEl) return;
-        const name = nameEl.textContent.trim();
-        if (starMap[name] !== undefined) {
-          starsEl.textContent = '★ ' + starMap[name];
-        }
-      });
-    } catch (e) { /* silent fail — static stars are fine */ }
+    } catch (e) { /* static fallback is fine */ }
   }
   fetchStars();
 </script>
