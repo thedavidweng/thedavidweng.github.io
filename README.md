@@ -1,3 +1,3 @@
 # thedavidweng.github.io
 
-Personal homepage — [davidweng.eu](https://davidweng.eu/)
+Personal homepage — [thedavidweng.github.io](https://thedavidweng.github.io/)
