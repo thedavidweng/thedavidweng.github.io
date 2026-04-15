@@ -1,25 +1,13 @@
 # thedavidweng.github.io
 
-Personal homepage. Single HTML file, no build tools.
+Ppersonal homepage.
 
-[davidweng.eu](https://davidweng.eu/) · [thedavidweng.github.io](https://thedavidweng.github.io/)
-
-## Quick Start
-
-```bash
-# edit
-open index.html
-
-# preview locally
-python3 -m http.server 8080
-
-# deploy (push to main, GitHub Pages handles the rest)
-git push
-```
+[Homepage](https://thedavidweng.github.io/)
+[Portfolio](https://davidweng.eu.org/) 
 
 ## Stack
 
-Zero dependencies. Pure HTML + CSS + JavaScript (~17KB).
+Zero dependencies. Pure HTML + CSS + JavaScript.
 
 - GitHub API for live star counts
 - IntersectionObserver for scroll animations
