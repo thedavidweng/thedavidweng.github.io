@@ -98,6 +98,21 @@
       padding: 2.4rem;
       transition: box-shadow 0.3s var(--ease), transform 0.2s var(--ease);
     }
+
+    /* ── Card Grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+    }
+    .card-grid .featured {
+      height: 100%;
+    }
+    @media (max-width: 600px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
     .featured:hover {
       box-shadow: 0 4px 16px var(--color-shadow-subtle);
       transform: translateY(-1px);
@@ -282,40 +297,37 @@
     </p>
   </section>
 
-  <!-- Portfolio -->
+  <!-- Portfolio & Resume -->
   <section class="reveal">
-    <div class="section-label">Portfolio</div>
-    <a href="https://davidweng.eu.org/" target="_blank" rel="noopener">
-      <div class="featured">
-        <div class="featured-header">
-          <h2>davidweng.eu.org</h2>
+    <div class="section-label">Portfolio & Resume</div>
+    <div class="card-grid">
+      <a href="https://davidweng.eu.org/" target="_blank" rel="noopener">
+        <div class="featured">
+          <div class="featured-header">
+            <h2>Portfolio</h2>
+          </div>
+          <p class="featured-desc">
+            Design work, video production, and creative projects.
+          </p>
+          <div class="featured-links">
+            <span>Visit portfolio →</span>
+          </div>
         </div>
-        <p class="featured-desc">
-          Personal portfolio — design work, video production, and creative projects.
-        </p>
-        <div class="featured-links">
-          <span>Visit portfolio →</span>
+      </a>
+      <a href="resume.html" target="_blank" rel="noopener">
+        <div class="featured">
+          <div class="featured-header">
+            <h2>Resume</h2>
+          </div>
+          <p class="featured-desc">
+            Content producer, visual designer, and creative technologist.
+          </p>
+          <div class="featured-links">
+            <span>View resume →</span>
+          </div>
         </div>
-      </div>
-    </a>
-  </section>
-
-  <!-- Resume -->
-  <section class="reveal">
-    <div class="section-label">Resume</div>
-    <a href="resume.html" target="_blank" rel="noopener">
-      <div class="featured">
-        <div class="featured-header">
-          <h2>Resume</h2>
-        </div>
-        <p class="featured-desc">
-          Content producer, visual designer, and creative technologist. UBC Media Studies '25.
-        </p>
-        <div class="featured-links">
-          <span>View resume →</span>
-        </div>
-      </div>
-    </a>
+      </a>
+    </div>
   </section>
 
   <!-- Connect -->
