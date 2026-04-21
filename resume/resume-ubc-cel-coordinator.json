@@ -1,18 +1,9 @@
 {
-  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "David (Jiachen) Weng",
     "label": "Community Engagement & Program Coordinator",
-    "image": "",
     "email": "thedavidweng@gmail.com",
-    "phone": "",
-    "url": "",
     "summary": "Community engagement professional with 4+ years designing and delivering co-curricular programs, managing budgets, and building cross-campus partnerships at UBC. Bachelor of Media Studies graduate with firsthand understanding of the BMS program's pedagogical approach and community-engaged learning values. Experienced in event programming for 1,500+ residents, grant-funded budget management ($10K+), cross-cultural facilitation, and educational content development. Bilingual (English & Mandarin) with strong cross-cultural sensitivity.",
-    "location": {
-      "city": "",
-      "countryCode": "",
-      "region": ""
-    },
     "profiles": [
       {
         "network": "Website",
@@ -43,7 +34,6 @@
       "position": "ContentOps & Graphic Designer",
       "url": "https://bc-ai.ca",
       "startDate": "2025-11-01",
-      "endDate": "",
       "summary": "Lead visual content operations for a growing AI community in British Columbia.",
       "highlights": [
         "Designed 50+ branded assets for social media, events, and presentations reaching 3,000+ cumulative viewers",
@@ -54,7 +44,6 @@
       "name": "UBC Department of Physical Therapy",
       "location": "Vancouver, BC",
       "position": "Educational Technology Assistant",
-      "url": "",
       "startDate": "2023-09-01",
       "endDate": "2024-04-01",
       "summary": "Designed and developed inclusive e-learning content for the Physical Therapy program, applying Universal Design for Learning principles.",
@@ -86,9 +75,7 @@
       "name": "Citang (词堂)",
       "location": "Shanghai, China",
       "position": "Writer & Editor",
-      "url": "",
       "startDate": "2022-12-01",
-      "endDate": "",
       "summary": "Create, contextualize, and curate internet culture content with cultural and sociological commentary for a bilingual audience.",
       "highlights": [
         "Created and contextualized internet culture content, driving 150,090 views on a single post and contributing to 5,000+ follower growth over 6 months",
@@ -101,7 +88,6 @@
     {
       "organization": "UBC Media Studies Student Association (MSSA)",
       "position": "Treasurer",
-      "url": "",
       "startDate": "2023-05-01",
       "endDate": "2025-04-01",
       "summary": "Managed all financial activities for the Media Studies Student Association, including budget administration, grant applications, and financial reporting.",
@@ -114,7 +100,6 @@
     {
       "organization": "UBC Media Studies Student Association (MSSA)",
       "position": "Communications Coordinator",
-      "url": "",
       "startDate": "2022-11-01",
       "endDate": "2023-05-01",
       "summary": "Developed and executed communication strategies for student association events and programming.",
@@ -126,7 +111,6 @@
     {
       "organization": "UBC Chinese Students and Scholars Association (CSSA)",
       "position": "Vice President Media",
-      "url": "",
       "startDate": "2023-04-01",
       "endDate": "2024-03-01",
       "summary": "Directed all media production for UBC's Chinese Students and Scholars Association, serving 1,000+ community members.",
@@ -138,7 +122,6 @@
     {
       "organization": "Vancouver Arts Colloquium Society",
       "position": "Social Media Coordinator",
-      "url": "",
       "startDate": "2023-01-01",
       "endDate": "2023-05-01",
       "summary": "Managed social media strategy for a Vancouver-based arts nonprofit.",
@@ -156,8 +139,6 @@
       "area": "Management",
       "studyType": "Master's",
       "startDate": "2026-01-01",
-      "endDate": "",
-      "score": "",
       "courses": []
     },
     {
@@ -167,16 +148,13 @@
       "studyType": "Bachelor",
       "startDate": "2021-09-01",
       "endDate": "2025-05-01",
-      "score": "",
       "courses": []
     }
   ],
   "awards": [
     {
       "title": "Faculty of Arts International Student Scholarship",
-      "date": "",
-      "awarder": "University of British Columbia",
-      "summary": ""
+      "awarder": "University of British Columbia"
     }
   ],
   "publications": [
@@ -184,14 +162,12 @@
       "name": "Transcending Barriers: Viewing Practices of 'Games of Thrones' in China, India, and Russia",
       "publisher": "Beacon: UBC Journal of Media Studies",
       "releaseDate": "2024-06-01",
-      "url": "",
       "summary": "Cross-cultural media consumption research examining unauthorized viewing practices across three countries."
     }
   ],
   "skills": [
     {
       "name": "Community Engagement & Programming",
-      "level": "",
       "keywords": [
         "Community-Engaged Learning",
         "Co-Curricular Programming",
@@ -203,7 +179,6 @@
     },
     {
       "name": "Communications & Outreach",
-      "level": "",
       "keywords": [
         "Newsletter Writing & Distribution",
         "Social Media Management",
@@ -214,7 +189,6 @@
     },
     {
       "name": "Budget & Financial Management",
-      "level": "",
       "keywords": [
         "Budget Administration",
         "Grant Writing & Applications",
@@ -225,7 +199,6 @@
     },
     {
       "name": "Educational Technology & Design",
-      "level": "",
       "keywords": [
         "E-Learning Development",
         "Articulate 360 (Rise, Storyline)",
@@ -236,7 +209,6 @@
     },
     {
       "name": "Graphic Design & Media Production",
-      "level": "",
       "keywords": [
         "Adobe Creative Suite",
         "Canva",
@@ -247,7 +219,6 @@
     },
     {
       "name": "Technical Tools",
-      "level": "",
       "keywords": [
         "Microsoft 365",
         "Google Workspace",
@@ -258,7 +229,6 @@
     },
     {
       "name": "Languages",
-      "level": "",
       "keywords": [
         "English (Professional)",
         "Mandarin Chinese (Native)"
@@ -289,13 +259,10 @@
         "Product Development",
         "AI Integration"
       ],
-      "startDate": "",
-      "endDate": "",
       "url": "https://github.com/thedavidweng/OpenKara",
       "roles": [
         "Creator & Lead Developer"
       ],
-      "entity": "",
       "type": "application"
     }
   ],

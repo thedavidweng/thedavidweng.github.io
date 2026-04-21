@@ -1,12 +1,8 @@
 {
-  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "David (Jiachen) Weng",
     "label": "Content Producer & Visual Designer",
-    "image": "",
     "email": "thedavidweng@gmail.com",
-    "phone": "",
-    "url": "",
     "summary": "Content producer, visual designer, and creative technologist in Vancouver. I build things that look good and work well — from brand identities to open-source apps. My work spans graphic design, video production, event management, and AI-integrated workflows. I maintain open-source projects like OpenKara (desktop karaoke app, Tauri + Rust). Co-Founder of OwO Network, LLC.",
     "location": {
       "city": "Vancouver",
@@ -43,7 +39,6 @@
       "position": "ContentOps & Graphic Designer",
       "url": "https://bc-ai.ca",
       "startDate": "2025-11-01",
-      "endDate": "",
       "summary": "Lead visual content operations for a growing AI community in British Columbia.",
       "highlights": [
         "Designed 50+ branded assets for social media, events, and presentations reaching 3,000+ cumulative viewers",
@@ -55,9 +50,7 @@
       "name": "OwO Network, LLC",
       "location": "Vancouver, BC",
       "position": "Co-Founder",
-      "url": "",
       "startDate": "2025-04-01",
-      "endDate": "",
       "summary": "Building tools that make AI accessible for everyday creative workflows.",
       "highlights": [
         "Co-founded technology company, defining product roadmap and coordinating cross-functional development",
@@ -82,9 +75,7 @@
       "name": "Citang (词堂)",
       "location": "Shanghai, China",
       "position": "Writer & Editor",
-      "url": "",
       "startDate": "2022-12-01",
-      "endDate": "",
       "summary": "Create, contextualize, and curate internet culture content with cultural commentary for a bilingual audience.",
       "highlights": [
         "Created and contextualized internet culture content, driving 150,090 views on a single post and contributing to 5,000+ follower growth over 6 months"
@@ -95,7 +86,6 @@
     {
       "organization": "UBC Media Studies Student Association (MSSA)",
       "position": "Treasurer",
-      "url": "",
       "startDate": "2023-05-01",
       "endDate": "2025-04-01",
       "summary": "Managed all financial activities for the Media Studies Student Association.",
@@ -106,7 +96,6 @@
     {
       "organization": "UBC Chinese Students and Scholars Association (CSSA)",
       "position": "Vice President Media",
-      "url": "",
       "startDate": "2023-04-01",
       "endDate": "2024-03-01",
       "summary": "Directed all media production for UBC's Chinese Students and Scholars Association, serving 1,000+ community members.",
@@ -123,8 +112,6 @@
       "area": "Management",
       "studyType": "Master's",
       "startDate": "2026-01-01",
-      "endDate": "",
-      "score": "",
       "courses": []
     },
     {
@@ -134,16 +121,13 @@
       "studyType": "Bachelor",
       "startDate": "2021-09-01",
       "endDate": "2025-05-01",
-      "score": "",
       "courses": []
     }
   ],
   "awards": [
     {
       "title": "Faculty of Arts International Student Scholarship",
-      "date": "",
-      "awarder": "University of British Columbia",
-      "summary": ""
+      "awarder": "University of British Columbia"
     }
   ],
   "publications": [
@@ -151,14 +135,12 @@
       "name": "Transcending Barriers: Viewing Practices of 'Games of Thrones' in China, India, and Russia",
       "publisher": "Beacon: UBC Journal of Media Studies",
       "releaseDate": "2024-06-01",
-      "url": "",
       "summary": "Cross-cultural media consumption research examining unauthorized viewing practices across three countries."
     }
   ],
   "skills": [
     {
       "name": "Content & Design",
-      "level": "",
       "keywords": [
         "Graphic Design",
         "Video Production",
@@ -170,7 +152,6 @@
     },
     {
       "name": "Tools & Platforms",
-      "level": "",
       "keywords": [
         "Adobe Creative Suite",
         "Canva",
@@ -182,7 +163,6 @@
     },
     {
       "name": "Operations & Management",
-      "level": "",
       "keywords": [
         "Event Planning",
         "Project Management",
@@ -193,7 +173,6 @@
     },
     {
       "name": "AI & Technology",
-      "level": "",
       "keywords": [
         "Prompt Engineering",
         "AI-Assisted Design",
@@ -228,13 +207,10 @@
         "Tauri",
         "AI"
       ],
-      "startDate": "",
-      "endDate": "",
       "url": "https://github.com/thedavidweng/OpenKara",
       "roles": [
         "Creator & Lead Developer"
       ],
-      "entity": "",
       "type": "application"
     }
   ],
