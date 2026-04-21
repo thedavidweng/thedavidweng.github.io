@@ -121,6 +121,7 @@
     {
       "name": "Communications & Management",
       "keywords": [
+        "Articulate 360",
         "Content Strategy",
         "Budget Administration",
         "Social Media Management",
@@ -146,6 +147,8 @@
         "E-Learning Development",
         "Prompt Engineering",
         "Codex",
+        "Hermes Agent",
+        "OpenCode",
         "Claude Code",
         "Cursor",
         "Gemini CLI"
