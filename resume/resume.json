@@ -1,0 +1,246 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "David (Jiachen) Weng",
+    "label": "Content Producer & Visual Designer",
+    "image": "",
+    "email": "thedavidweng@gmail.com",
+    "phone": "",
+    "url": "",
+    "summary": "Content producer, visual designer, and creative technologist in Vancouver. I build things that look good and work well — from brand identities to open-source apps. My work spans graphic design, video production, event management, and AI-integrated workflows. I maintain open-source projects like OpenKara (desktop karaoke app, Tauri + Rust). Co-Founder of OwO Network, LLC.",
+    "location": {
+      "city": "Vancouver",
+      "countryCode": "CA",
+      "region": "British Columbia"
+    },
+    "profiles": [
+      {
+        "network": "Website",
+        "username": "thedavidweng.github.io",
+        "url": "https://thedavidweng.github.io"
+      },
+      {
+        "network": "Portfolio",
+        "username": "davidweng.eu.org",
+        "url": "https://davidweng.eu.org/"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "thedavidweng",
+        "url": "https://linkedin.com/in/thedavidweng"
+      },
+      {
+        "network": "GitHub",
+        "username": "thedavidweng",
+        "url": "https://github.com/thedavidweng"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "BC + AI Ecosystem",
+      "location": "Vancouver, BC",
+      "position": "ContentOps & Graphic Designer",
+      "url": "https://bc-ai.ca",
+      "startDate": "2025-11-01",
+      "endDate": "",
+      "summary": "Lead visual content operations for a growing AI community in British Columbia.",
+      "highlights": [
+        "Designed 50+ branded assets for social media, events, and presentations reaching 3,000+ cumulative viewers",
+        "Managed multi-platform content publishing workflow across LinkedIn, Instagram, and WeChat, maintaining brand consistency across 3 channels",
+        "Established brand guidelines and asset library, standardizing visual identity across 5+ organizational partners"
+      ]
+    },
+    {
+      "name": "OwO Network, LLC",
+      "location": "Vancouver, BC",
+      "position": "Co-Founder",
+      "url": "",
+      "startDate": "2025-04-01",
+      "endDate": "",
+      "summary": "Building tools that make AI accessible for everyday creative workflows.",
+      "highlights": [
+        "Co-founded technology company, defining product roadmap and coordinating cross-functional development",
+        "Led product strategy and technical architecture decisions for AI-integrated consumer applications"
+      ]
+    },
+    {
+      "name": "UBC Student Housing and Hospitality Services",
+      "location": "Vancouver, BC",
+      "position": "Resident Advisor",
+      "url": "https://vancouver.housing.ubc.ca",
+      "startDate": "2023-08-01",
+      "endDate": "2025-08-01",
+      "summary": "Planned and delivered community programs for a residence community of 1,500+ students.",
+      "highlights": [
+        "Designed and executed 12+ residential programs per academic year, engaging 25–60+ attendees per event",
+        "Managed community of 1,500+ residents through structured unit visits, peer mentoring, and wellness check-ins",
+        "Facilitated cross-cultural programming promoting diversity, equity, and inclusion among diverse resident populations"
+      ]
+    },
+    {
+      "name": "Citang (词堂)",
+      "location": "Shanghai, China",
+      "position": "Writer & Editor",
+      "url": "",
+      "startDate": "2022-12-01",
+      "endDate": "",
+      "summary": "Create, contextualize, and curate internet culture content with cultural commentary for a bilingual audience.",
+      "highlights": [
+        "Created and contextualized internet culture content, driving 150,090 views on a single post and contributing to 5,000+ follower growth over 6 months"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "UBC Media Studies Student Association (MSSA)",
+      "position": "Treasurer",
+      "url": "",
+      "startDate": "2023-05-01",
+      "endDate": "2025-04-01",
+      "summary": "Managed all financial activities for the Media Studies Student Association.",
+      "highlights": [
+        "Managed association budget and financial operations over 2-year term, maintaining accurate records and on-time reporting"
+      ]
+    },
+    {
+      "organization": "UBC Chinese Students and Scholars Association (CSSA)",
+      "position": "Vice President Media",
+      "url": "",
+      "startDate": "2023-04-01",
+      "endDate": "2024-03-01",
+      "summary": "Directed all media production for UBC's Chinese Students and Scholars Association, serving 1,000+ community members.",
+      "highlights": [
+        "Built and led media team of 8+ volunteers, producing 100+ event photos and 5+ edited videos per term",
+        "Created visual content strategy that drove measurable attendance growth across flagship cultural events"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Illinois Urbana-Champaign",
+      "url": "https://illinois.edu",
+      "area": "Management",
+      "studyType": "Master's",
+      "startDate": "2026-01-01",
+      "endDate": "",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "University of British Columbia",
+      "url": "https://ubc.ca",
+      "area": "Media Studies (Minor: Asian Area Studies)",
+      "studyType": "Bachelor",
+      "startDate": "2021-09-01",
+      "endDate": "2025-05-01",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "awards": [
+    {
+      "title": "Faculty of Arts International Student Scholarship",
+      "date": "",
+      "awarder": "University of British Columbia",
+      "summary": ""
+    }
+  ],
+  "publications": [
+    {
+      "name": "Transcending Barriers: Viewing Practices of 'Games of Thrones' in China, India, and Russia",
+      "publisher": "Beacon: UBC Journal of Media Studies",
+      "releaseDate": "2024-06-01",
+      "url": "",
+      "summary": "Cross-cultural media consumption research examining unauthorized viewing practices across three countries."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Content & Design",
+      "level": "",
+      "keywords": [
+        "Graphic Design",
+        "Video Production",
+        "Content Strategy",
+        "Brand Identity",
+        "Photography",
+        "Visual Storytelling"
+      ]
+    },
+    {
+      "name": "Tools & Platforms",
+      "level": "",
+      "keywords": [
+        "Adobe Creative Suite",
+        "Canva",
+        "Figma",
+        "Articulate 360",
+        "React",
+        "Next.js"
+      ]
+    },
+    {
+      "name": "Operations & Management",
+      "level": "",
+      "keywords": [
+        "Event Planning",
+        "Project Management",
+        "Budget Management",
+        "Team Leadership",
+        "Social Media Management"
+      ]
+    },
+    {
+      "name": "AI & Technology",
+      "level": "",
+      "keywords": [
+        "Prompt Engineering",
+        "AI-Assisted Design",
+        "E-Learning Development",
+        "Tauri",
+        "Rust"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    },
+    {
+      "language": "Mandarin Chinese",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [
+    {
+      "name": "OpenKara",
+      "description": "Open-source desktop karaoke application using AI vocal separation and online synced lyrics.",
+      "highlights": [
+        "Built with Tauri 2 + Rust, demonstrating full-stack development and product design"
+      ],
+      "keywords": [
+        "Open Source",
+        "Rust",
+        "Tauri",
+        "AI"
+      ],
+      "startDate": "",
+      "endDate": "",
+      "url": "https://github.com/thedavidweng/OpenKara",
+      "roles": [
+        "Creator & Lead Developer"
+      ],
+      "entity": "",
+      "type": "application"
+    }
+  ],
+  "meta": {
+    "canonical": "https://registry.jsonresume.org/thedavidweng",
+    "version": "v1.0.0",
+    "lastModified": "2026-04-21T00:00:00"
+  }
+}

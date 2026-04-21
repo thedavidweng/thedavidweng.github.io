@@ -1,1 +1,13 @@
+# macOS
 .DS_Store
+
+# Node
+node_modules/
+
+# Resume build source (rendered HTML at root is committed for GitHub Pages)
+resume/out*.html
+resume/*.pdf
+
+# Temp
+*.tmp
+*.log

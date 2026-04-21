@@ -1,0 +1,27 @@
+{
+  "name": "thedavidweng",
+  "version": "1.0.0",
+  "description": "Developer, designer, and content creator in Vancouver. Building open-source tools and code-first motion graphics.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedavidweng/thedavidweng.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedavidweng/thedavidweng/issues"
+  },
+  "homepage": "https://github.com/thedavidweng/thedavidweng#readme",
+  "dependencies": {
+    "@jsonresume/jsonresume-theme-consultant-polished": "^1.0.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "resumed": "^6.1.0",
+    "styled-components": "^6.4.0"
+  }
+}
