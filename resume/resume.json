@@ -232,6 +232,14 @@
   "meta": {
     "canonical": "https://registry.jsonresume.org/thedavidweng",
     "version": "v1.0.0",
-    "lastModified": "2026-04-21T00:00:00"
+    "lastModified": "2026-04-21T00:00:00",
+    "pdfRenderOptions": {
+      "margin": {
+        "top": "0.5in",
+        "right": "0.5in",
+        "bottom": "0.5in",
+        "left": "0.5in"
+      }
+    }
   }
 }

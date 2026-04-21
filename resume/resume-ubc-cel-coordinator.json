@@ -270,6 +270,14 @@
   "meta": {
     "canonical": "",
     "version": "v1.0.0",
-    "lastModified": "2026-04-20T23:30:00"
+    "lastModified": "2026-04-20T23:30:00",
+    "pdfRenderOptions": {
+      "margin": {
+        "top": "0.5in",
+        "right": "0.5in",
+        "bottom": "0.5in",
+        "left": "0.5in"
+      }
+    }
   }
 }
