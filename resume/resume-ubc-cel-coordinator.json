@@ -59,12 +59,9 @@
       "url": "https://vancouver.housing.ubc.ca",
       "startDate": "2023-08-01",
       "endDate": "2025-08-01",
-      "summary": "Planned and delivered community-engaged learning programs for a residence community of 1,500+ students, combining program development, peer education, budget management, and safety administration.",
+      "summary": "Planned and delivered community-engaged learning programs for a residence community of 1,500+ students.",
       "highlights": [
-        "Designed and executed 12+ residential programs per academic year, including cross-cultural celebrations, educational workshops, and peer mentoring activities, engaging 25-60+ attendees per event",
-        "Facilitated cross-cultural co-curricular programming (Mahjong Night, Around the World in Games, Wear Your Pride) promoting diversity, equity, and inclusion among diverse resident populations",
-        "Designed and distributed monthly community newsletters, improving resident awareness of available resources and upcoming events",
-        "Coordinated with Resident Life team, campus services, and external partners to deliver educational resource events connecting students with financial literacy and support services",
+        "Designed and executed 12+ residential programs per academic year, including cross-cultural celebrations and educational workshops, engaging 25-60+ attendees per event",
         "Administered weekly duty shifts including late-night safety rounds, enforcing campus policy and emergency response protocols for a community of 1,500+ residents"
       ]
     }
@@ -85,7 +82,6 @@
       "position": "Vice President Media",
       "startDate": "2024-04-01",
       "endDate": "2025-04-01",
-      "summary": "Led media strategy and visual communications for one of UBC's largest cultural student organizations.",
       "highlights": [
         "Directed social media strategy and visual content production for events serving 1,000+ UBC students",
         "Coordinated with executive team to promote cultural programming, driving event attendance and community engagement"
@@ -125,21 +121,10 @@
     {
       "name": "Communications & Management",
       "keywords": [
-        "Newsletter Writing",
-        "Social Media Management",
         "Content Strategy",
         "Budget Administration",
-        "Grant Writing"
-      ]
-    },
-    {
-      "name": "Educational Technology & Design",
-      "keywords": [
-        "E-Learning Development",
-        "Articulate 360",
-        "Curriculum Design",
-        "UDL",
-        "Multimedia Content"
+        "Social Media Management",
+        "Stakeholder Communication"
       ]
     },
     {
@@ -156,14 +141,13 @@
       ]
     },
     {
-      "name": "Agentic Tools",
+      "name": "AI & Agentic Tools",
       "keywords": [
+        "E-Learning Development",
+        "Prompt Engineering",
         "Codex",
-        "OpenClaw",
-        "Hermes Agent",
-        "OpenCode",
-        "Cursor",
         "Claude Code",
+        "Cursor",
         "Gemini CLI"
       ]
     }
