@@ -144,14 +144,11 @@
     {
       "name": "AI & Agentic Tools",
       "keywords": [
-        "E-Learning Development",
-        "Prompt Engineering",
         "Codex",
         "Hermes Agent",
         "OpenCode",
         "Claude Code",
-        "Cursor",
-        "Gemini CLI"
+        "Cursor"
       ]
     }
   ],
