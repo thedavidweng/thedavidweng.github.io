@@ -48,8 +48,8 @@
       "endDate": "2024-04-01",
       "summary": "Designed and developed inclusive e-learning content for the Physical Therapy program, applying Universal Design for Learning principles.",
       "highlights": [
-        "Designed and developed 5+ inclusive e-learning modules using Articulate 360 (Rise, Storyline), applying Universal Design for Learning (UDL) principles for diverse learner needs",
-        "Collaborated with faculty to translate curriculum content into interactive digital formats serving 200+ students, contributing to the program's experiential learning goals"
+        "Designed and developed 5+ inclusive e-learning modules using Articulate 360 (Rise, Storyline), applying UDL principles for diverse learner needs",
+        "Collaborated with faculty to translate curriculum content into interactive digital formats serving 200+ students"
       ]
     },
     {
@@ -61,23 +61,8 @@
       "endDate": "2025-08-01",
       "summary": "Planned and delivered community-engaged learning programs for a residence community of 1,500+ students, combining program development, peer education, budget management, and safety administration.",
       "highlights": [
-        "Designed and executed 12+ residential programs per academic year, including cross-cultural celebrations, educational workshops, and peer mentoring activities, engaging 25–60+ attendees per event",
-        "Facilitated cross-cultural co-curricular programming (Mahjong Night, Around the World in Games, Wear Your Pride) promoting diversity, equity, and inclusion among diverse resident populations",
-        "Designed and distributed monthly community newsletters, improving resident awareness of available resources and upcoming events",
-        "Coordinated with Resident Life team, campus services, and external partners to deliver educational resource events connecting students with financial literacy and support services",
-        "Administered weekly duty shifts including late-night safety rounds, enforcing campus policy and emergency response protocols for a community of 1,500+ residents"
-      ]
-    },
-    {
-      "name": "Citang (词堂)",
-      "location": "Shanghai, China",
-      "position": "Writer & Editor",
-      "startDate": "2022-12-01",
-      "summary": "Create, contextualize, and curate internet culture content with cultural and sociological commentary for a bilingual audience.",
-      "highlights": [
-        "Created and contextualized internet culture content, driving 150,090 views on a single post and contributing to 5,000+ follower growth over 6 months",
-        "Curated and annotated meme content with cross-cultural commentary, serving bilingual (CN/EN) audience needs",
-        "Monitored trending topics and cultural phenomena to produce timely, relevant content in a fast-moving digital landscape"
+        "Designed and executed 12+ residential programs per academic year, engaging 25-60+ attendees per event",
+        "Administered weekly duty shifts including late-night safety rounds for a community of 1,500+ residents"
       ]
     }
   ],
@@ -87,44 +72,9 @@
       "position": "Treasurer",
       "startDate": "2023-05-01",
       "endDate": "2025-04-01",
-      "summary": "Managed all financial activities for the Media Studies Student Association, including budget administration, grant applications, and financial reporting.",
+      "summary": "Managed all financial activities and pursued funding opportunities for the student association.",
       "highlights": [
-        "Managed association budget and financial operations over 2-year term, including authorizing expenditures, reconciling statements, and ensuring compliance with funding body regulations",
-        "Collaborated with VP Events to plan and allocate budgets across co-curricular activities, balancing financial constraints with program quality and student engagement goals",
-        "Presented quarterly financial reports to executive team and membership, maintaining transparency and accountability in fund management"
-      ]
-    },
-    {
-      "organization": "UBC Media Studies Student Association (MSSA)",
-      "position": "Communications Coordinator",
-      "startDate": "2022-11-01",
-      "endDate": "2023-05-01",
-      "summary": "Developed and executed communication strategies for student association events and programming.",
-      "highlights": [
-        "Developed and executed communication and marketing strategies for 8+ annual events, including web-based newsletters and social media content reaching 200+ members",
-        "Co-authored monthly newsletters and managed distribution lists, driving event awareness and student participation in co-curricular programming"
-      ]
-    },
-    {
-      "organization": "UBC Chinese Students and Scholars Association (CSSA)",
-      "position": "Vice President Media",
-      "startDate": "2023-04-01",
-      "endDate": "2024-03-01",
-      "summary": "Directed all media production for UBC's Chinese Students and Scholars Association, serving 1,000+ community members.",
-      "highlights": [
-        "Cultivated cross-campus relationships with 5+ UBC units to facilitate community engagement collaborations, serving 1,000+ international students through 10+ annual cultural events",
-        "Led media team of 8+ volunteers, coordinating event photography, videography, and content production to support program outreach and engagement"
-      ]
-    },
-    {
-      "organization": "Vancouver Arts Colloquium Society",
-      "position": "Social Media Coordinator",
-      "startDate": "2023-01-01",
-      "endDate": "2023-05-01",
-      "summary": "Managed social media strategy for a Vancouver-based arts nonprofit.",
-      "highlights": [
-        "Crafted engaging articles for monthly newsletter, driving subscriber retention and event attendance",
-        "Analyzed social media analytics to optimize posting times, content formats, and audience targeting"
+        "Administered budget, applied for grants, tracked expenses, and reported financials to executive team"
       ]
     }
   ],
@@ -147,20 +97,6 @@
       "courses": []
     }
   ],
-  "awards": [
-    {
-      "title": "Faculty of Arts International Student Scholarship",
-      "awarder": "University of British Columbia"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Transcending Barriers: Viewing Practices of 'Games of Thrones' in China, India, and Russia",
-      "publisher": "Beacon: UBC Journal of Media Studies",
-      "releaseDate": "2024-06-01",
-      "summary": "Cross-cultural media consumption research examining unauthorized viewing practices across three countries."
-    }
-  ],
   "skills": [
     {
       "name": "Community Engagement & Programming",
@@ -169,38 +105,27 @@
         "Co-Curricular Programming",
         "Event Planning & Execution",
         "Program Development",
-        "Peer Education",
         "Cross-Cultural Facilitation"
       ]
     },
     {
-      "name": "Communications & Outreach",
+      "name": "Communications & Management",
       "keywords": [
-        "Newsletter Writing & Distribution",
+        "Newsletter Writing",
         "Social Media Management",
         "Content Strategy",
-        "Marketing Communications",
-        "Stakeholder Communication"
-      ]
-    },
-    {
-      "name": "Budget & Financial Management",
-      "keywords": [
         "Budget Administration",
-        "Grant Writing & Applications",
-        "Financial Reporting",
-        "Expense Tracking",
-        "Compliance & Documentation"
+        "Grant Writing"
       ]
     },
     {
       "name": "Educational Technology & Design",
       "keywords": [
         "E-Learning Development",
-        "Articulate 360 (Rise, Storyline)",
+        "Articulate 360",
         "Curriculum Design",
-        "Universal Design for Learning (UDL)",
-        "Accessibility (WCAG 2.1)"
+        "UDL",
+        "Multimedia Content"
       ]
     },
     {
@@ -208,12 +133,12 @@
       "keywords": [
         "Adobe Creative Suite",
         "Canva",
-        "Video Production",
-        "Photography",
-        "Brand Identity Design",
+        "Figma",
         "reveal.js",
         "Remotion",
-        "DaVinci Resolve"
+        "DaVinci Resolve",
+        "Video Production",
+        "Brand Identity"
       ]
     },
     {
@@ -226,13 +151,6 @@
         "Cursor",
         "Claude Code",
         "Gemini CLI"
-      ]
-    },
-    {
-      "name": "Languages",
-      "keywords": [
-        "English (Professional)",
-        "Mandarin Chinese (Native)"
       ]
     }
   ],

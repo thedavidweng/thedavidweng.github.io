@@ -42,8 +42,7 @@
       "summary": "Lead visual content operations for a growing AI community in British Columbia.",
       "highlights": [
         "Designed 50+ branded assets for social media, events, and presentations reaching 3,000+ cumulative viewers",
-        "Managed multi-platform content publishing workflow across LinkedIn, Instagram, and YouTube, maintaining brand consistency across 3 channels",
-        "Established brand guidelines and asset library, standardizing visual identity across 5+ organizational partners"
+        "Managed multi-platform content publishing workflow across LinkedIn, Instagram, and YouTube, maintaining brand consistency across 3 channels"
       ]
     },
     {
@@ -66,19 +65,18 @@
       "endDate": "2025-08-01",
       "summary": "Planned and delivered community programs for a residence community of 1,500+ students.",
       "highlights": [
-        "Designed and executed 12+ residential programs per academic year, engaging 25–60+ attendees per event",
-        "Managed community of 1,500+ residents through structured unit visits, peer mentoring, and wellness check-ins",
-        "Facilitated cross-cultural programming promoting diversity, equity, and inclusion among diverse resident populations"
+        "Designed and executed 12+ residential programs per academic year, engaging 25-60+ attendees per event",
+        "Facilitated cross-cultural co-curricular programming promoting diversity, equity, and inclusion"
       ]
     },
     {
-      "name": "Citang (词堂)",
+      "name": "Citang",
       "location": "Shanghai, China",
       "position": "Writer & Editor",
       "startDate": "2022-12-01",
       "summary": "Create, contextualize, and curate internet culture content with cultural commentary for a bilingual audience.",
       "highlights": [
-        "Created and contextualized internet culture content, driving 150,090 views on a single post and contributing to 5,000+ follower growth over 6 months"
+        "Created and contextualized internet culture content, driving 150,090 views on a single post"
       ]
     }
   ],
@@ -88,20 +86,9 @@
       "position": "Treasurer",
       "startDate": "2023-05-01",
       "endDate": "2025-04-01",
-      "summary": "Managed all financial activities for the Media Studies Student Association.",
+      "summary": "Managed all financial activities for the student association.",
       "highlights": [
-        "Managed association budget and financial operations over 2-year term, maintaining accurate records and on-time reporting"
-      ]
-    },
-    {
-      "organization": "UBC Chinese Students and Scholars Association (CSSA)",
-      "position": "Vice President Media",
-      "startDate": "2023-04-01",
-      "endDate": "2024-03-01",
-      "summary": "Directed all media production for UBC's Chinese Students and Scholars Association, serving 1,000+ community members.",
-      "highlights": [
-        "Built and led media team of 8+ volunteers, producing 100+ event photos and 5+ edited videos per term",
-        "Created visual content strategy that drove measurable attendance growth across flagship cultural events"
+        "Administered budget, applied for grants, tracked expenses, and reported financials to executive team"
       ]
     }
   ],
@@ -124,20 +111,6 @@
       "courses": []
     }
   ],
-  "awards": [
-    {
-      "title": "Faculty of Arts International Student Scholarship",
-      "awarder": "University of British Columbia"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Transcending Barriers: Viewing Practices of 'Games of Thrones' in China, India, and Russia",
-      "publisher": "Beacon: UBC Journal of Media Studies",
-      "releaseDate": "2024-06-01",
-      "summary": "Cross-cultural media consumption research examining unauthorized viewing practices across three countries."
-    }
-  ],
   "skills": [
     {
       "name": "Content & Design",
@@ -146,7 +119,6 @@
         "Video Production",
         "Content Strategy",
         "Brand Identity",
-        "Photography",
         "Visual Storytelling"
       ]
     },
@@ -156,9 +128,6 @@
         "Adobe Creative Suite",
         "Canva",
         "Figma",
-        "Articulate 360",
-        "React",
-        "Next.js",
         "reveal.js",
         "Remotion",
         "DaVinci Resolve"
@@ -170,8 +139,7 @@
         "Event Planning",
         "Project Management",
         "Budget Management",
-        "Team Leadership",
-        "Social Media Management"
+        "Team Leadership"
       ]
     },
     {
