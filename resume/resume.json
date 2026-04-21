@@ -158,7 +158,10 @@
         "Figma",
         "Articulate 360",
         "React",
-        "Next.js"
+        "Next.js",
+        "reveal.js",
+        "Remotion",
+        "DaVinci Resolve"
       ]
     },
     {
@@ -179,6 +182,18 @@
         "E-Learning Development",
         "Tauri",
         "Rust"
+      ]
+    },
+    {
+      "name": "Agentic Tools",
+      "keywords": [
+        "Codex",
+        "OpenClaw",
+        "Hermes Agent",
+        "OpenCode",
+        "Cursor",
+        "Claude Code",
+        "Gemini CLI"
       ]
     }
   ],

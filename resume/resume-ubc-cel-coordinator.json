@@ -210,17 +210,22 @@
         "Canva",
         "Video Production",
         "Photography",
-        "Brand Identity Design"
+        "Brand Identity Design",
+        "reveal.js",
+        "Remotion",
+        "DaVinci Resolve"
       ]
     },
     {
-      "name": "Technical Tools",
+      "name": "Agentic Tools",
       "keywords": [
-        "Microsoft 365",
-        "Google Workspace",
-        "Workday",
-        "WordPress",
-        "Social Media Analytics"
+        "Codex",
+        "OpenClaw",
+        "Hermes Agent",
+        "OpenCode",
+        "Cursor",
+        "Claude Code",
+        "Gemini CLI"
       ]
     },
     {
