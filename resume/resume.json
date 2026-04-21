@@ -42,7 +42,8 @@
       "summary": "Lead visual content operations for a growing AI community in British Columbia.",
       "highlights": [
         "Designed 50+ branded assets for social media, events, and presentations reaching 3,000+ cumulative viewers",
-        "Managed multi-platform content publishing workflow across LinkedIn, Instagram, and YouTube, maintaining brand consistency across 3 channels"
+        "Managed multi-platform content publishing workflow across LinkedIn, Instagram, and YouTube, maintaining brand consistency across 3 channels",
+        "Collaborated with stakeholders to translate AI ecosystem initiatives into compelling visual narratives for diverse audiences"
       ]
     },
     {
@@ -66,7 +67,10 @@
       "summary": "Planned and delivered community programs for a residence community of 1,500+ students.",
       "highlights": [
         "Designed and executed 12+ residential programs per academic year, engaging 25-60+ attendees per event",
-        "Facilitated cross-cultural co-curricular programming promoting diversity, equity, and inclusion"
+        "Facilitated cross-cultural co-curricular programming (Mahjong Night, Around the World in Games, Wear Your Pride) promoting diversity, equity, and inclusion among diverse resident populations",
+        "Designed and distributed monthly community newsletters, improving resident awareness of available resources and upcoming events",
+        "Coordinated with Resident Life team, campus services, and external partners to deliver educational resource events connecting students with financial literacy and support services",
+        "Administered weekly duty shifts including late-night safety rounds, enforcing campus policy and emergency response protocols for a community of 1,500+ residents"
       ]
     },
     {
@@ -76,7 +80,8 @@
       "startDate": "2022-12-01",
       "summary": "Create, contextualize, and curate internet culture content with cultural commentary for a bilingual audience.",
       "highlights": [
-        "Created and contextualized internet culture content, driving 150,090 views on a single post"
+        "Created and contextualized internet culture content, driving 150,090 views on a single post and contributing to 5,000+ follower growth over 6 months",
+        "Curated and annotated meme content with cross-cultural commentary, serving bilingual (CN/EN) audience needs"
       ]
     }
   ],
@@ -89,6 +94,17 @@
       "summary": "Managed all financial activities for the student association.",
       "highlights": [
         "Administered budget, applied for grants, tracked expenses, and reported financials to executive team"
+      ]
+    },
+    {
+      "organization": "UBC Chinese Students and Scholars Association (CSSA)",
+      "position": "Vice President Media",
+      "startDate": "2024-04-01",
+      "endDate": "2025-04-01",
+      "summary": "Led media strategy and visual communications for one of UBC's largest cultural student organizations.",
+      "highlights": [
+        "Directed social media strategy and visual content production for events serving 1,000+ UBC students",
+        "Coordinated with executive team to promote cultural programming, driving event attendance and community engagement"
       ]
     }
   ],
@@ -119,6 +135,7 @@
         "Video Production",
         "Content Strategy",
         "Brand Identity",
+        "Photography",
         "Visual Storytelling"
       ]
     },
@@ -128,6 +145,9 @@
         "Adobe Creative Suite",
         "Canva",
         "Figma",
+        "Articulate 360",
+        "React",
+        "Next.js",
         "reveal.js",
         "Remotion",
         "DaVinci Resolve"
@@ -139,7 +159,8 @@
         "Event Planning",
         "Project Management",
         "Budget Management",
-        "Team Leadership"
+        "Team Leadership",
+        "Social Media Management"
       ]
     },
     {
@@ -209,5 +230,19 @@
         "left": "0.5in"
       }
     }
-  }
+  },
+  "publications": [
+    {
+      "name": "\"Transcending Barriers: Viewing Practices of 'Games of Thrones' in China, India, and Russia\"",
+      "publisher": "Beacon: UBC Journal of Media Studies",
+      "releaseDate": "2024-06-01"
+    }
+  ],
+  "awards": [
+    {
+      "title": "UBC Faculty of Arts Student Research Grant",
+      "date": "2024-04-01",
+      "awarder": "University of British Columbia"
+    }
+  ]
 }
