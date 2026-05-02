@@ -105,8 +105,16 @@
       grid-template-columns: 1fr 1fr;
       gap: 1.6rem;
     }
+    .card-grid.three-col {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
     .card-grid .featured {
       height: 100%;
+    }
+    @media (max-width: 768px) {
+      .card-grid.three-col {
+        grid-template-columns: 1fr;
+      }
     }
     @media (max-width: 600px) {
       .card-grid {
@@ -292,15 +300,51 @@
       </div>
     </a>
 
+    <div class="card-grid" style="margin-top: 1.6rem;">
+      <a href="https://github.com/thedavidweng/OpenLoop" target="_blank" rel="noopener">
+        <div class="featured">
+          <div class="featured-header">
+            <h2>OpenLoop</h2>
+          </div>
+          <p class="featured-desc">
+            Desktop app for local ACE-Step music generation with prompt, lyrics, full controls, playback, and export.
+          </p>
+          <div class="featured-tech">
+            <span class="tag">TypeScript</span>
+            <span class="tag">Electron</span>
+          </div>
+          <div class="featured-links">
+            <span>View on GitHub →</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://github.com/thedavidweng/lyric-romanizer" target="_blank" rel="noopener">
+        <div class="featured">
+          <div class="featured-header">
+            <h2>lyric-romanizer</h2>
+          </div>
+          <p class="featured-desc">
+            Script detection and local romanization engine for lyrics — supports Japanese, Chinese, Korean, Cyrillic, Indic, Tamil, Thai, and Latin.
+          </p>
+          <div class="featured-tech">
+            <span class="tag">TypeScript</span>
+          </div>
+          <div class="featured-links">
+            <span>View on GitHub →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
     <p style="font-size: 1.3rem; color: var(--color-muted); margin-top: 1.6rem;">
       More projects on <a href="https://github.com/thedavidweng?tab=repositories" target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: 2px;">GitHub</a>.
     </p>
   </section>
 
-  <!-- Portfolio & Resume -->
+  <!-- Portfolio, Blog & Resume -->
   <section class="reveal">
-    <div class="section-label">Portfolio & Resume</div>
-    <div class="card-grid">
+    <div class="section-label">Portfolio, Blog & Resume</div>
+    <div class="card-grid three-col">
       <a href="https://davidweng.eu.org/" target="_blank" rel="noopener">
         <div class="featured">
           <div class="featured-header">
@@ -311,6 +355,19 @@
           </p>
           <div class="featured-links">
             <span>Visit portfolio →</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://blog.davidweng.eu.org/" target="_blank" rel="noopener">
+        <div class="featured">
+          <div class="featured-header">
+            <h2>Blog</h2>
+          </div>
+          <p class="featured-desc">
+            Writing on tech, design, and life in Vancouver.
+          </p>
+          <div class="featured-links">
+            <span>Read blog →</span>
           </div>
         </div>
       </a>
