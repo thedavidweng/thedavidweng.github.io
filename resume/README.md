@@ -29,7 +29,7 @@ resume/
 
 ```bash
 cd resume
-npm install
+pnpm install
 ```
 
 ### 渲染 HTML

@@ -4,7 +4,7 @@
   "description": "Developer, designer, and content creator in Vancouver. Building open-source tools and code-first motion graphics.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "pnpm exec resumed validate resume.json && pnpm exec resumed validate resume-ubc-cel-coordinator.json"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "resumed": "^6.1.0",
-    "styled-components": "^6.4.0"
+    "styled-components": "^6.4.1"
   },
   "packageManager": "pnpm@10.33.2",
   "pnpm": {
