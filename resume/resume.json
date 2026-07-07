@@ -139,7 +139,8 @@
         "egui",
         "SQLite",
         "Cobra",
-        "Vite"
+        "Next.js",
+        "TanStack"
       ]
     },
     {
@@ -172,8 +173,7 @@
         "Figma",
         "Remotion",
         "DaVinci Resolve",
-        "Next.js",
-        "TanStack"
+        "Vite"
       ]
     },
     {
