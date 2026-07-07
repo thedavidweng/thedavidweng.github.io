@@ -1,0 +1,219 @@
+{
+  "basics": {
+    "name": "David (Jiachen) Weng",
+    "label": "QA Engineer",
+    "email": "thedavidweng@gmail.com",
+    "summary": "QA engineer with a builder's mindset. I ship cross-platform desktop apps and AI-orchestration CLI tools, which means I think about edge cases, platform differences, and predictable behavior from day one. Experience spans TypeScript, Rust, Go, local AI inference, and open-source project maintenance. Strong eye for product quality across interfaces, platforms, and non-deterministic AI outputs.",
+    "location": {
+      "city": "Vancouver",
+      "countryCode": "CA",
+      "region": "British Columbia"
+    },
+    "profiles": [
+      {
+        "network": "Website",
+        "username": "thedavidweng.github.io",
+        "url": "https://thedavidweng.github.io"
+      },
+      {
+        "network": "Portfolio",
+        "username": "davidweng.eu.org",
+        "url": "https://davidweng.eu.org/"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "thedavidweng",
+        "url": "https://linkedin.com/in/thedavidweng"
+      },
+      {
+        "network": "GitHub",
+        "username": "thedavidweng",
+        "url": "https://github.com/thedavidweng"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "OwO Network, LLC",
+      "location": "Wyoming, USA",
+      "position": "Co-Founder",
+      "startDate": "2025-04-01",
+      "summary": "Technology company providing network acceleration services, AI-powered solutions, and comprehensive IT services for modern businesses.",
+      "highlights": [
+        "Co-founded and operate a technology company delivering network acceleration and AI-powered solutions to a global user base",
+        "Oversee business operations, product direction, and open-source community engagement across the organization's projects"
+      ]
+    },
+    {
+      "name": "BC + AI Ecosystem",
+      "location": "Vancouver, BC",
+      "position": "ContentOps & Graphic Designer",
+      "url": "https://bc-ai.ca",
+      "startDate": "2025-11-01",
+      "summary": "Lead visual content operations for a growing AI community in British Columbia.",
+      "highlights": [
+        "Designed 50+ branded assets for social media, events, and presentations reaching 3,000+ cumulative viewers",
+        "Managed multi-platform content publishing workflow across LinkedIn, Instagram, and YouTube, maintaining brand consistency across 3 channels"
+      ]
+    },
+    {
+      "name": "Citang",
+      "location": "Shanghai, China",
+      "position": "Writer & Editor",
+      "startDate": "2022-12-01",
+      "summary": "Create, contextualize, and curate internet culture content with cultural commentary for a bilingual audience.",
+      "highlights": [
+        "Created and contextualized internet culture content, driving 150,090 views on a single post and contributing to 5,000+ follower growth over 6 months",
+        "Curated and annotated meme content with cross-cultural commentary, serving bilingual (CN/EN) audience needs"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Illinois Urbana-Champaign",
+      "url": "https://illinois.edu",
+      "area": "Management",
+      "studyType": "Master's",
+      "startDate": "2026-01-01",
+      "courses": []
+    },
+    {
+      "institution": "University of British Columbia",
+      "url": "https://ubc.ca",
+      "area": "Media Studies (Minor: Asian Area Studies)",
+      "studyType": "Bachelor",
+      "startDate": "2021-09-01",
+      "endDate": "2025-05-01",
+      "courses": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "QA & Testing",
+      "keywords": [
+        "Cross-Platform Testing",
+        "Test Automation",
+        "E2E Testing",
+        "Regression Testing",
+        "API Testing",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "Engineering",
+      "keywords": [
+        "TypeScript",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Rust",
+        "Go",
+        "Tauri",
+        "egui",
+        "SQLite",
+        "Cobra",
+        "Next.js",
+        "TanStack"
+      ]
+    },
+    {
+      "name": "AI & Local Inference",
+      "keywords": [
+        "Agent Evaluation",
+        "ONNX Runtime",
+        "MLX",
+        "Demucs",
+        "ACE-Step",
+        "Agent-Friendly CLI Design",
+        "Prompt Engineering"
+      ]
+    },
+    {
+      "name": "Tools & Platforms",
+      "keywords": [
+        "GitHub Actions",
+        "Vite",
+        "Figma",
+        "Adobe Creative Suite",
+        "Remotion",
+        "DaVinci Resolve"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    },
+    {
+      "language": "Mandarin Chinese",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [
+    {
+      "name": "OpenMusic Series",
+      "description": "Open-source, local-first music tools with on-device AI inference and no subscriptions.",
+      "highlights": [
+        "Built with Tauri 2 + Rust + React, shipping cross-platform desktop apps that must behave consistently across macOS, Windows, and Linux",
+        "OpenLoop: local AI music generation from text prompts and lyrics; agent-first CLI with NDJSON streaming for automation pipelines"
+      ],
+      "keywords": [
+        "Open Source",
+        "Rust",
+        "Tauri",
+        "AI",
+        "Local-first",
+        "Cross-Platform"
+      ],
+      "url": "https://github.com/thedavidweng/OpenKara",
+      "roles": [
+        "Creator & Lead Developer"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Agent-Friendly CLI Tools",
+      "description": "Go command-line tools designed for AI agent orchestration across LMS, research, finance, and photo management.",
+      "highlights": [
+        "Designed for machine consumption: stable JSON output, predictable exit codes, and distinct stdout/stderr",
+        "Safety gates on mutation commands with read-only and dry-run modes; single static cross-platform binaries"
+      ],
+      "keywords": [
+        "Go",
+        "CLI",
+        "Agent-friendly",
+        "Open Source",
+        "Automation"
+      ],
+      "url": "https://thedavidweng.github.io/site/",
+      "roles": [
+        "Creator & Lead Developer"
+      ],
+      "type": "application"
+    }
+  ],
+  "meta": {
+    "canonical": "https://thedavidweng.github.io/resume/resume-photon.json",
+    "version": "v1.0.0",
+    "lastModified": "2026-07-07T00:00:00",
+    "pdfRenderOptions": {
+      "format": "Letter",
+      "margin": {
+        "top": "0.4in",
+        "right": "0.4in",
+        "bottom": "0.4in",
+        "left": "0.4in"
+      }
+    }
+  },
+  "publications": [
+    {
+      "name": "\"Transcending Barriers: Viewing Practices of 'Games of Thrones' in China, India, and Russia\"",
+      "publisher": "Beacon: UBC Journal of Media Studies",
+      "releaseDate": "2024-06-01"
+    }
+  ]
+}
