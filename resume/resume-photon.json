@@ -1,9 +1,9 @@
 {
   "basics": {
     "name": "David (Jiachen) Weng",
-    "label": "QA Engineer",
+    "label": "Product Engineer & Creative Technologist",
     "email": "thedavidweng@gmail.com",
-    "summary": "QA engineer with a builder's mindset. I ship cross-platform desktop apps and AI-orchestration CLI tools, which means I think about edge cases, platform differences, and predictable behavior from day one. Experience spans TypeScript, Rust, Go, local AI inference, and open-source project maintenance. Strong eye for product quality across interfaces, platforms, and non-deterministic AI outputs.",
+    "summary": "Product engineer and creative technologist in Vancouver. I build things that look good and work well, from brand identities to open-source apps. I maintain projects across stacks (Tauri + Rust, Go, Rust + egui) with a local-first, agent-friendly design philosophy. My work spans product strategy, full-stack development, AI-integrated workflows, and visual design. Co-Founder of OwO Network, LLC.",
     "location": {
       "city": "Vancouver",
       "countryCode": "CA",
@@ -89,17 +89,6 @@
   ],
   "skills": [
     {
-      "name": "QA & Testing",
-      "keywords": [
-        "Cross-Platform Testing",
-        "Test Automation",
-        "E2E Testing",
-        "Regression Testing",
-        "API Testing",
-        "CI/CD"
-      ]
-    },
-    {
       "name": "Engineering",
       "keywords": [
         "TypeScript",
@@ -119,24 +108,33 @@
     {
       "name": "AI & Local Inference",
       "keywords": [
-        "Agent Evaluation",
         "ONNX Runtime",
         "MLX",
         "Demucs",
         "ACE-Step",
         "Agent-Friendly CLI Design",
-        "Prompt Engineering"
+        "Prompt Engineering",
+        "AI-Assisted Design"
+      ]
+    },
+    {
+      "name": "Content & Design",
+      "keywords": [
+        "Graphic Design",
+        "Video Production",
+        "Content Strategy",
+        "Brand Identity",
+        "Visual Storytelling"
       ]
     },
     {
       "name": "Tools & Platforms",
       "keywords": [
-        "GitHub Actions",
-        "Vite",
-        "Figma",
         "Adobe Creative Suite",
+        "Figma",
         "Remotion",
-        "DaVinci Resolve"
+        "DaVinci Resolve",
+        "Vite"
       ]
     }
   ],
