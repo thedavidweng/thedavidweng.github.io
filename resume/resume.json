@@ -1,9 +1,9 @@
 {
   "basics": {
     "name": "David (Jiachen) Weng",
-    "label": "Content Producer & Visual Designer",
+    "label": "Product Engineer & Creative Technologist",
     "email": "thedavidweng@gmail.com",
-    "summary": "Content producer, visual designer, and creative technologist in Vancouver. I build things that look good and work well. From brand identities to open-source apps, my work spans graphic design, video production, event management, and AI-integrated workflows. I maintain open-source projects like OpenKara (desktop karaoke app, Tauri + Rust). Co-Founder of OwO Network, LLC.",
+    "summary": "Product engineer and creative technologist in Vancouver. I build things that look good and work well, from brand identities to open-source apps. I maintain projects across stacks (Tauri + Rust, Go, Rust + egui) with a local-first, agent-friendly design philosophy. My work spans product strategy, full-stack development, AI-integrated workflows, and visual design. Co-Founder of OwO Network, LLC.",
     "location": {
       "city": "Vancouver",
       "countryCode": "CA",
@@ -48,13 +48,13 @@
     },
     {
       "name": "OwO Network, LLC",
-      "location": "Vancouver, BC",
+      "location": "Wyoming, USA",
       "position": "Co-Founder",
       "startDate": "2025-04-01",
-      "summary": "Building tools that make AI accessible for everyday creative workflows.",
+      "summary": "Technology company providing network acceleration services, AI-powered solutions, and comprehensive IT services for modern businesses.",
       "highlights": [
-        "Co-founded technology company, defining product roadmap and coordinating cross-functional development",
-        "Led product strategy and technical architecture decisions for AI-integrated consumer applications"
+        "Co-founded and operate a technology company delivering network acceleration and AI-powered solutions to a global user base",
+        "Oversee business operations, product direction, and open-source community engagement across the organization's projects"
       ]
     },
     {
@@ -129,6 +129,32 @@
   ],
   "skills": [
     {
+      "name": "Engineering",
+      "keywords": [
+        "Rust",
+        "Go",
+        "TypeScript",
+        "React",
+        "Tauri",
+        "egui",
+        "SQLite",
+        "Cobra",
+        "Vite"
+      ]
+    },
+    {
+      "name": "AI & Local Inference",
+      "keywords": [
+        "ONNX Runtime",
+        "MLX",
+        "Demucs",
+        "ACE-Step",
+        "Agent-Friendly CLI Design",
+        "Prompt Engineering",
+        "AI-Assisted Design"
+      ]
+    },
+    {
       "name": "Content & Design",
       "keywords": [
         "Graphic Design",
@@ -143,14 +169,11 @@
       "name": "Tools & Platforms",
       "keywords": [
         "Adobe Creative Suite",
-        "Canva",
         "Figma",
-        "Articulate 360",
-        "React",
-        "Next.js",
-        "reveal.js",
         "Remotion",
-        "DaVinci Resolve"
+        "DaVinci Resolve",
+        "Next.js",
+        "TanStack"
       ]
     },
     {
@@ -161,28 +184,6 @@
         "Budget Management",
         "Team Leadership",
         "Social Media Management"
-      ]
-    },
-    {
-      "name": "AI & Technology",
-      "keywords": [
-        "Prompt Engineering",
-        "AI-Assisted Design",
-        "E-Learning Development",
-        "Tauri",
-        "Rust"
-      ]
-    },
-    {
-      "name": "Agentic Tools",
-      "keywords": [
-        "Codex",
-        "OpenClaw",
-        "Hermes Agent",
-        "OpenCode",
-        "Cursor",
-        "Claude Code",
-        "Gemini CLI"
       ]
     }
   ],
@@ -200,18 +201,42 @@
   "references": [],
   "projects": [
     {
-      "name": "OpenKara",
-      "description": "Open-source desktop karaoke application using AI vocal separation and online synced lyrics.",
+      "name": "OpenMusic Series",
+      "description": "Open-source, local-first music tools. OpenKara turns your owned library into a karaoke stage with on-device AI stem separation; OpenLoop is a local AI music generator, an open-source alternative to Suno.",
       "highlights": [
-        "Built with Tauri 2 + Rust, demonstrating full-stack development and product design"
+        "Built with Tauri 2 + Rust + React, cross-platform desktop apps",
+        "OpenKara: on-device AI stem separation, synced lyrics with multi-language romanization, remote library support, AirPlay casting",
+        "OpenLoop: local AI music generation from text prompts and lyrics; agent-first CLI with NDJSON streaming for automation pipelines"
       ],
       "keywords": [
         "Open Source",
         "Rust",
         "Tauri",
-        "AI"
+        "AI",
+        "Local-first",
+        "Agent-friendly"
       ],
       "url": "https://github.com/thedavidweng/OpenKara",
+      "roles": [
+        "Creator & Lead Developer"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Agent-Friendly CLI Tools",
+      "description": "A suite of Go command-line tools for AI agent orchestration across LMS, research repositories, personal finance, and photo management.",
+      "highlights": [
+        "Stable JSON output, predictable exit codes, and distinct stdout/stderr for reliable machine consumption",
+        "Safety gates on all mutation commands with read-only and dry-run modes",
+        "Single static cross-platform binaries"
+      ],
+      "keywords": [
+        "Go",
+        "CLI",
+        "Agent-friendly",
+        "Open Source"
+      ],
+      "url": "https://thedavidweng.github.io/site/",
       "roles": [
         "Creator & Lead Developer"
       ],
