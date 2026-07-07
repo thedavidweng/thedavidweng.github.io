@@ -202,10 +202,9 @@
   "projects": [
     {
       "name": "OpenMusic Series",
-      "description": "Open-source, local-first music tools. OpenKara turns your owned library into a karaoke stage with on-device AI stem separation; OpenLoop is a local AI music generator, an open-source alternative to Suno.",
+      "description": "Open-source, local-first music tools with on-device AI inference and no subscriptions.",
       "highlights": [
-        "Built with Tauri 2 + Rust + React, cross-platform desktop apps",
-        "OpenKara: on-device AI stem separation, synced lyrics with multi-language romanization, remote library support, AirPlay casting",
+        "OpenKara: karaoke stage for your owned library with AI stem separation, synced lyrics, and AirPlay casting",
         "OpenLoop: local AI music generation from text prompts and lyrics; agent-first CLI with NDJSON streaming for automation pipelines"
       ],
       "keywords": [
@@ -224,11 +223,10 @@
     },
     {
       "name": "Agent-Friendly CLI Tools",
-      "description": "A suite of Go command-line tools for AI agent orchestration across LMS, research repositories, personal finance, and photo management.",
+      "description": "Go command-line tools designed for AI agent orchestration across LMS, research, finance, and photo management.",
       "highlights": [
         "Stable JSON output, predictable exit codes, and distinct stdout/stderr for reliable machine consumption",
-        "Safety gates on all mutation commands with read-only and dry-run modes",
-        "Single static cross-platform binaries"
+        "Safety gates on mutation commands with read-only and dry-run modes; single static cross-platform binaries"
       ],
       "keywords": [
         "Go",
