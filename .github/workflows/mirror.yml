@@ -2,7 +2,9 @@ name: Mirror to Codeberg
 
 on:
   push:
-    branches: ["**"]
+    branches:
+      - "**"
+      - "!dependabot/**"
     tags: ["**"]
   workflow_dispatch:
 
@@ -22,7 +24,7 @@ jobs:
           fetch-depth: 0
 
       - name: Mirror to Codeberg
-        uses: cssnr/mirror-repository-action@2af5bf347684245f52b5f56502956a57f9b8813e # v1.2.0
+        uses: cssnr/mirror-repository-action@2af5bf347684245f52b5f56502956a57f9b8813e # v1
         with:
           host: https://codeberg.org
           username: thedavidweng
