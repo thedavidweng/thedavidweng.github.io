@@ -8,7 +8,11 @@
 resume/
 ├── resume.json                          # 通用版简历 (推送到 jsonresume.org)
 ├── resume-ubc-cel-coordinator.json      # UBC CEL Coordinator 定制版
+├── resume-melotech.json                 # Melotech 定制版
+├── resume-photon.json                   # Photon 定制版
+├── resume-vpl-library-assistant.json    # Vancouver Public Library 定制版
 ├── out-ubc-cel-coordinator.html         # 渲染输出
+├── out-vpl-library-assistant.html       # 渲染输出
 ├── README.md                            # 本文件
 ├── package.json
 └── node_modules/
@@ -36,17 +40,29 @@ pnpm install
 
 ```bash
 npx resumed render "resume.json" \
-  -t @jsonresume/jsonresume-theme-consultant-polished \
+  -t @jsonresume/jsonresume-theme-consultant-polished/dist \
   -o out.html
 ```
 
+> 注意：主题的默认 export 指向 JSX 源码（`src/index.jsx`），在较新版本 Node 下无法直接加载；
+> 请使用 `/dist` 子路径指向已构建的 `dist/index.js`。
+
 ### 导出 PDF
 
+本机用 **Helium**（Chromium 内核浏览器，位于 `/Applications/Helium.app`）驱动 Puppeteer 导出。
+`resumed export` CLI 的 `--puppeteer-arg` 解析有 bug（会报 `TypeError: s.startsWith is not a function`），
+所以直接用 Puppeteer API。推荐用仓库里的脚本：
+
 ```bash
-npx resumed export "resume.json" \
-  -t @jsonresume/jsonresume-theme-consultant-polished \
-  -o david-weng-resume.pdf
+cd resume
+node render-pdf.mjs        # 读取 out-vpl-library-assistant.html，注入紧凑打印 CSS，导出 2 页 PDF
 ```
+
+> **两页控制**：`render-pdf.mjs` 会注入一段 `@media print` 紧凑 CSS（字号 13px、收紧行距/段距），
+> 确保 VPL 版简历稳定落在 2 页以内。其余版本若不需要压缩，可去掉脚本里的 `COMPACT` 注入。
+
+> `resumed export` 需要本机装有 Puppeteer 可驱动的浏览器（Chrome/Chromium）。若无浏览器，
+> 可安装 Helium，或在 Chrome 中打开渲染后的 HTML 用「打印 → 另存为 PDF」代替。
 
 ## 自动推送到 jsonresume.org
 
