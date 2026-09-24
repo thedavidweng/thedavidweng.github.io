@@ -58,6 +58,18 @@
       ]
     },
     {
+      "name": "UBC Department of Physical Therapy",
+      "location": "Vancouver, BC",
+      "position": "Educational Technology Assistant",
+      "startDate": "2023-09-01",
+      "endDate": "2024-04-01",
+      "summary": "Designed and developed inclusive e-learning content for the Physical Therapy program, applying Universal Design for Learning principles.",
+      "highlights": [
+        "Designed and developed 5+ inclusive e-learning modules using Articulate 360 (Rise, Storyline), applying UDL principles for diverse learner needs",
+        "Collaborated with faculty to translate curriculum content into interactive digital formats serving 200+ students"
+      ]
+    },
+    {
       "name": "UBC Student Housing and Hospitality Services",
       "location": "Vancouver, BC",
       "position": "Resident Advisor",
@@ -244,7 +256,7 @@
   "meta": {
     "canonical": "https://registry.jsonresume.org/thedavidweng",
     "version": "v1.0.0",
-    "lastModified": "2026-04-21T00:00:00",
+    "lastModified": "2026-09-24T00:00:00",
     "pdfRenderOptions": {
       "margin": {
         "top": "0.5in",

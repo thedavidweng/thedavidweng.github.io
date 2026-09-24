@@ -1,11 +1,18 @@
-// Compact + export the VPL Library Assistant resume to a 2-page PDF.
-// Usage: node render-pdf.mjs
-// Reads out-vpl-library-assistant.html, injects compact print CSS, exports to ../resume-vpl-library-assistant.pdf.
+// Compact + export a rendered resume HTML to PDF.
+// Usage: node render-pdf.mjs <input.html> <output.pdf>
+// Example: node render-pdf.mjs out.html David_Weng_Resume.pdf
+// Injects compact print CSS so the resume holds within 2 pages.
 import { readFileSync, writeFileSync } from 'node:fs';
 import puppeteer from 'puppeteer';
 
-const HTML = new URL('./out-vpl-library-assistant.html', import.meta.url).pathname;
-const OUT = new URL('../resume-vpl-library-assistant.pdf', import.meta.url).pathname;
+const [HTML_ARG, OUT_ARG] = process.argv.slice(2);
+if (!HTML_ARG || !OUT_ARG) {
+  console.error('Usage: node render-pdf.mjs <input.html> <output.pdf>');
+  process.exit(1);
+}
+
+const HTML = new URL('./' + HTML_ARG, import.meta.url).pathname;
+const OUT = new URL('../' + OUT_ARG, import.meta.url).pathname;
 const CHROME = '/Applications/Helium.app/Contents/MacOS/Helium';
 
 const COMPACT = `

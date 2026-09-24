@@ -2,28 +2,45 @@
 
 基于 [JSON Resume](https://jsonresume.org/) 标准的简历管理系统。
 
+## 工作流：只追踪主简历
+
+- `resume.json` 是唯一的 source of truth：中立、全貌，包含所有经历模块。**任何新经历先加进这里**，再考虑针对岗位怎么裁剪。
+- 针对具体 JD 的定制版**不提交到仓库**：从主简历复制一份 → 按 JD 定制 → 渲染投递，用完即弃。如需回溯，从 git 历史找回或重新生成。
+- 只有 `resume.json` 被修改时才会触发 Gist 同步（`jsonresume.org/thedavidweng` 自动刷新）。
+
+## 定制手法
+
+针对 JD 的常规操作，配合仓库 `.agents/skills/` 里的 agent 流水线
+（`job-description-analyzer` → `resume-tailor` → `resume-ats-optimizer` → `interview-prep-generator`）：
+
+1. 重写 `basics.label` 和 `basics.summary` 定调。Tech 岗保持 "Product Engineer & Creative Technologist" 身份，只做小幅适配；转行 / 服务类岗可整体改写。
+2. `work` 按相关性重排或删减，不相关的经历直接拿掉；保留经历的 highlights 换措辞贴 JD 关键词。
+3. `projects` 按岗位增删：tech 岗保留，服务类岗可全删。
+4. `skills` 整个分类体系按岗位重建，不只是加减关键词。
+5. `volunteer`：tech 岗删，社区 / 服务岗保留。
+6. `education` 保持不动。
+
+原则：只 highlight 真实经历，不编造（见 `resume-tailor` skill 的 Tailoring Philosophy）。
+
 ## 文件说明
 
 ```
 resume/
-├── resume.json                          # 通用版简历 (推送到 jsonresume.org)
-├── resume-ubc-cel-coordinator.json      # UBC CEL Coordinator 定制版
-├── resume-melotech.json                 # Melotech 定制版
-├── resume-photon.json                   # Photon 定制版
-├── resume-vpl-library-assistant.json    # Vancouver Public Library 定制版
-├── out-ubc-cel-coordinator.html         # 渲染输出
-├── out-vpl-library-assistant.html       # 渲染输出
-├── README.md                            # 本文件
+├── resume.json        # 主简历（唯一追踪版本，推送到 registry）
+├── README.md          # 本文件
 ├── package.json
-└── node_modules/
+├── pnpm-lock.yaml
+└── render-pdf.mjs     # HTML → PDF，注入紧凑打印 CSS 控制页数
 ```
+
+`out-*.html` 为渲染中间产物，已在 `.gitignore` 中忽略，不提交。
 
 ## 工具链
 
 | 工具 | 用途 |
 |------|------|
 | [resumed](https://github.com/rbard/resumed) | JSON Resume CLI — 渲染/导出 |
-| [@jsonresume/jsonresume-theme-consultant-polished](https://www.npmjs.com/package/@jsonresume/jsonresume-theme-consultant-polished) | 主题 — 咨询/叙事风格 |
+| [@jsonresume/jsonresume-theme-consultant-polished](https://www.npmjs.com/npm/package/@jsonresume/jsonresume-theme-consultant-polished) | 主题 — 咨询/叙事风格 |
 | [JSON Resume Registry](https://registry.jsonresume.org/) | 在线托管 |
 | GitHub Actions (gist.yml) | 自动同步到 Gist |
 
@@ -47,6 +64,18 @@ npx resumed render "resume.json" \
 > 注意：主题的默认 export 指向 JSX 源码（`src/index.jsx`），在较新版本 Node 下无法直接加载；
 > 请使用 `/dist` 子路径指向已构建的 `dist/index.js`。
 
+### 定制一版简历（不提交）
+
+```bash
+cd resume
+cp resume.json /tmp/resume-target.json
+# 按 JD 修改 /tmp/resume-target.json（可走 .agents/skills 流水线让 agent 做）
+npx resumed render /tmp/resume-target.json \
+  -t @jsonresume/jsonresume-theme-consultant-polished/dist \
+  -o out.html
+node render-pdf.mjs out.html David_Weng_Resume.pdf
+```
+
 ### 导出 PDF
 
 本机用 **Helium**（Chromium 内核浏览器，位于 `/Applications/Helium.app`）驱动 Puppeteer 导出。
@@ -55,11 +84,11 @@ npx resumed render "resume.json" \
 
 ```bash
 cd resume
-node render-pdf.mjs        # 读取 out-vpl-library-assistant.html，注入紧凑打印 CSS，导出 2 页 PDF
+node render-pdf.mjs out.html David_Weng_Resume.pdf
 ```
 
-> **两页控制**：`render-pdf.mjs` 会注入一段 `@media print` 紧凑 CSS（字号 13px、收紧行距/段距），
-> 确保 VPL 版简历稳定落在 2 页以内。其余版本若不需要压缩，可去掉脚本里的 `COMPACT` 注入。
+> **页数控制**：`render-pdf.mjs` 会注入一段 `@media print` 紧凑 CSS（字号 13px、收紧行距/段距），
+> 让简历稳定落在 2 页以内。若不需要压缩，可去掉脚本里的 `COMPACT` 注入。
 
 > `resumed export` 需要本机装有 Puppeteer 可驱动的浏览器（Chrome/Chromium）。若无浏览器，
 > 可安装 Helium，或在 Chrome 中打开渲染后的 HTML 用「打印 → 另存为 PDF」代替。
@@ -95,20 +124,3 @@ push resume/resume.json
 ### 触发条件
 
 - 只有 `resume/resume.json` 被修改时才会触发
-- 定制版简历（如 `resume-ubc-cel-coordinator.json`）不会触发
-
-## 命名规范
-
-```
-resume-{target-role-slug}.json  ← 定制版（不推送）
-resume.json                     ← 通用版（推送到 registry）
-```
-
-## 两种简历的区别
-
-| 文件 | 用途 | 推送 |
-|------|------|------|
-| `resume.json` | 通用版，覆盖全貌 | ✅ 推送到 jsonresume.org |
-| `resume-*.json` | 针对特定 JD 定制 | ❌ 仅本地 |
-
-通用版保持中立、全面，不偏向任何单一岗位。定制版从通用版复制后修改。
