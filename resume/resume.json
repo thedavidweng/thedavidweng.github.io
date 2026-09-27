@@ -3,7 +3,7 @@
     "name": "David (Jiachen) Weng",
     "label": "Product Engineer & Creative Technologist",
     "email": "thedavidweng@gmail.com",
-    "summary": "Product engineer and creative technologist in Vancouver. I build things that look good and work well, from brand identities to open-source apps. I maintain projects across stacks (Tauri + Rust, Go, Rust + egui) with a local-first, agent-friendly design philosophy. My work spans product strategy, full-stack development, AI-integrated workflows, and visual design. Co-Founder of OwO Network, LLC.",
+    "summary": "Product engineer and creative technologist in Vancouver. I build things that look good and work well, from brand identities to open-source apps, and I create content end to end, from video production and graphic design to social media marketing, with a proven ability to manage intricate projects from concept to completion. I maintain projects across stacks (Tauri + Rust, Go, Rust + egui) with a local-first, agent-friendly design philosophy. My work spans product strategy, full-stack development, AI-integrated workflows, and visual design. Co-Founder of OwO Network, LLC.",
     "location": {
       "city": "Vancouver",
       "countryCode": "CA",
@@ -86,8 +86,33 @@
       ]
     },
     {
+      "name": "Beaty Biodiversity Museum",
+      "location": "Vancouver, BC",
+      "position": "Video Production Assistant",
+      "startDate": "2023-05-01",
+      "endDate": "2023-09-01",
+      "summary": "Produced video and visual materials communicating the museum's research and brand identity.",
+      "highlights": [
+        "Filmed and edited research and promotional videos communicating key messages and reinforcing the museum's brand identity",
+        "Designed signage, posters, and plaques enhancing the museum's aesthetic and public image",
+        "Led creation of a data visualization video submitted to the Government of Canada and featured in the museum's 2022-2023 annual report"
+      ]
+    },
+    {
+      "name": "Vancouver Arts Colloquium Society (VACS)",
+      "location": "Vancouver, BC",
+      "position": "Social Media Coordinator",
+      "startDate": "2023-01-01",
+      "endDate": "2023-05-01",
+      "summary": "Ran social media marketing and audience communications for an arts society.",
+      "highlights": [
+        "Managed social media marketing strategy and execution, growing followers and brand awareness for the society",
+        "Co-authored and distributed monthly newsletters, improving audience engagement"
+      ]
+    },
+    {
       "name": "Citang",
-      "location": "Shanghai, China",
+      "location": "New York, United States",
       "position": "Writer & Editor",
       "startDate": "2022-12-01",
       "summary": "Create, contextualize, and curate internet culture content with cultural commentary for a bilingual audience.",
@@ -105,14 +130,15 @@
       "endDate": "2025-04-01",
       "summary": "Managed all financial activities for the student association.",
       "highlights": [
-        "Administered budget, applied for grants, tracked expenses, and reported financials to executive team"
+        "Secured $10,000+ in grant funding for events through grant applications",
+        "Administered budget, processed member reimbursements, tracked expenses, and reported financials to executive team"
       ]
     },
     {
       "organization": "UBC Chinese Students and Scholars Association (CSSA)",
       "position": "Vice President Media",
-      "startDate": "2024-04-01",
-      "endDate": "2025-04-01",
+      "startDate": "2023-04-01",
+      "endDate": "2024-04-01",
       "summary": "Led media strategy and visual communications for one of UBC's largest cultural student organizations.",
       "highlights": [
         "Directed social media strategy and visual content production for events serving 1,000+ UBC students",

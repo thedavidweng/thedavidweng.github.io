@@ -88,7 +88,9 @@ node render-pdf.mjs out.html David_Weng_Resume.pdf
 ```
 
 > **页数控制**：`render-pdf.mjs` 会注入一段 `@media print` 紧凑 CSS（字号 13px、收紧行距/段距），
-> 让简历稳定落在 2 页以内。若不需要压缩，可去掉脚本里的 `COMPACT` 注入。
+> 让特调后的简历稳定落在 2 页以内。CSS 只用结构选择器（section/h2/h3/ul/li 等），不依赖主题的
+> styled-components 哈希类名，因此主题升级后依然有效（2026-09-27 按 consultant-polished 1.0.3 重调；
+> 主简历作为素材库不追求页数，特调版删减后实测 2 页）。若不需要压缩，可去掉脚本里的 `COMPACT` 注入。
 
 > `resumed export` 需要本机装有 Puppeteer 可驱动的浏览器（Chrome/Chromium）。若无浏览器，
 > 可安装 Helium，或在 Chrome 中打开渲染后的 HTML 用「打印 → 另存为 PDF」代替。
