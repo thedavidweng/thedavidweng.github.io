@@ -275,6 +275,15 @@
         "Powers OpenKara's 13-language synced-lyrics romanization; documented in 9 languages"
       ],
       "url": "https://github.com/thedavidweng/lyric-romanizer"
+    },
+    {
+      "name": "opencard-db",
+      "summary": "Open database of credit card products across the US, Canada, and China.",
+      "highlights": [
+        "257 card products as schema-validated JSON files, published as versioned static exports (JSON, CSV, YAML) on jsDelivr CDN, plus a rate-limited Cloudflare Workers read-only API",
+        "Release-please automation with changelog and checksums, contribution guidelines, and self-hosting docs"
+      ],
+      "url": "https://github.com/thedavidweng/opencard-db"
     }
   ],
   "meta": {
