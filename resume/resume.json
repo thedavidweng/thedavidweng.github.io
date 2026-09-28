@@ -3,7 +3,7 @@
     "name": "David (Jiachen) Weng",
     "label": "Product Engineer & Creative Technologist",
     "email": "thedavidweng@gmail.com",
-    "summary": "Product engineer and creative technologist in Vancouver. I build things that look good and work well, from brand identities to open-source apps, and I create content end to end, from video production and graphic design to social media marketing, with a proven ability to manage intricate projects from concept to completion. I maintain projects across stacks (Tauri + Rust, Go, Rust + egui) with a local-first, agent-friendly design philosophy. My work spans product strategy, full-stack development, AI-integrated workflows, and visual design. Co-Founder of OwO Network, LLC.",
+    "summary": "Product engineer and creative technologist in Vancouver. I build things that look good and work well, from brand identities to open-source apps, and I create content end to end, from video production and graphic design to social media marketing, with a proven ability to manage intricate projects from concept to completion. I design agent-native developer tools: a suite of 8 original Go CLIs sharing one machine-consumable contract (monarchmoney-cli with 30 stars, flickr-cli with 47 commands), plus jobs-cli, an agent-first job search CLI. I maintain projects across stacks (Tauri + Rust, Go, Rust + egui) with a local-first philosophy. My work spans product strategy, full-stack development, AI-integrated workflows, and visual design. Co-Founder of OwO Network, LLC.",
     "location": {
       "city": "Vancouver",
       "countryCode": "CA",
@@ -51,10 +51,10 @@
       "location": "Wyoming, USA",
       "position": "Co-Founder",
       "startDate": "2025-04-01",
-      "summary": "Technology company providing network acceleration services, AI-powered solutions, and comprehensive IT services for modern businesses.",
+      "summary": "Wyoming-based technology company delivering network acceleration services and AI-powered developer tooling to a global user base.",
       "highlights": [
-        "Co-founded and operate a technology company delivering network acceleration and AI-powered solutions to a global user base",
-        "Oversee business operations, product direction, and open-source community engagement across the organization's projects"
+        "Co-founded and operate a technology company delivering network acceleration services, API infrastructure, and open-source developer tools to a global user base",
+        "Design and ship production tooling across Go, Rust, and TypeScript with a local-first, agent-friendly philosophy"
       ]
     },
     {
@@ -240,43 +240,41 @@
   "projects": [
     {
       "name": "OpenMusic Series",
-      "description": "Open-source, local-first music tools with on-device AI inference and no subscriptions.",
+      "summary": "Local-first AI music apps: OpenKara (desktop karaoke) and OpenLoop (text-to-music generation, alpha).",
       "highlights": [
-        "OpenKara: karaoke stage for your owned library with AI stem separation, synced lyrics, and AirPlay casting",
-        "OpenLoop: local AI music generation from text prompts and lyrics; agent-first CLI with NDJSON streaming for automation pipelines"
+        "OpenKara (Rust + Tauri, 31 stars): on-device AI stem separation (Demucs, 2/4-stem), synced lyrics with 13-language romanization, AirPlay casting; ships v0.14.0 as full-platform binaries (dmg, AppImage, deb, exe) with a YouTube demo",
+        "OpenLoop (TypeScript, alpha): local ACE-Step music generation from text prompts and lyrics; agent-first CLI with NDJSON streaming for automation pipelines"
       ],
-      "keywords": [
-        "Open Source",
-        "Rust",
-        "Tauri",
-        "AI",
-        "Local-first",
-        "Agent-friendly"
+      "url": "https://github.com/thedavidweng/OpenKara"
+    },
+    {
+      "name": "jobs-cli",
+      "summary": "Agent-native job search and application CLI (Go).",
+      "highlights": [
+        "Searches Indeed and LinkedIn from the terminal, detects the ATS provider behind each posting (Greenhouse, Lever, Workday and others), and submits applications where the provider supports it",
+        "Safety-first by design: nothing is ever sent without an explicit --confirm flag; agent-first contract with stable JSON output, separated stdout/stderr, and predictable exit codes",
+        "Ships v2.0.2 as single static binaries for macOS, Linux, and Windows via Homebrew tap, install script, and go install"
       ],
-      "url": "https://github.com/thedavidweng/OpenKara",
-      "roles": [
-        "Creator & Lead Developer"
-      ],
-      "type": "application"
+      "url": "https://github.com/thedavidweng/jobs-cli",
+      "startDate": "2026-09-26"
     },
     {
       "name": "Agent-Friendly CLI Tools",
-      "description": "Go command-line tools designed for AI agent orchestration across LMS, research, finance, and photo management.",
+      "summary": "A suite of 8 original Go CLIs built on one machine-consumable design contract.",
       "highlights": [
-        "Stable JSON output, predictable exit codes, and distinct stdout/stderr for reliable machine consumption",
-        "Safety gates on mutation commands with read-only and dry-run modes; single static cross-platform binaries"
+        "monarchmoney-cli (30 stars, 3 forks): query and automate Monarch Money from the terminal, with JSONL audit logs, hledger backups, and offline SQLite cache; flickr-cli: 47 commands across photos, albums, and stats; canvas-cli: terminal interface for Canvas LMS; plus zenodo-cli, qualtrics-cli, tg-drive-cli, and money",
+        "Every tool ships the same contract: JSON-first output, predictable exit codes, distinct stdout/stderr, and --read-only / --dry-run / --confirm safety gates on mutations; single static binaries with SBOM and checksums, distributed through a personal Homebrew tap"
       ],
-      "keywords": [
-        "Go",
-        "CLI",
-        "Agent-friendly",
-        "Open Source"
+      "url": "https://thedavidweng.github.io/site/"
+    },
+    {
+      "name": "lyric-romanizer",
+      "summary": "Local lyrics romanization engine, published on npm.",
+      "highlights": [
+        "Script detection and romanization across 12 scripts (Japanese, Mandarin/Cantonese, Korean, Cyrillic, Indic, Tamil, Thai), running fully locally with zero API calls; 511 npm downloads in the last 30 days",
+        "Powers OpenKara's 13-language synced-lyrics romanization; documented in 9 languages"
       ],
-      "url": "https://thedavidweng.github.io/site/",
-      "roles": [
-        "Creator & Lead Developer"
-      ],
-      "type": "application"
+      "url": "https://github.com/thedavidweng/lyric-romanizer"
     }
   ],
   "meta": {
