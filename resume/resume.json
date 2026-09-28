@@ -262,7 +262,7 @@
       "name": "Agent-Friendly CLI Tools",
       "summary": "A suite of 8 original Go CLIs built on one machine-consumable design contract.",
       "highlights": [
-        "monarchmoney-cli (30 stars, 3 forks): query and automate Monarch Money from the terminal, with JSONL audit logs, hledger backups, and offline SQLite cache; flickr-cli: 47 commands across photos, albums, and stats; canvas-cli: terminal interface for Canvas LMS; plus zenodo-cli, qualtrics-cli, tg-drive-cli, and money",
+        "monarchmoney-cli (30 stars, 3 forks): query and automate Monarch Money from the terminal, with JSONL audit logs, hledger backups, and offline SQLite cache; flickr-cli: 47 commands across photos, albums, and stats; canvas-cli: terminal interface for Canvas LMS; zenodo-cli: uploaded and published an 8.1 GB public dataset (875,140 records, 58 provincial datasets) to Zenodo; plus qualtrics-cli, tg-drive-cli, and money",
         "Every tool ships the same contract: JSON-first output, predictable exit codes, distinct stdout/stderr, and --read-only / --dry-run / --confirm safety gates on mutations; single static binaries with SBOM and checksums, distributed through a personal Homebrew tap"
       ],
       "url": "https://thedavidweng.github.io/site/"
