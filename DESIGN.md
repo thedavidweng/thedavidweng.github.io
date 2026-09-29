@@ -238,6 +238,21 @@ Letter Spacing: -0.01em (slight tightening)
 
 ---
 
+## Homepage Implementation Notes (`index.html`)
+
+The homepage adapts this system with a few deliberate extensions:
+
+| Aspect | Choice |
+|--------|--------|
+| Fonts | System stacks only (no web fonts); serif italic (`New York` → Georgia) for single accent words in headings |
+| Theme | Light + dark via `light-dark()` tokens; toggle persisted in `localStorage`, defaults to the OS preference |
+| Accent | One accent (`#e2530e` light / `#ff8a4c` dark), used only for status, focus rings, the playhead, and vocals |
+| Muted text | `#62676a` for body-size muted copy (meets WCAG AA); Silver Mist `#a3a3a3` is reserved for faint labels |
+| Grid | 6-column card grid, 1120px max width, fluid gutters |
+| Motion | Blur-in reveals and hover lift follow the timings above; all motion is disabled under `prefers-reduced-motion` |
+
+---
+
 ## How Agents Should Use This File
 
 ### For UI Generation
