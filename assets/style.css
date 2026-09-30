@@ -247,7 +247,8 @@ canvas {
     padding: 0;
   }
 
-  .palette-btn kbd {
+  .palette-btn kbd,
+  .scrub-hint {
     display: none;
   }
 }
@@ -445,6 +446,7 @@ canvas {
 }
 
 .stems-bar:first-child {
+  flex-wrap: nowrap;
   border-bottom: 1px solid var(--border);
 }
 
@@ -452,9 +454,22 @@ canvas {
   border-top: 1px solid var(--border);
 }
 
+.stems-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .timecode {
-  min-width: 7.5em;
-  text-align: left;
+  flex-shrink: 0;
+  min-width: 6.5em;
+  text-align: right;
+}
+
+@media (max-width: 30rem) {
+  .stems .dots {
+    display: none;
+  }
 }
 
 .dots {
@@ -1141,6 +1156,7 @@ footer a:hover {
 }
 
 .palette .option small {
+  max-width: 60%;
   overflow: hidden;
   color: var(--faint);
   font-size: 0.8125rem;
@@ -1201,7 +1217,7 @@ footer a:hover {
     .reveal {
       animation: rise linear both;
       animation-timeline: view();
-      animation-range: entry 0% entry 40%;
+      animation-range: entry 0% entry 160px;
     }
   }
 }

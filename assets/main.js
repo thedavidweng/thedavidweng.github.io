@@ -82,7 +82,7 @@ function showRepos({ total_count, incomplete_results, items }) {
   renderTimes();
 
   const latest = items.reduce((a, b) => (a.pushed_at > b.pushed_at ? a : b));
-  $("[data-activity]").textContent = `Pushed to ${latest.name} ${ago(latest.pushed_at)}`;
+  $("[data-activity]").textContent = `Pushed ${ago(latest.pushed_at)} to ${latest.name}`;
 
   if (incomplete_results || items.length < total_count) return;
   $('[data-stat="repos"]').textContent = total_count;
