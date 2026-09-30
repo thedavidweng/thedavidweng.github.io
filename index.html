@@ -6,10 +6,17 @@
   <title>David Weng</title>
   <meta name="description" content="David Weng is a developer, designer, and content creator in Vancouver who builds open source desktop apps and command line tools.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0e0f0f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c0e0f" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://thedavidweng.github.io/">
   <link rel="icon" href="https://avatars.githubusercontent.com/u/95214375?v=4&amp;s=64" type="image/png">
+  <script>
+    document.documentElement.classList.add("js");
+    try {
+      const theme = localStorage.getItem("theme");
+      if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+    } catch {}
+  </script>
   <link rel="preload" href="assets/fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
   <script src="assets/main.js" type="module"></script>
@@ -44,110 +51,252 @@
   </script>
 </head>
 <body>
-  <main>
-    <header class="section">
-      <div class="label">
-        <img class="avatar" src="https://avatars.githubusercontent.com/u/95214375?v=4&amp;s=96" alt="" width="40" height="40">
-        <h1>David Weng</h1>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <img src="https://avatars.githubusercontent.com/u/95214375?v=4&amp;s=64" alt="" width="28" height="28">
+        David Weng
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#projects">Projects</a>
+        <a href="#tools">Tools</a>
+        <a href="#contributions">Contributions</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="actions js-only">
+        <button class="icon-btn palette-btn" id="palette-open" type="button" aria-haspopup="dialog" aria-label="Search the site">
+          <svg aria-hidden="true"><use href="assets/icons.svg#search"/></svg>
+          <kbd data-shortcut>⌘K</kbd>
+        </button>
+        <button class="icon-btn theme-btn" id="theme-toggle" type="button" aria-label="Switch between light and dark">
+          <svg class="sun" aria-hidden="true"><use href="assets/icons.svg#sun"/></svg>
+          <svg class="moon" aria-hidden="true"><use href="assets/icons.svg#moon"/></svg>
+        </button>
       </div>
-      <p class="lead">Developer, designer, and content creator in Vancouver. I build open source desktop apps and command line tools, and make motion graphics with code.</p>
-    </header>
+    </div>
+  </header>
 
-    <section class="section" aria-labelledby="projects">
-      <h2 class="label" id="projects">Projects</h2>
-      <div>
-        <p class="intro">Mostly software for music, with the heavy AI work done on your own computer.</p>
-        <ul class="rows">
-          <li><a href="https://github.com/thedavidweng/OpenKara" data-repo="OpenKara"><span class="name">OpenKara</span><span class="desc">Karaoke from the music you already own. Vocals are separated on your computer, with synced lyrics.</span><span class="meta">31 stars</span></a></li>
-          <li><a href="https://github.com/thedavidweng/OpenLoop" data-repo="OpenLoop"><span class="name">OpenLoop</span><span class="desc">Make music on your computer from a prompt and lyrics, with full controls, playback, and export.</span><span class="meta"></span></a></li>
-          <li><a href="https://github.com/thedavidweng/strudel-tui" data-repo="strudel-tui"><span class="name">strudel-tui</span><span class="desc">Live code music with Strudel in the terminal, with an AI agent to play along.</span><span class="meta"></span></a></li>
-          <li><a href="https://github.com/thedavidweng/lyric-romanizer" data-repo="lyric-romanizer"><span class="name">lyric-romanizer</span><span class="desc">Detects the writing system of song lyrics and romanizes them locally, from Japanese and Korean to Cyrillic and Thai.</span><span class="meta"></span></a></li>
-          <li><a href="https://github.com/thedavidweng/sdf-flash-gui" data-repo="sdf-flash-gui"><span class="name">sdf-flash-gui</span><span class="desc">Dump and flash firmware on MT1959 optical drives, on macOS, Windows, and Linux.</span><span class="meta">9 stars</span></a></li>
-        </ul>
+  <main id="main">
+    <section class="wrap hero" id="top" aria-label="Introduction">
+      <p class="eyebrow rise"><span class="pulse" aria-hidden="true"></span><span data-activity>Open source on GitHub</span></p>
+      <h1 class="rise">David Weng</h1>
+      <p class="lede rise">Developer, designer, and content creator in Vancouver. I build open source desktop apps and command line tools, and make motion graphics with code.</p>
+      <div class="hero-cta rise">
+        <a class="btn primary" href="#projects">See projects<svg aria-hidden="true"><use href="assets/icons.svg#arrow-down"/></svg></a>
+        <a class="btn" href="https://github.com/thedavidweng"><svg aria-hidden="true"><use href="assets/icons.svg#github"/></svg>GitHub</a>
+        <a class="btn" href="resume.html">Resume</a>
+      </div>
+
+      <dl class="stats rise">
+        <div class="stat"><dt>original repositories</dt><dd data-stat="repos">41</dd></div>
+        <div class="stat"><dt>stars on GitHub</dt><dd data-stat="stars">157</dd></div>
+        <div class="stat"><dt>merged pull requests upstream</dt><dd data-prs>120</dd></div>
+        <div class="stat"><dt>projects contributed to</dt><dd>20+</dd></div>
+      </dl>
+
+      <figure class="stems rise js-only">
+        <div class="stems-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>OpenKara stem separation</span>
+          <span class="timecode" id="timecode" aria-hidden="true">00:00 / 03:32</span>
+        </div>
+        <canvas id="stems" role="img" aria-label="Animation of a song split into vocals, drums, bass, and other, the way OpenKara separates it on your computer."></canvas>
+        <figcaption class="stems-bar">
+          <span class="legend">
+            <span data-stem>vocals</span>
+            <span data-stem>drums</span>
+            <span data-stem>bass</span>
+            <span data-stem>other</span>
+          </span>
+          <span>Demucs v4 through ONNX Runtime, running on your computer. Hover to scrub.</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap section" id="projects" aria-labelledby="projects-title">
+      <div class="sec-head reveal">
+        <div><p class="kicker">01</p><h2 id="projects-title">Projects</h2></div>
+        <p>Mostly software for music, with the heavy AI work done on your own computer.</p>
+      </div>
+
+      <div class="grid" data-spotlight>
+        <article class="card feature reveal" data-repo="OpenKara">
+          <div>
+            <div class="card-top">
+              <span><span class="lang rust">Rust</span> <time datetime="2026-09-29T11:50:27Z"></time></span>
+              <span class="stars" data-stars><svg role="img" aria-label="Stars"><use href="assets/icons.svg#star"/></svg><span>31</span></span>
+            </div>
+            <h3><a class="card-link" href="https://github.com/thedavidweng/OpenKara">OpenKara</a></h3>
+            <p class="desc">Karaoke from the music you already own. Vocals are separated on your computer, with synced lyrics.</p>
+            <div class="card-actions">
+              <a class="btn small" href="https://thedavidweng.github.io/OpenKara/">Website</a>
+              <a class="btn small" href="https://github.com/thedavidweng/OpenKara/releases">Releases</a>
+            </div>
+          </div>
+          <ul class="points">
+            <li><span class="n">01</span><span><b>Separation on your computer.</b> Demucs v4 through ONNX Runtime. Nothing is uploaded.</span></li>
+            <li><span class="n">02</span><span><b>A native app.</b> Tauri 2 and Rust, with a React 19 and TypeScript interface.</span></li>
+            <li><span class="n">03</span><span><b>Your own library.</b> Works with the files you already have, plus synced lyrics from the web.</span></li>
+            <li class="tags"><span class="tag">Tauri 2</span><span class="tag">Rust</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">ONNX Runtime</span></li>
+          </ul>
+        </article>
+
+        <article class="card reveal" data-repo="OpenLoop">
+          <div class="card-top"><span class="lang typescript">TypeScript</span><span class="stars" data-stars><svg role="img" aria-label="Stars"><use href="assets/icons.svg#star"/></svg><span>1</span></span></div>
+          <h3><a class="card-link" href="https://github.com/thedavidweng/OpenLoop">OpenLoop</a></h3>
+          <p class="desc">Make music on your computer from a prompt and lyrics, with full controls, playback, and export.</p>
+          <div class="card-foot"><span class="tags"><span class="tag">Tauri</span><span class="tag">Music generation</span></span><time datetime="2026-09-28T11:27:07Z"></time></div>
+        </article>
+
+        <article class="card reveal" data-repo="strudel-tui">
+          <div class="card-top"><span class="lang typescript">TypeScript</span><span class="stars" data-stars><svg role="img" aria-label="Stars"><use href="assets/icons.svg#star"/></svg><span>1</span></span></div>
+          <h3><a class="card-link" href="https://github.com/thedavidweng/strudel-tui">strudel-tui</a></h3>
+          <p class="desc">Live code music with Strudel in the terminal, with an AI agent to play along.</p>
+          <div class="card-foot"><span class="tags"><span class="tag">Terminal</span><span class="tag">Live coding</span></span><time datetime="2026-09-27T14:26:11Z"></time></div>
+        </article>
+
+        <article class="card reveal" data-repo="lyric-romanizer">
+          <div class="card-top"><span class="lang typescript">TypeScript</span><span class="stars" data-stars><svg role="img" aria-label="Stars"><use href="assets/icons.svg#star"/></svg><span>2</span></span></div>
+          <h3><a class="card-link" href="https://github.com/thedavidweng/lyric-romanizer">lyric-romanizer</a></h3>
+          <p class="desc">Detects the writing system of song lyrics and romanizes them locally, from Japanese and Korean to Cyrillic and Thai.</p>
+          <div class="card-foot"><span class="tags"><span class="tag">Library</span><span class="tag">Unicode</span></span><time datetime="2026-09-29T23:12:43Z"></time></div>
+        </article>
+
+        <article class="card reveal" data-repo="sdf-flash-gui">
+          <div class="card-top"><span class="lang rust">Rust</span><span class="stars" data-stars><svg role="img" aria-label="Stars"><use href="assets/icons.svg#star"/></svg><span>9</span></span></div>
+          <h3><a class="card-link" href="https://github.com/thedavidweng/sdf-flash-gui">sdf-flash-gui</a></h3>
+          <p class="desc">Dump and flash firmware on MT1959 optical drives, on macOS, Windows, and Linux.</p>
+          <div class="card-foot"><span class="tags"><span class="tag">egui</span><span class="tag">Hardware</span></span><time datetime="2026-09-29T23:13:40Z"></time></div>
+        </article>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="tools">
-      <h2 class="label" id="tools">Tools</h2>
-      <div>
-        <p class="intro">Command line tools written in Go. They print stable JSON and ask before changing anything, so people and AI agents can both use them safely.</p>
-        <ul class="rows">
-          <li><a href="https://github.com/thedavidweng/monarchmoney-cli" data-repo="monarchmoney-cli"><span class="name">monarchmoney-cli</span><span class="desc">Accounts, transactions, and budgets from Monarch Money, in your terminal.</span><span class="meta">30 stars</span></a></li>
-          <li><a href="https://github.com/thedavidweng/money" data-repo="money"><span class="name">money</span><span class="desc">A personal finance backend that keeps your data in encrypted SQLite on your own machine.</span><span class="meta"></span></a></li>
-          <li><a href="https://github.com/thedavidweng/jobs-cli" data-repo="jobs-cli"><span class="name">jobs-cli</span><span class="desc">Search and apply for jobs on Indeed and LinkedIn.</span><span class="meta"></span></a></li>
-          <li><a href="https://github.com/thedavidweng/tg-drive-cli" data-repo="tg-drive-cli"><span class="name">tg-drive-cli</span><span class="desc">Use a Telegram channel as a file tree you can script and restore.</span><span class="meta"></span></a></li>
-          <li><a href="https://github.com/thedavidweng/flickr-cli" data-repo="flickr-cli"><span class="name">flickr-cli</span><span class="desc">Manage, upload, and back up your Flickr photos.</span><span class="meta"></span></a></li>
-          <li><a href="https://github.com/thedavidweng/zenodo-cli" data-repo="zenodo-cli"><span class="name">zenodo-cli</span><span class="desc">Manage Zenodo records and file uploads, with full InvenioRDM API access.</span><span class="meta"></span></a></li>
-          <li><a href="https://github.com/thedavidweng/canvas-cli" data-repo="canvas-cli"><span class="name">canvas-cli</span><span class="desc">Canvas LMS from the command line, with automatic paging and an audit log.</span><span class="meta"></span></a></li>
-          <li><a href="https://github.com/thedavidweng/qualtrics-cli" data-repo="qualtrics-cli"><span class="name">qualtrics-cli</span><span class="desc">Qualtrics from the command line, plus an offline compiler that turns Markdown into surveys.</span><span class="meta"></span></a></li>
-        </ul>
+    <section class="wrap section" id="tools" aria-labelledby="tools-title">
+      <div class="sec-head reveal">
+        <div><p class="kicker">02</p><h2 id="tools-title">Tools</h2></div>
+        <p>Command line tools written in Go. They print stable JSON and ask before changing anything, so people and AI agents can both use them safely.</p>
+      </div>
+
+      <div class="term reveal">
+        <div class="term-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span>~/tools</span></div>
+        <div class="term-body">
+          <p class="prompt" aria-hidden="true"><b>$</b> ls<span class="caret"></span></p>
+          <ul class="cli">
+            <li data-repo="monarchmoney-cli"><a class="name card-link" href="https://github.com/thedavidweng/monarchmoney-cli">monarchmoney-cli</a><span class="desc">Accounts, transactions, and budgets from Monarch Money, in your terminal.</span><a class="docs" href="https://thedavidweng.github.io/site/monarchmoney-cli/">docs</a><span class="stars" data-stars><svg role="img" aria-label="Stars"><use href="assets/icons.svg#star"/></svg><span>30</span></span></li>
+            <li data-repo="money"><a class="name card-link" href="https://github.com/thedavidweng/money">money</a><span class="desc">A personal finance backend that keeps your data in encrypted SQLite on your own machine.</span><a class="docs" href="https://thedavidweng.github.io/site/money/">docs</a><span class="stars" data-stars><svg role="img" aria-label="Stars"><use href="assets/icons.svg#star"/></svg><span>1</span></span></li>
+            <li data-repo="jobs-cli"><a class="name card-link" href="https://github.com/thedavidweng/jobs-cli">jobs-cli</a><span class="desc">Search and apply for jobs on Indeed and LinkedIn.</span><span class="stars" data-stars><svg role="img" aria-label="Stars"><use href="assets/icons.svg#star"/></svg><span>1</span></span></li>
+            <li data-repo="tg-drive-cli"><a class="name card-link" href="https://github.com/thedavidweng/tg-drive-cli">tg-drive-cli</a><span class="desc">Use a Telegram channel as a file tree you can script and restore.</span><span class="stars" data-stars><svg role="img" aria-label="Stars"><use href="assets/icons.svg#star"/></svg><span>1</span></span></li>
+            <li data-repo="flickr-cli"><a class="name card-link" href="https://github.com/thedavidweng/flickr-cli">flickr-cli</a><span class="desc">Manage, upload, and back up your Flickr photos.</span><a class="docs" href="https://thedavidweng.github.io/site/flickr-cli/">docs</a><span class="stars" data-stars data-zero><svg role="img" aria-label="Stars"><use href="assets/icons.svg#star"/></svg><span>0</span></span></li>
+            <li data-repo="zenodo-cli"><a class="name card-link" href="https://github.com/thedavidweng/zenodo-cli">zenodo-cli</a><span class="desc">Manage Zenodo records and file uploads, with full InvenioRDM API access.</span><a class="docs" href="https://thedavidweng.github.io/site/zenodo-cli/">docs</a><span class="stars" data-stars data-zero><svg role="img" aria-label="Stars"><use href="assets/icons.svg#star"/></svg><span>0</span></span></li>
+            <li data-repo="canvas-cli"><a class="name card-link" href="https://github.com/thedavidweng/canvas-cli">canvas-cli</a><span class="desc">Canvas LMS from the command line, with automatic paging and an audit log.</span><a class="docs" href="https://thedavidweng.github.io/site/canvas-cli/">docs</a><span class="stars" data-stars data-zero><svg role="img" aria-label="Stars"><use href="assets/icons.svg#star"/></svg><span>0</span></span></li>
+            <li data-repo="qualtrics-cli"><a class="name card-link" href="https://github.com/thedavidweng/qualtrics-cli">qualtrics-cli</a><span class="desc">Qualtrics from the command line, plus an offline compiler that turns Markdown into surveys.</span><span class="stars" data-stars data-zero><svg role="img" aria-label="Stars"><use href="assets/icons.svg#star"/></svg><span>0</span></span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="contributions">
-      <h2 class="label" id="contributions">Contributions</h2>
-      <div>
-        <p class="intro"><span data-prs>120+</span> merged pull requests to projects by other people, including:</p>
-        <ul class="repos">
-          <li><a href="https://github.com/NousResearch/hermes-agent/pulls?q=is%3Apr+author%3Athedavidweng" title="NousResearch/hermes-agent">hermes-agent</a></li>
-          <li><a href="https://github.com/emilk/egui/pulls?q=is%3Apr+author%3Athedavidweng" title="emilk/egui">egui</a></li>
-          <li><a href="https://github.com/longbridge/gpui-kit/pulls?q=is%3Apr+author%3Athedavidweng" title="longbridge/gpui-kit">gpui-kit</a></li>
-          <li><a href="https://github.com/Homebrew/homebrew-core/pulls?q=is%3Apr+author%3Athedavidweng" title="Homebrew/homebrew-core">homebrew-core</a></li>
-          <li><a href="https://github.com/Homebrew/homebrew-cask/pulls?q=is%3Apr+author%3Athedavidweng" title="Homebrew/homebrew-cask">homebrew-cask</a></li>
-          <li><a href="https://github.com/projectM-visualizer/projectm/pulls?q=is%3Apr+author%3Athedavidweng" title="projectM-visualizer/projectm">projectm</a></li>
-          <li><a href="https://github.com/apache/camel-k/pulls?q=is%3Apr+author%3Athedavidweng" title="apache/camel-k">camel-k</a></li>
-          <li><a href="https://github.com/mtkennerly/ludusavi/pulls?q=is%3Apr+author%3Athedavidweng" title="mtkennerly/ludusavi">ludusavi</a></li>
-          <li><a href="https://github.com/getpaseo/paseo/pulls?q=is%3Apr+author%3Athedavidweng" title="getpaseo/paseo">paseo</a></li>
-          <li><a href="https://github.com/mengxi-ream/read-frog/pulls?q=is%3Apr+author%3Athedavidweng" title="mengxi-ream/read-frog">read-frog</a></li>
-          <li><a href="https://github.com/voyager-crew/voyager/pulls?q=is%3Apr+author%3Athedavidweng" title="voyager-crew/voyager">voyager</a></li>
-          <li><a href="https://github.com/openclaw/wacli/pulls?q=is%3Apr+author%3Athedavidweng" title="openclaw/wacli">wacli</a></li>
-          <li><a href="https://github.com/missuo/koe/pulls?q=is%3Apr+author%3Athedavidweng" title="missuo/koe">koe</a></li>
-          <li><a href="https://github.com/junhoyeo/tokscale/pulls?q=is%3Apr+author%3Athedavidweng" title="junhoyeo/tokscale">tokscale</a></li>
-          <li><a href="https://github.com/SaladDay/cc-switch-cli/pulls?q=is%3Apr+author%3Athedavidweng" title="SaladDay/cc-switch-cli">cc-switch-cli</a></li>
-          <li><a href="https://github.com/jazzyalex/agent-sessions/pulls?q=is%3Apr+author%3Athedavidweng" title="jazzyalex/agent-sessions">agent-sessions</a></li>
-          <li><a href="https://github.com/Cyberdrop-DL/cyberdrop-dl/pulls?q=is%3Apr+author%3Athedavidweng" title="Cyberdrop-DL/cyberdrop-dl">cyberdrop-dl</a></li>
-          <li><a href="https://github.com/abue-ammar/tinycast/pulls?q=is%3Apr+author%3Athedavidweng" title="abue-ammar/tinycast">tinycast</a></li>
-          <li><a href="https://github.com/rutikwankhade/CoverView/pulls?q=is%3Apr+author%3Athedavidweng" title="rutikwankhade/CoverView">CoverView</a></li>
-          <li><a href="https://github.com/jlcodes99/cockpit-tools/pulls?q=is%3Apr+author%3Athedavidweng" title="jlcodes99/cockpit-tools">cockpit-tools</a></li>
-        </ul>
-        <p class="more"><a class="link" href="https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3Athedavidweng+-user%3Athedavidweng">All merged pull requests</a></p>
+    <section class="wrap section" id="contributions" aria-labelledby="contributions-title">
+      <div class="sec-head reveal">
+        <div><p class="kicker">03</p><h2 id="contributions-title">Contributions</h2></div>
+        <p><span data-prs>120+</span> merged pull requests to projects by other people, from Rust GUI toolkits and agent frameworks to Homebrew.</p>
+      </div>
+      <div class="upstream reveal">
+        <a class="up" href="https://github.com/NousResearch/hermes-agent/pulls?q=is%3Apr+author%3Athedavidweng"><span class="repo"><span>NousResearch/</span>hermes-agent</span><span class="what">Extensible AI agent framework</span></a>
+        <a class="up" href="https://github.com/emilk/egui/pulls?q=is%3Apr+author%3Athedavidweng"><span class="repo"><span>emilk/</span>egui</span><span class="what">Immediate mode GUI for Rust</span></a>
+        <a class="up" href="https://github.com/longbridge/gpui-kit/pulls?q=is%3Apr+author%3Athedavidweng"><span class="repo"><span>longbridge/</span>gpui-kit</span><span class="what">Rust components for GPUI desktop apps</span></a>
+        <a class="up" href="https://github.com/Homebrew/homebrew-cask/pulls?q=is%3Apr+author%3Athedavidweng"><span class="repo"><span>Homebrew/</span>homebrew-cask</span><span class="what">Apple Silicon support and packaging</span></a>
+        <a class="up" href="https://github.com/Homebrew/homebrew-core/pulls?q=is%3Apr+author%3Athedavidweng"><span class="repo"><span>Homebrew/</span>homebrew-core</span><span class="what">New formulae and updates</span></a>
+        <a class="up" href="https://github.com/projectM-visualizer/projectm/pulls?q=is%3Apr+author%3Athedavidweng"><span class="repo"><span>projectM-visualizer/</span>projectm</span><span class="what">Music visualization compatible with Milkdrop</span></a>
+        <a class="up" href="https://github.com/apache/camel-k/pulls?q=is%3Apr+author%3Athedavidweng"><span class="repo"><span>apache/</span>camel-k</span><span class="what">Integration platform on Kubernetes</span></a>
+        <a class="up" href="https://github.com/mtkennerly/ludusavi/pulls?q=is%3Apr+author%3Athedavidweng"><span class="repo"><span>mtkennerly/</span>ludusavi</span><span class="what">Game save backup with Wine and Proton support</span></a>
+        <a class="up" href="https://github.com/getpaseo/paseo/pulls?q=is%3Apr+author%3Athedavidweng"><span class="repo"><span>getpaseo/</span>paseo</span><span class="what">Run coding agents from desktop and mobile</span></a>
+        <a class="up" href="https://github.com/mengxi-ream/read-frog/pulls?q=is%3Apr+author%3Athedavidweng"><span class="repo"><span>mengxi-ream/</span>read-frog</span><span class="what">Browser extension for language learning</span></a>
+        <a class="up" href="https://github.com/openclaw/wacli/pulls?q=is%3Apr+author%3Athedavidweng"><span class="repo"><span>openclaw/</span>wacli</span><span class="what">WhatsApp from the command line</span></a>
+        <a class="up" href="https://github.com/missuo/koe/pulls?q=is%3Apr+author%3Athedavidweng"><span class="repo"><span>missuo/</span>koe</span><span class="what">Voice input for macOS from a hotkey</span></a>
+      </div>
+      <p class="more reveal"><a class="link" href="https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3Athedavidweng+-user%3Athedavidweng">All merged pull requests</a></p>
+    </section>
+
+    <section class="wrap section" id="work" aria-labelledby="work-title">
+      <div class="sec-head reveal">
+        <div><p class="kicker">04</p><h2 id="work-title">Work</h2></div>
+        <p>Current roles, and the full resume.</p>
+      </div>
+      <div class="grid" data-spotlight>
+        <article class="card third reveal">
+          <div class="card-top"><span>Since 2025</span><span>bc-ai.ca</span></div>
+          <h3><a class="card-link" href="https://bc-ai.ca">BC + AI Ecosystem</a></h3>
+          <p class="desc">ContentOps &amp; Graphic Designer. Visual content for an AI community in British Columbia.</p>
+        </article>
+        <article class="card third reveal">
+          <div class="card-top"><span>Since 2025</span><span>owo.network</span></div>
+          <h3><a class="card-link" href="https://owo.network">OwO Network</a></h3>
+          <p class="desc">Cofounder. Network acceleration, AI solutions, and IT services for businesses.</p>
+        </article>
+        <article class="card third reveal">
+          <div class="card-top"><span>Earlier</span><span>resume.html</span></div>
+          <h3><a class="card-link" href="resume.html">Resume</a></h3>
+          <p class="desc">Full history, including video production at the Beaty Biodiversity Museum and educational technology at UBC.</p>
+        </article>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="work">
-      <h2 class="label" id="work">Work</h2>
-      <ul class="rows">
-        <li><a href="https://bc-ai.ca"><span class="name">BC + AI Ecosystem</span><span class="desc">ContentOps &amp; Graphic Designer</span><span class="meta">Since 2025</span></a></li>
-        <li><a href="https://owo.network"><span class="name">OwO Network</span><span class="desc">Cofounder</span><span class="meta">Since 2025</span></a></li>
-        <li><a href="resume.html"><span class="name">Resume</span><span class="desc">Full work history and education.</span><span class="meta"></span></a></li>
-      </ul>
+    <section class="wrap section" id="elsewhere" aria-labelledby="elsewhere-title">
+      <div class="sec-head reveal">
+        <div><p class="kicker">05</p><h2 id="elsewhere-title">Elsewhere</h2></div>
+        <p>Design work and writing live on their own sites.</p>
+      </div>
+      <div class="grid" data-spotlight>
+        <article class="card reveal">
+          <div class="card-top"><span>Portfolio</span><span>davidweng.eu.org</span></div>
+          <h3><a class="card-link" href="https://davidweng.eu.org/">Design, video, and creative work</a></h3>
+        </article>
+        <article class="card reveal">
+          <div class="card-top"><span>Blog</span><span>blog.blahaj.uk</span></div>
+          <h3><a class="card-link" href="https://blog.blahaj.uk/">Writing on tech, design, and life in Vancouver</a></h3>
+        </article>
+      </div>
     </section>
 
-    <section class="section" aria-labelledby="elsewhere">
-      <h2 class="label" id="elsewhere">Elsewhere</h2>
-      <ul class="rows">
-        <li><a href="https://davidweng.eu.org/"><span class="name">Portfolio</span><span class="desc">Design, video, and creative work.</span><span class="meta">davidweng.eu.org</span></a></li>
-        <li><a href="https://blog.blahaj.uk/"><span class="name">Blog</span><span class="desc">Writing on tech, design, and life in Vancouver.</span><span class="meta">blog.blahaj.uk</span></a></li>
-      </ul>
-    </section>
-
-    <section class="section" aria-labelledby="contact">
-      <h2 class="label" id="contact">Contact</h2>
-      <ul class="rows">
-        <li><a href="mailto:david@owo.network"><span class="name">Email</span><span class="desc">david@owo.network</span></a></li>
-        <li><a href="https://github.com/thedavidweng"><span class="name">GitHub</span><span class="desc">thedavidweng</span></a></li>
-        <li><a href="https://x.com/thedavidweng"><span class="name">X</span><span class="desc">thedavidweng</span></a></li>
-        <li><a href="https://www.linkedin.com/in/thedavidweng"><span class="name">LinkedIn</span><span class="desc">thedavidweng</span></a></li>
-        <li><a href="https://www.youtube.com/@davyweng"><span class="name">YouTube</span><span class="desc">davyweng</span></a></li>
-        <li><a href="https://www.instagram.com/davidwengpro/"><span class="name">Instagram</span><span class="desc">davidwengpro</span></a></li>
-        <li><a href="https://www.buymeacoffee.com/thedavidweng"><span class="name">Buy Me a Coffee</span><span class="desc">thedavidweng</span></a></li>
-      </ul>
+    <section class="wrap section contact" id="contact" aria-labelledby="contact-title">
+      <div class="sec-head reveal">
+        <div><p class="kicker">06</p><h2 id="contact-title">Contact</h2></div>
+        <p>Email is the best way to reach me.</p>
+      </div>
+      <a class="contact-email reveal" href="mailto:david@owo.network">david@owo.network</a>
+      <div class="contact-actions reveal">
+        <a class="btn primary" href="mailto:david@owo.network">Write an email</a>
+        <button class="btn js-only" type="button" data-copy><svg aria-hidden="true"><use href="assets/icons.svg#copy"/></svg><span aria-live="polite">Copy address</span></button>
+      </div>
+      <nav class="socials reveal" aria-label="Social">
+        <a href="https://github.com/thedavidweng"><svg aria-hidden="true"><use href="assets/icons.svg#github"/></svg>GitHub</a>
+        <a href="https://x.com/thedavidweng"><svg aria-hidden="true"><use href="assets/icons.svg#x"/></svg>X</a>
+        <a href="https://www.linkedin.com/in/thedavidweng"><svg aria-hidden="true"><use href="assets/icons.svg#linkedin"/></svg>LinkedIn</a>
+        <a href="https://www.youtube.com/@davyweng"><svg aria-hidden="true"><use href="assets/icons.svg#youtube"/></svg>YouTube</a>
+        <a href="https://www.instagram.com/davidwengpro/"><svg aria-hidden="true"><use href="assets/icons.svg#instagram"/></svg>Instagram</a>
+        <a href="https://www.buymeacoffee.com/thedavidweng"><svg aria-hidden="true"><use href="assets/icons.svg#coffee"/></svg>Buy Me a Coffee</a>
+      </nav>
     </section>
   </main>
 
   <footer>
-    <p>Set in Mona Sans.</p>
-    <p><a class="link" href="https://github.com/thedavidweng/thedavidweng.github.io">Source</a></p>
+    <div class="wrap">
+      <p>Set in Mona Sans.</p>
+      <p><a href="https://github.com/thedavidweng/thedavidweng.github.io">Source</a></p>
+    </div>
   </footer>
+
+  <dialog class="palette" id="palette" aria-label="Search the site">
+    <div class="palette-field">
+      <svg aria-hidden="true"><use href="assets/icons.svg#search"/></svg>
+      <input id="palette-input" type="text" placeholder="Search projects, pages, and actions" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
+    </div>
+    <!-- [html-validate-disable-next prefer-native-element] -->
+    <ul id="palette-list" role="listbox" aria-label="Results"></ul>
+    <div class="palette-foot" aria-hidden="true"><span><kbd>↑</kbd><kbd>↓</kbd>move</span><span><kbd>Enter</kbd>open</span><span><kbd>Esc</kbd>close</span></div>
+  </dialog>
 </body>
 </html>
