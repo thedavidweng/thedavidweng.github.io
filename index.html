@@ -1,448 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>David Weng — Product Engineer & Creative Technologist</title>
-  <meta name="description" content="David Weng is a product engineer and creative technologist in Vancouver, building local-first desktop apps with on-device AI and agent-friendly command-line tools.">
-  <meta name="author" content="David Weng">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>David Weng</title>
+  <meta name="description" content="David Weng is a developer, designer, and content creator in Vancouver who builds open source desktop apps and command line tools.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0c0e0f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0f0f" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://thedavidweng.github.io/">
-  <link rel="icon" href="https://avatars.githubusercontent.com/u/95214375?v=4&s=64" type="image/png">
-  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/95214375?v=4&s=180">
-  <link rel="preconnect" href="https://api.github.com" crossorigin>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/95214375?v=4&amp;s=64" type="image/png">
+  <link rel="preload" href="assets/fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/main.js" type="module"></script>
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thedavidweng.github.io/">
-  <meta property="og:title" content="David Weng — Product Engineer & Creative Technologist">
-  <meta property="og:description" content="Local-first desktop apps with on-device AI, agent-friendly CLIs, and 120+ merged pull requests upstream.">
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/95214375?v=4&s=460">
+  <meta property="og:title" content="David Weng">
+  <meta property="og:description" content="Developer, designer, and content creator in Vancouver. Open source desktop apps and command line tools.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/95214375?v=4&amp;s=460">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@thedavidweng">
-
-  <script>
-    (() => {
-      const d = document.documentElement;
-      d.classList.add('js');
-      try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch {}
-    })();
-  </script>
-
-  <style>
-    /* ── Tokens ─────────────────────────────────────────────── */
-    :root {
-      color-scheme: light dark;
-
-      --bg:        light-dark(#fbfbfa, #0c0e0f);
-      --surface:   light-dark(#ffffff, #131617);
-      --surface-2: light-dark(#f4f4f2, #1a1d1f);
-      --text:      light-dark(#131718, #ecece9);
-      --muted:     light-dark(#62676a, #9ca1a3);
-      --faint:     light-dark(#a3a3a3, #5c6163);
-      --border:    light-dark(#e6e6e3, #24282a);
-      --border-2:  light-dark(#d6d6d2, #33383b);
-      --accent:    light-dark(#e2530e, #ff8a4c);
-      --glass:     light-dark(rgba(251,251,250,.78), rgba(12,14,15,.72));
-      --spot:      light-dark(rgba(19,23,24,.045), rgba(255,255,255,.05));
-
-      --stem-1: var(--accent);
-      --stem-2: light-dark(#131718, #ecece9);
-      --stem-3: light-dark(#5b6f7a, #8fa6b3);
-      --stem-4: light-dark(#a0968a, #7d756c);
-
-      --shadow-1: 0 1px 2px rgba(0,0,0,.04), 0 4px 10px rgba(0,0,0,.05);
-      --shadow-2: 0 2px 4px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.08);
-
-      --sans:  ui-sans-serif, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      --serif: "New York", "Iowan Old Style", "Charter", "Source Serif Pro", Georgia, "Times New Roman", serif;
-      --mono:  ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
-
-      --ease: cubic-bezier(.2, 0, 0, 1);
-      --ease-out: cubic-bezier(0, .55, .45, 1);
-      --r-lg: 16px;
-      --r-md: 12px;
-      --r-sm: 8px;
-
-      --max: 1120px;
-      --gutter: clamp(2rem, 5vw, 4rem);
-    }
-    :root[data-theme="light"] { color-scheme: light; }
-    :root[data-theme="dark"]  { color-scheme: dark; }
-
-    /* ── Base ───────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html {
-      font-size: 62.5%;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-      scroll-behavior: smooth;
-      scroll-padding-top: 8rem;
-      -webkit-text-size-adjust: 100%;
-    }
-    body {
-      font-family: var(--sans);
-      font-size: 1.6rem;
-      line-height: 1.55;
-      letter-spacing: -0.011em;
-      color: var(--text);
-      background: var(--bg);
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    img, svg, canvas { display: block; }
-    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
-    ::selection { background: color-mix(in srgb, var(--accent) 22%, transparent); }
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-
-    .wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
-    .mono { font-family: var(--mono); letter-spacing: 0; }
-    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-    .skip { position: fixed; left: 1.6rem; top: -10rem; z-index: 200; padding: .8rem 1.4rem; background: var(--text); color: var(--bg); border-radius: var(--r-sm); }
-    .skip:focus { top: 1.6rem; }
-
-    /* ── Header ─────────────────────────────────────────────── */
-    .site-header {
-      position: sticky; top: 0; z-index: 50;
-      background: var(--glass);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      backdrop-filter: saturate(180%) blur(20px);
-      border-bottom: 1px solid transparent;
-      transition: border-color .3s var(--ease);
-    }
-    .site-header.scrolled { border-bottom-color: var(--border); }
-    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 6.4rem; gap: 2rem; }
-    .brand { display: flex; align-items: center; gap: 1rem; font-weight: 550; font-size: 1.5rem; letter-spacing: -0.02em; }
-    .brand img { width: 28px; height: 28px; border-radius: 50%; }
-    .nav { display: flex; align-items: center; gap: .4rem; }
-    .nav a { font-size: 1.4rem; color: var(--muted); padding: .6rem 1rem; border-radius: 999px; transition: color .2s var(--ease), background .2s var(--ease); }
-    .nav a:hover { color: var(--text); background: var(--surface-2); }
-    .tools { display: flex; align-items: center; gap: .6rem; }
-    .icon-btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
-      height: 3.4rem; min-width: 3.4rem; padding: 0 1rem;
-      border: 1px solid var(--border); border-radius: 999px;
-      color: var(--muted); font-size: 1.3rem;
-      transition: color .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
-    }
-    .icon-btn:hover { color: var(--text); border-color: var(--border-2); background: var(--surface); }
-    .icon-btn svg { width: 16px; height: 16px; }
-    kbd { font-family: var(--mono); font-size: 1.15rem; letter-spacing: 0; }
-    .theme-btn { padding: 0; }
-    .theme-btn .moon { display: none; }
-    :root[data-theme="dark"] .theme-btn .sun { display: none; }
-    :root[data-theme="dark"] .theme-btn .moon { display: block; }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) .theme-btn .sun { display: none; }
-      :root:not([data-theme="light"]) .theme-btn .moon { display: block; }
-    }
-    @media (max-width: 760px) { .nav { display: none; } }
-    @media (hover: none) { #palette-open kbd { display: none; } #palette-open { padding: 0; } }
-
-    /* ── Hero ───────────────────────────────────────────────── */
-    .hero { padding-block: clamp(6rem, 11vw, 12rem) clamp(4rem, 6vw, 6rem); }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: .8rem;
-      font-size: 1.3rem; color: var(--muted);
-      padding: .5rem 1.2rem .5rem 1rem; border: 1px solid var(--border); border-radius: 999px;
-      background: var(--surface);
-    }
-    .pulse { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-    .pulse::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--accent); animation: pulse 2.4s var(--ease-out) infinite; }
-    @keyframes pulse { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(3.2); opacity: 0; } }
-
-    .hero h1 {
-      margin-top: 2.8rem;
-      font-size: clamp(4rem, 7.4vw, 8.4rem);
-      line-height: 1.02;
-      font-weight: 500;
-      letter-spacing: -0.045em;
-      max-width: 13ch;
-      text-wrap: balance;
-    }
-    .hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.03em; }
-    .hero h1 .dim { color: var(--faint); }
-    .lede {
-      margin-top: 2.8rem; max-width: 58ch;
-      font-size: clamp(1.7rem, 1.9vw, 1.95rem); line-height: 1.55; color: var(--muted);
-      text-wrap: pretty;
-    }
-    .lede strong { color: var(--text); font-weight: 500; }
-    .hero-cta { margin-top: 3.2rem; display: flex; flex-wrap: wrap; gap: 1rem; }
-    .btn {
-      display: inline-flex; align-items: center; gap: .8rem;
-      height: 4.4rem; padding: 0 1.8rem; border-radius: 999px;
-      font-size: 1.45rem; font-weight: 500;
-      border: 1px solid var(--border-2); background: var(--surface);
-      transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
-    }
-    .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-1); }
-    .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
-    .btn svg { width: 15px; height: 15px; }
-
-    .stats {
-      margin-top: clamp(4.8rem, 7vw, 7.2rem);
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--border);
-    }
-    .stat { padding: 2rem 2rem 0 0; }
-    .stat + .stat { padding-left: 2rem; border-left: 1px solid var(--border); }
-    .stat b { display: block; font-size: clamp(2.8rem, 3.6vw, 3.8rem); font-weight: 500; letter-spacing: -0.04em; line-height: 1.1; font-variant-numeric: tabular-nums; }
-    .stat span { font-size: 1.3rem; color: var(--muted); }
-    @media (max-width: 760px) {
-      .stats { grid-template-columns: repeat(2, 1fr); }
-      .stat:nth-child(3) { padding-left: 0; border-left: 0; }
-      .stat:nth-child(n+3) { border-top: 1px solid var(--border); margin-top: 2rem; }
-    }
-
-    /* ── Stems visual ───────────────────────────────────────── */
-    .stems {
-      margin-top: clamp(4.8rem, 7vw, 7.2rem);
-      border: 1px solid var(--border); border-radius: var(--r-lg);
-      background: var(--surface);
-      overflow: hidden;
-    }
-    .stems-head, .stems-foot {
-      display: flex; align-items: center; justify-content: space-between; gap: 1.6rem;
-      padding: 1.2rem 1.6rem; font-size: 1.2rem; color: var(--muted);
-    }
-    .stems-head { border-bottom: 1px solid var(--border); }
-    .stems-foot { border-top: 1px solid var(--border); flex-wrap: wrap; }
-    .dots { display: flex; gap: .6rem; }
-    .dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--border-2); }
-    .stems canvas { width: 100%; height: clamp(160px, 22vw, 220px); color: var(--border-2); cursor: ew-resize; touch-action: pan-y; }
-    .legend { display: flex; flex-wrap: wrap; gap: 1.6rem; }
-    .legend span { display: inline-flex; align-items: center; gap: .6rem; }
-    .legend span::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: currentColor; }
-    .legend span[data-stem="1"] { color: var(--stem-1); }
-    .legend span[data-stem="2"] { color: var(--stem-2); }
-    .legend span[data-stem="3"] { color: var(--stem-3); }
-    .legend span[data-stem="4"] { color: var(--stem-4); }
-    .legend em { font-style: normal; color: var(--muted); }
-
-    /* ── Sections ───────────────────────────────────────────── */
-    section { padding-block: clamp(6.4rem, 9vw, 11.2rem) 0; }
-    .sec-head {
-      display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 2.4rem 4rem;
-      align-items: end; margin-bottom: 4rem;
-    }
-    .kicker { font-family: var(--mono); font-size: 1.2rem; color: var(--faint); letter-spacing: .02em; }
-    .sec-head h2 { margin-top: 1rem; font-size: clamp(2.8rem, 3.8vw, 4.4rem); line-height: 1.08; font-weight: 500; letter-spacing: -0.035em; text-wrap: balance; }
-    .sec-head h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; }
-    .sec-head p { color: var(--muted); max-width: 52ch; text-wrap: pretty; }
-    @media (max-width: 760px) { .sec-head { grid-template-columns: 1fr; } }
-
-    /* ── Cards ──────────────────────────────────────────────── */
-    .grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.2rem; }
-    .card {
-      --mx: 50%; --my: 50%;
-      position: relative; isolation: isolate;
-      display: flex; flex-direction: column;
-      grid-column: span 2;
-      padding: 2.4rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
-    }
-    .card::before {
-      content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
-      background: radial-gradient(420px circle at var(--mx) var(--my), var(--spot), transparent 60%);
-      opacity: 0; transition: opacity .3s var(--ease);
-    }
-    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-2); border-color: var(--border-2); }
-    .card:hover::before { opacity: 1; }
-    .card:has(.card-link:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
-    .card-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
-    .card-link:focus-visible { outline: none; }
-    .card.wide { grid-column: span 3; }
-    .card.feature { grid-column: span 6; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; padding: clamp(2.4rem, 4vw, 4rem); }
-    @media (max-width: 960px) {
-      .card, .card.wide { grid-column: span 3; }
-      .card.feature { grid-template-columns: 1fr; gap: 2.4rem; }
-    }
-    @media (max-width: 620px) { .card, .card.wide { grid-column: span 6; } }
-
-    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.2rem; }
-    .card h3 { font-size: 1.9rem; font-weight: 550; letter-spacing: -0.025em; line-height: 1.25; }
-    .card.feature h3 { font-size: clamp(3.2rem, 4vw, 4.4rem); font-weight: 500; letter-spacing: -0.04em; }
-    .card p { font-size: 1.45rem; color: var(--muted); line-height: 1.6; text-wrap: pretty; }
-    .card.feature p { font-size: 1.65rem; }
-    .card .badge-row { margin-top: auto; padding-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: .6rem; }
-    .tag {
-      font-family: var(--mono); font-size: 1.15rem; letter-spacing: 0;
-      padding: .3rem .8rem; border-radius: 6px;
-      color: var(--muted); background: var(--surface-2); border: 1px solid var(--border);
-    }
-    .meta { font-family: var(--mono); font-size: 1.15rem; color: var(--faint); letter-spacing: 0; white-space: nowrap; }
-    .stars { display: inline-flex; align-items: center; gap: .4rem; font-family: var(--mono); font-size: 1.2rem; color: var(--muted); letter-spacing: 0; font-variant-numeric: tabular-nums; }
-    .stars svg { width: 13px; height: 13px; fill: currentColor; }
-    .stars[data-zero] { display: none; }
-    .lang::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: .6rem; background: var(--c, var(--faint)); vertical-align: 0; }
-
-    .feature-points { list-style: none; display: grid; gap: 1.4rem; align-content: start; }
-    .feature-points li { display: grid; grid-template-columns: 2.4rem 1fr; gap: .4rem; font-size: 1.45rem; color: var(--muted); padding-bottom: 1.4rem; border-bottom: 1px solid var(--border); }
-    .feature-points li:last-child { border-bottom: 0; padding-bottom: 0; }
-    .feature-points b { color: var(--text); font-weight: 500; }
-    .feature-points li.tags { display: flex; border: 0; padding: 0; }
-    .feature-points .n { font-family: var(--mono); font-size: 1.15rem; color: var(--faint); padding-top: .25rem; }
-    .inline-links { position: relative; z-index: 1; display: flex; gap: 1.6rem; margin-top: 2.4rem; font-size: 1.4rem; font-weight: 500; }
-    .inline-links a { display: inline-flex; align-items: center; gap: .4rem; border-bottom: 1px solid var(--border-2); padding-bottom: 1px; transition: border-color .2s var(--ease); }
-    .inline-links a:hover { border-color: var(--text); }
-
-    /* ── Terminal / CLI list ────────────────────────────────── */
-    .term {
-      border: 1px solid var(--border); border-radius: var(--r-lg);
-      background: var(--surface); overflow: hidden;
-      font-family: var(--mono); letter-spacing: 0;
-    }
-    .term-bar { display: flex; align-items: center; gap: 1.6rem; padding: 1.2rem 1.6rem; border-bottom: 1px solid var(--border); font-size: 1.2rem; color: var(--faint); }
-    .term-body { padding: 1.2rem 0 1.6rem; font-size: 1.35rem; }
-    .prompt { padding: .4rem 1.6rem 1.2rem; color: var(--muted); }
-    .prompt .p { color: var(--accent); }
-    .caret { display: inline-block; width: .6em; height: 1.1em; vertical-align: -.2em; background: var(--text); margin-left: .2em; animation: blink 1.1s steps(1) infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
-    .cli-list { list-style: none; }
-    .cli-row {
-      position: relative;
-      display: grid; grid-template-columns: 20ch minmax(0, 1fr) auto; gap: 2.4rem; align-items: baseline;
-      padding: 1rem 1.6rem;
-      transition: background .15s var(--ease);
-    }
-    .cli-row:hover { background: var(--surface-2); }
-    .cli-row .name { color: var(--text); font-weight: 600; }
-    .cli-row .name::before { content: "▸ "; color: var(--faint); transition: color .15s var(--ease); }
-    .cli-row:hover .name::before { color: var(--accent); }
-    .cli-row .desc { color: var(--muted); font-family: var(--sans); font-size: 1.4rem; letter-spacing: -0.005em; }
-    .cli-row .name { white-space: nowrap; }
-    .cli-row .right { display: grid; grid-template-columns: 4ch 5ch; align-items: baseline; justify-items: end; gap: 1.4rem; }
-    .cli-row .right .docs { grid-column: 1; }
-    .cli-row .right .stars { grid-column: 2; }
-    .cli-row .docs { position: relative; z-index: 1; font-size: 1.2rem; color: var(--faint); transition: color .15s var(--ease); }
-    .cli-row .docs:hover { color: var(--text); }
-    @media (max-width: 760px) {
-      .cli-row { grid-template-columns: 1fr auto; gap: .4rem 1.6rem; }
-      .cli-row .desc { grid-column: 1 / -1; grid-row: 2; }
-    }
-
-    /* ── Principles ─────────────────────────────────────────── */
-    .principles { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); }
-    .principle { padding: 2.8rem 2.8rem 0 0; }
-    .principle + .principle { padding-left: 2.8rem; border-left: 1px solid var(--border); }
-    .principle h3 { font-size: 2rem; font-weight: 500; letter-spacing: -0.025em; margin: 1.2rem 0 1rem; }
-    .principle p { color: var(--muted); font-size: 1.5rem; text-wrap: pretty; }
-    @media (max-width: 860px) {
-      .principles { grid-template-columns: 1fr; }
-      .principle, .principle + .principle { padding: 2.4rem 0; border-left: 0; }
-      .principle + .principle { border-top: 1px solid var(--border); }
-    }
-
-    /* ── Upstream ───────────────────────────────────────────── */
-    .upstream { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0; border-top: 1px solid var(--border); }
-    .up {
-      display: flex; flex-direction: column; gap: .4rem;
-      padding: 1.8rem 1.6rem 1.8rem 0;
-      border-bottom: 1px solid var(--border);
-      transition: opacity .2s var(--ease);
-    }
-    .up .repo { font-family: var(--mono); font-size: 1.35rem; letter-spacing: 0; }
-    .up .repo span { color: var(--faint); }
-    .up .what { font-size: 1.35rem; color: var(--muted); line-height: 1.45; }
-    .upstream:hover .up { opacity: .45; }
-    .upstream:hover .up:hover { opacity: 1; }
-    .up:hover .repo { color: var(--accent); }
-    .more-link { display: inline-flex; margin-top: 2.4rem; font-size: 1.4rem; color: var(--muted); border-bottom: 1px solid var(--border-2); transition: color .2s var(--ease), border-color .2s var(--ease); }
-    .more-link:hover { color: var(--text); border-color: var(--text); }
-
-    /* ── Stack ──────────────────────────────────────────────── */
-    .stack { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
-    .stack-col { padding: 2.4rem; border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--surface); }
-    .stack-col h3 { font-family: var(--mono); font-size: 1.2rem; font-weight: 400; color: var(--faint); letter-spacing: 0; margin-bottom: 1.4rem; }
-    .stack-col ul { list-style: none; display: grid; gap: .6rem; font-size: 1.5rem; }
-    @media (max-width: 960px) { .stack { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px) { .stack { grid-template-columns: 1fr; } }
-
-    /* ── Contact ────────────────────────────────────────────── */
-    .contact { padding-bottom: clamp(6rem, 9vw, 10rem); }
-    .contact-big {
-      display: inline-block; margin-top: 1.2rem;
-      font-size: clamp(3.6rem, 7vw, 8rem); line-height: 1.02; font-weight: 500; letter-spacing: -0.045em;
-    }
-    .contact-big em { font-family: var(--serif); font-style: italic; font-weight: 400; }
-    .mail-row { margin-top: 3.2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
-    .copy-btn[data-copied] { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
-    .socials { margin-top: 4.8rem; display: flex; flex-wrap: wrap; gap: .8rem; }
-    .socials a {
-      display: inline-flex; align-items: center; gap: .8rem;
-      height: 4rem; padding: 0 1.6rem; border-radius: 999px;
-      border: 1px solid var(--border); color: var(--muted); font-size: 1.4rem;
-      transition: color .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
-    }
-    .socials a:hover { color: var(--text); border-color: var(--border-2); background: var(--surface); }
-    .socials svg { width: 15px; height: 15px; fill: currentColor; }
-
-    /* ── Footer ─────────────────────────────────────────────── */
-    footer { border-top: 1px solid var(--border); }
-    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2.4rem; padding-block: 2.4rem calc(2.4rem + env(safe-area-inset-bottom)); font-size: 1.25rem; color: var(--faint); }
-    footer .mono { font-size: 1.15rem; }
-    footer a { border-bottom: 1px solid transparent; transition: color .2s var(--ease), border-color .2s var(--ease); }
-    footer a:hover { color: var(--text); border-color: currentColor; }
-
-    /* ── Command palette ────────────────────────────────────── */
-    .palette {
-      margin: min(14vh, 12rem) auto auto; width: min(640px, calc(100vw - 3.2rem));
-      padding: 0; border: 1px solid var(--border-2); border-radius: var(--r-lg);
-      background: var(--surface); color: var(--text); box-shadow: 0 24px 80px rgba(0,0,0,.22);
-      overflow: hidden;
-    }
-    .palette::backdrop { background: rgba(10,10,10,.28); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
-    .palette[open] { animation: pop .22s var(--ease); }
-    .palette[open]::backdrop { animation: fade .22s var(--ease); }
-    @keyframes pop { from { opacity: 0; transform: translateY(8px) scale(.985); filter: blur(4px); } }
-    @keyframes fade { from { opacity: 0; } }
-    .palette-input { display: flex; align-items: center; gap: 1.2rem; padding: 0 1.8rem; border-bottom: 1px solid var(--border); }
-    .palette-input svg { width: 17px; height: 17px; color: var(--faint); flex-shrink: 0; }
-    .palette input { flex: 1; height: 5.6rem; border: 0; outline: 0; background: none; color: var(--text); font: inherit; font-size: 1.6rem; }
-    .palette input::placeholder { color: var(--faint); }
-    .palette ul { list-style: none; max-height: min(52vh, 420px); overflow-y: auto; padding: .8rem; overscroll-behavior: contain; }
-    .palette .group { padding: 1rem 1rem .4rem; font-size: 1.15rem; color: var(--faint); font-family: var(--mono); letter-spacing: 0; }
-    .palette .opt { display: flex; align-items: center; justify-content: space-between; gap: 1.6rem; padding: 1rem 1.2rem; border-radius: var(--r-sm); cursor: pointer; font-size: 1.45rem; }
-    .palette .opt span { white-space: nowrap; flex-shrink: 0; }
-    .palette .opt small { color: var(--faint); font-family: var(--mono); font-size: 1.15rem; letter-spacing: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .palette .opt[aria-selected="true"] { background: var(--surface-2); }
-    .palette .empty { padding: 2.4rem; text-align: center; color: var(--faint); font-size: 1.4rem; }
-    .palette-foot { display: flex; gap: 1.6rem; padding: 1rem 1.8rem; border-top: 1px solid var(--border); font-size: 1.15rem; color: var(--faint); }
-    .palette-foot kbd { padding: .1rem .5rem; border: 1px solid var(--border); border-radius: 4px; margin-right: .4rem; }
-
-    /* ── Motion ─────────────────────────────────────────────── */
-    .js .reveal { opacity: 0; transform: translateY(8px); filter: blur(4px); transition: opacity .6s var(--ease), transform .6s var(--ease), filter .6s var(--ease); transition-delay: calc(var(--i, 0) * 60ms); }
-    .js .reveal.in { opacity: 1; transform: none; filter: none; }
-    ::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; transition-delay: 0s !important; }
-      .js .reveal { opacity: 1; transform: none; filter: none; }
-    }
-    @media print {
-      .site-header, .stems, .palette, .hero-cta, .socials { display: none !important; }
-      .js .reveal { opacity: 1; transform: none; filter: none; }
-    }
-  </style>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "David Weng",
-    "alternateName": "Jiachen Weng",
-    "jobTitle": "Product Engineer & Creative Technologist",
+    "jobTitle": "Developer and Designer",
     "url": "https://thedavidweng.github.io/",
     "image": "https://avatars.githubusercontent.com/u/95214375?v=4",
-    "description": "Product engineer and creative technologist in Vancouver, building local-first desktop apps with on-device AI and agent-friendly command-line tools.",
+    "description": "Developer, designer, and content creator in Vancouver. Builds open source desktop apps and command line tools.",
     "homeLocation": { "@type": "Place", "name": "Vancouver, BC, Canada" },
     "sameAs": [
       "https://github.com/thedavidweng",
@@ -452,698 +39,115 @@
       "https://www.instagram.com/davidwengpro/",
       "https://davidweng.eu.org/",
       "https://blog.blahaj.uk/"
-    ],
-    "knowsAbout": ["Rust", "Go", "TypeScript", "Tauri", "On-device AI", "Agent-friendly CLI design", "Music technology", "Graphic design", "Video production"]
+    ]
   }
   </script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-
-<header class="site-header" id="top">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="David Weng — back to top">
-      <img src="https://avatars.githubusercontent.com/u/95214375?v=4&s=64" alt="" width="28" height="28">
-      David Weng
-    </a>
-    <nav class="nav" aria-label="Primary">
-      <a href="#work">Work</a>
-      <a href="#cli">CLIs</a>
-      <a href="#upstream">Upstream</a>
-      <a href="#elsewhere">Writing</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="tools">
-      <button class="icon-btn" id="palette-open" type="button" aria-haspopup="dialog" aria-label="Open command menu">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="4.75"/><path d="m10.5 10.5 3.25 3.25" stroke-linecap="round"/></svg>
-        <kbd data-mod>⌘K</kbd>
-      </button>
-      <button class="icon-btn theme-btn" id="theme-toggle" type="button" aria-label="Toggle color theme">
-        <svg class="sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.05 3.05l1.06 1.06M11.89 11.89l1.06 1.06M3.05 12.95l1.06-1.06M11.89 4.11l1.06-1.06"/></svg>
-        <svg class="moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 9.6A5.75 5.75 0 0 1 6.4 2.5a5.75 5.75 0 1 0 7.1 7.1Z"/></svg>
-      </button>
-    </div>
-  </div>
-</header>
-
-<main id="main">
-
-  <!-- Hero -->
-  <div class="wrap hero">
-    <p class="eyebrow reveal"><span class="pulse" aria-hidden="true"></span>Product engineer &amp; creative technologist · Vancouver</p>
-    <h1 class="reveal" style="--i:1">I build software that <em>looks good</em> <span class="dim">and</span> works well.</h1>
-    <p class="lede reveal" style="--i:2">
-      I design and ship <strong>local-first desktop apps with on-device AI</strong> and
-      <strong>agent-friendly command-line tools</strong> — across Rust, Go, and TypeScript.
-      I also come from graphic design and video production, so the interface is never an afterthought.
-      Currently co-founder of OwO Network and ContentOps &amp; graphic designer at BC + AI Ecosystem.
-    </p>
-    <div class="hero-cta reveal" style="--i:3">
-      <a class="btn primary" href="#work">
-        See selected work
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5"/></svg>
-      </a>
-      <a class="btn" href="https://github.com/thedavidweng" target="_blank" rel="noopener">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        GitHub
-      </a>
-      <a class="btn" href="resume.html">Resume</a>
-    </div>
-
-    <dl class="stats reveal" style="--i:4" aria-label="GitHub at a glance">
-      <div class="stat"><dt class="sr-only">Original repositories</dt><dd><b data-stat="repos">41</b><span>original repositories</span></dd></div>
-      <div class="stat"><dt class="sr-only">Stars</dt><dd><b data-stat="stars">157</b><span>stars earned</span></dd></div>
-      <div class="stat"><dt class="sr-only">Merged pull requests upstream</dt><dd><b data-stat="prs">120</b><span>PRs merged upstream</span></dd></div>
-      <div class="stat"><dt class="sr-only">Upstream projects</dt><dd><b>20+</b><span>open-source projects contributed to</span></dd></div>
-    </dl>
-
-    <figure class="stems reveal" style="--i:5">
-      <div class="stems-head mono">
-        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span>openkara — separate</span>
-        <span id="timecode" aria-hidden="true">00:00 / 03:32</span>
+  <main>
+    <header class="section">
+      <div class="label">
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/95214375?v=4&amp;s=96" alt="" width="40" height="40">
+        <h1>David Weng</h1>
       </div>
-      <canvas id="stems" role="img" aria-label="Animated illustration of a song split into four stems — vocals, drums, bass, and other — as OpenKara does on-device."></canvas>
-      <figcaption class="stems-foot mono">
-        <span class="legend">
-          <span data-stem="1">vocals</span>
-          <span data-stem="2">drums</span>
-          <span data-stem="3">bass</span>
-          <span data-stem="4">other</span>
-        </span>
-        <span><em>Demucs v4 · ONNX Runtime · on-device</em> — hover to scrub</span>
-      </figcaption>
-    </figure>
-  </div>
+      <p class="lead">Developer, designer, and content creator in Vancouver. I build open source desktop apps and command line tools, and make motion graphics with code.</p>
+    </header>
 
-  <!-- Work -->
-  <section id="work" aria-labelledby="work-title">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <div>
-          <p class="kicker">01 — Selected work</p>
-          <h2 id="work-title">Desktop apps for <em>music</em> and the people who make it.</h2>
-        </div>
-        <p>The OpenMusic series: native, private, and fast. Heavy models run on your own hardware, and your library never leaves the machine.</p>
+    <section class="section" aria-labelledby="projects">
+      <h2 class="label" id="projects">Projects</h2>
+      <div>
+        <p class="intro">Mostly software for music, with the heavy AI work done on your own computer.</p>
+        <ul class="rows">
+          <li><a href="https://github.com/thedavidweng/OpenKara" data-repo="OpenKara"><span class="name">OpenKara</span><span class="desc">Karaoke from the music you already own. Vocals are separated on your computer, with synced lyrics.</span><span class="meta">31 stars</span></a></li>
+          <li><a href="https://github.com/thedavidweng/OpenLoop" data-repo="OpenLoop"><span class="name">OpenLoop</span><span class="desc">Make music on your computer from a prompt and lyrics, with full controls, playback, and export.</span><span class="meta"></span></a></li>
+          <li><a href="https://github.com/thedavidweng/strudel-tui" data-repo="strudel-tui"><span class="name">strudel-tui</span><span class="desc">Live code music with Strudel in the terminal, with an AI agent to play along.</span><span class="meta"></span></a></li>
+          <li><a href="https://github.com/thedavidweng/lyric-romanizer" data-repo="lyric-romanizer"><span class="name">lyric-romanizer</span><span class="desc">Detects the writing system of song lyrics and romanizes them locally, from Japanese and Korean to Cyrillic and Thai.</span><span class="meta"></span></a></li>
+          <li><a href="https://github.com/thedavidweng/sdf-flash-gui" data-repo="sdf-flash-gui"><span class="name">sdf-flash-gui</span><span class="desc">Dump and flash firmware on MT1959 optical drives, on macOS, Windows, and Linux.</span><span class="meta">9 stars</span></a></li>
+        </ul>
       </div>
+    </section>
 
-      <div class="grid" data-spotlight>
-        <article class="card feature reveal" data-repo="OpenKara">
-          <div>
-            <div class="card-top">
-              <span class="meta"><span class="lang" style="--c:#dea584">Rust</span> · <time data-pushed="2026-09-29T11:50:27Z">active</time></span>
-              <span class="stars" data-stars><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-star"/></svg><span>31</span></span>
-            </div>
-            <h3><a class="card-link" href="https://github.com/thedavidweng/OpenKara" target="_blank" rel="noopener">OpenKara</a></h3>
-            <p style="margin-top:1.2rem">A desktop karaoke app that turns the music library you already own into sing-along tracks — AI stem separation runs entirely on-device, paired with synced lyrics.</p>
-            <div class="inline-links">
-              <a href="https://thedavidweng.github.io/OpenKara/" target="_blank" rel="noopener">Website ↗</a>
-              <a href="https://github.com/thedavidweng/OpenKara/releases" target="_blank" rel="noopener">Download ↗</a>
-            </div>
-          </div>
-          <ul class="feature-points">
-            <li><span class="n">01</span><span><b>On-device separation.</b> Demucs v4 via ONNX Runtime, no cloud, no upload.</span></li>
-            <li><span class="n">02</span><span><b>Native shell.</b> Tauri 2 + Rust core with a React 19 / TypeScript interface.</span></li>
-            <li><span class="n">03</span><span><b>Reuse, don’t re-buy.</b> Works with local files and online synced lyrics.</span></li>
-            <li class="tags"><span class="tag">Tauri 2</span><span class="tag">Rust</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">ONNX Runtime</span></li>
-          </ul>
-        </article>
-
-        <article class="card reveal" style="--i:1" data-repo="OpenLoop">
-          <div class="card-top"><span class="meta"><span class="lang" style="--c:#3178c6">TypeScript</span></span><span class="stars" data-stars><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-star"/></svg><span>1</span></span></div>
-          <h3><a class="card-link" href="https://github.com/thedavidweng/OpenLoop" target="_blank" rel="noopener">OpenLoop</a></h3>
-          <p style="margin-top:.8rem">Local ACE-Step music generation on the desktop — prompt, lyrics, full controls, playback, and export.</p>
-          <div class="badge-row"><div class="tags"><span class="tag">Tauri</span><span class="tag">ACE-Step</span></div><time class="meta" data-pushed="2026-09-28T11:27:07Z"></time></div>
-        </article>
-
-        <article class="card reveal" style="--i:2" data-repo="lyric-romanizer">
-          <div class="card-top"><span class="meta"><span class="lang" style="--c:#3178c6">TypeScript</span></span><span class="stars" data-stars><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-star"/></svg><span>2</span></span></div>
-          <h3><a class="card-link" href="https://github.com/thedavidweng/lyric-romanizer" target="_blank" rel="noopener">lyric-romanizer</a></h3>
-          <p style="margin-top:.8rem">Script detection and local romanization for lyrics: Japanese, Chinese, Korean, Cyrillic, Indic, Tamil, Thai, and Latin.</p>
-          <div class="badge-row"><div class="tags"><span class="tag">i18n</span><span class="tag">Library</span></div><time class="meta" data-pushed="2026-09-29T23:12:43Z"></time></div>
-        </article>
-
-        <article class="card reveal" style="--i:3" data-repo="strudel-tui">
-          <div class="card-top"><span class="meta"><span class="lang" style="--c:#3178c6">TypeScript</span></span><span class="stars" data-stars><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-star"/></svg><span>1</span></span></div>
-          <h3><a class="card-link" href="https://github.com/thedavidweng/strudel-tui" target="_blank" rel="noopener">strudel-tui</a></h3>
-          <p style="margin-top:.8rem">A terminal-based live-coding interface for Strudel, with an AI agent jamming alongside you.</p>
-          <div class="badge-row"><div class="tags"><span class="tag">TUI</span><span class="tag">Live coding</span></div><time class="meta" data-pushed="2026-09-27T14:26:11Z"></time></div>
-        </article>
-
-        <article class="card wide reveal" data-repo="sdf-flash-gui">
-          <div class="card-top"><span class="meta"><span class="lang" style="--c:#dea584">Rust</span></span><span class="stars" data-stars><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-star"/></svg><span>9</span></span></div>
-          <h3><a class="card-link" href="https://github.com/thedavidweng/sdf-flash-gui" target="_blank" rel="noopener">sdf-flash-gui</a></h3>
-          <p style="margin-top:.8rem">A cross-platform GUI for dumping and flashing optical-drive firmware on MT1959 drives — careful, low-level work behind a friendly face.</p>
-          <div class="badge-row"><div class="tags"><span class="tag">Rust</span><span class="tag">egui</span><span class="tag">Hardware</span></div><time class="meta" data-pushed="2026-09-29T23:13:40Z"></time></div>
-        </article>
-
-        <article class="card wide reveal" style="--i:1" data-repo="money">
-          <div class="card-top"><span class="meta"><span class="lang" style="--c:#00add8">Go</span></span><span class="stars" data-stars><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-star"/></svg><span>1</span></span></div>
-          <h3><a class="card-link" href="https://github.com/thedavidweng/money" target="_blank" rel="noopener">money</a></h3>
-          <p style="margin-top:.8rem">A local-first personal finance backend for AI agents and power users — encrypted SQLite, pluggable providers, and stable JSON contracts.</p>
-          <div class="badge-row"><div class="tags"><span class="tag">Go</span><span class="tag">SQLite</span><span class="tag">Local-first</span></div><time class="meta" data-pushed="2026-09-29T23:12:44Z"></time></div>
-        </article>
+    <section class="section" aria-labelledby="tools">
+      <h2 class="label" id="tools">Tools</h2>
+      <div>
+        <p class="intro">Command line tools written in Go. They print stable JSON and ask before changing anything, so people and AI agents can both use them safely.</p>
+        <ul class="rows">
+          <li><a href="https://github.com/thedavidweng/monarchmoney-cli" data-repo="monarchmoney-cli"><span class="name">monarchmoney-cli</span><span class="desc">Accounts, transactions, and budgets from Monarch Money, in your terminal.</span><span class="meta">30 stars</span></a></li>
+          <li><a href="https://github.com/thedavidweng/money" data-repo="money"><span class="name">money</span><span class="desc">A personal finance backend that keeps your data in encrypted SQLite on your own machine.</span><span class="meta"></span></a></li>
+          <li><a href="https://github.com/thedavidweng/jobs-cli" data-repo="jobs-cli"><span class="name">jobs-cli</span><span class="desc">Search and apply for jobs on Indeed and LinkedIn.</span><span class="meta"></span></a></li>
+          <li><a href="https://github.com/thedavidweng/tg-drive-cli" data-repo="tg-drive-cli"><span class="name">tg-drive-cli</span><span class="desc">Use a Telegram channel as a file tree you can script and restore.</span><span class="meta"></span></a></li>
+          <li><a href="https://github.com/thedavidweng/flickr-cli" data-repo="flickr-cli"><span class="name">flickr-cli</span><span class="desc">Manage, upload, and back up your Flickr photos.</span><span class="meta"></span></a></li>
+          <li><a href="https://github.com/thedavidweng/zenodo-cli" data-repo="zenodo-cli"><span class="name">zenodo-cli</span><span class="desc">Manage Zenodo records and file uploads, with full InvenioRDM API access.</span><span class="meta"></span></a></li>
+          <li><a href="https://github.com/thedavidweng/canvas-cli" data-repo="canvas-cli"><span class="name">canvas-cli</span><span class="desc">Canvas LMS from the command line, with automatic paging and an audit log.</span><span class="meta"></span></a></li>
+          <li><a href="https://github.com/thedavidweng/qualtrics-cli" data-repo="qualtrics-cli"><span class="name">qualtrics-cli</span><span class="desc">Qualtrics from the command line, plus an offline compiler that turns Markdown into surveys.</span><span class="meta"></span></a></li>
+        </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CLIs -->
-  <section id="cli" aria-labelledby="cli-title">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <div>
-          <p class="kicker">02 — Agent-friendly CLIs</p>
-          <h2 id="cli-title">Tools that humans <em>and</em> agents can trust.</h2>
-        </div>
-        <p>Single Go binaries with stable JSON output, automatic pagination, dry-runs, and safety gates on every mutation — so an AI agent can operate them as reliably as a person.</p>
+    <section class="section" aria-labelledby="contributions">
+      <h2 class="label" id="contributions">Contributions</h2>
+      <div>
+        <p class="intro"><span data-prs>120+</span> merged pull requests to projects by other people, including:</p>
+        <ul class="repos">
+          <li><a href="https://github.com/NousResearch/hermes-agent/pulls?q=is%3Apr+author%3Athedavidweng" title="NousResearch/hermes-agent">hermes-agent</a></li>
+          <li><a href="https://github.com/emilk/egui/pulls?q=is%3Apr+author%3Athedavidweng" title="emilk/egui">egui</a></li>
+          <li><a href="https://github.com/longbridge/gpui-kit/pulls?q=is%3Apr+author%3Athedavidweng" title="longbridge/gpui-kit">gpui-kit</a></li>
+          <li><a href="https://github.com/Homebrew/homebrew-core/pulls?q=is%3Apr+author%3Athedavidweng" title="Homebrew/homebrew-core">homebrew-core</a></li>
+          <li><a href="https://github.com/Homebrew/homebrew-cask/pulls?q=is%3Apr+author%3Athedavidweng" title="Homebrew/homebrew-cask">homebrew-cask</a></li>
+          <li><a href="https://github.com/projectM-visualizer/projectm/pulls?q=is%3Apr+author%3Athedavidweng" title="projectM-visualizer/projectm">projectm</a></li>
+          <li><a href="https://github.com/apache/camel-k/pulls?q=is%3Apr+author%3Athedavidweng" title="apache/camel-k">camel-k</a></li>
+          <li><a href="https://github.com/mtkennerly/ludusavi/pulls?q=is%3Apr+author%3Athedavidweng" title="mtkennerly/ludusavi">ludusavi</a></li>
+          <li><a href="https://github.com/getpaseo/paseo/pulls?q=is%3Apr+author%3Athedavidweng" title="getpaseo/paseo">paseo</a></li>
+          <li><a href="https://github.com/mengxi-ream/read-frog/pulls?q=is%3Apr+author%3Athedavidweng" title="mengxi-ream/read-frog">read-frog</a></li>
+          <li><a href="https://github.com/voyager-crew/voyager/pulls?q=is%3Apr+author%3Athedavidweng" title="voyager-crew/voyager">voyager</a></li>
+          <li><a href="https://github.com/openclaw/wacli/pulls?q=is%3Apr+author%3Athedavidweng" title="openclaw/wacli">wacli</a></li>
+          <li><a href="https://github.com/missuo/koe/pulls?q=is%3Apr+author%3Athedavidweng" title="missuo/koe">koe</a></li>
+          <li><a href="https://github.com/junhoyeo/tokscale/pulls?q=is%3Apr+author%3Athedavidweng" title="junhoyeo/tokscale">tokscale</a></li>
+          <li><a href="https://github.com/SaladDay/cc-switch-cli/pulls?q=is%3Apr+author%3Athedavidweng" title="SaladDay/cc-switch-cli">cc-switch-cli</a></li>
+          <li><a href="https://github.com/jazzyalex/agent-sessions/pulls?q=is%3Apr+author%3Athedavidweng" title="jazzyalex/agent-sessions">agent-sessions</a></li>
+          <li><a href="https://github.com/Cyberdrop-DL/cyberdrop-dl/pulls?q=is%3Apr+author%3Athedavidweng" title="Cyberdrop-DL/cyberdrop-dl">cyberdrop-dl</a></li>
+          <li><a href="https://github.com/abue-ammar/tinycast/pulls?q=is%3Apr+author%3Athedavidweng" title="abue-ammar/tinycast">tinycast</a></li>
+          <li><a href="https://github.com/rutikwankhade/CoverView/pulls?q=is%3Apr+author%3Athedavidweng" title="rutikwankhade/CoverView">CoverView</a></li>
+          <li><a href="https://github.com/jlcodes99/cockpit-tools/pulls?q=is%3Apr+author%3Athedavidweng" title="jlcodes99/cockpit-tools">cockpit-tools</a></li>
+        </ul>
+        <p class="more"><a class="link" href="https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3Athedavidweng+-user%3Athedavidweng">All merged pull requests</a></p>
       </div>
+    </section>
 
-      <div class="term reveal" style="--i:1">
-        <div class="term-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span>~/thedavidweng — zsh</span></div>
-        <div class="term-body">
-          <p class="prompt"><span class="p">❯</span> ls --agent-friendly<span class="caret" aria-hidden="true"></span></p>
-          <ul class="cli-list">
-            <li class="cli-row" data-repo="monarchmoney-cli">
-              <a class="name card-link" href="https://github.com/thedavidweng/monarchmoney-cli" target="_blank" rel="noopener">monarchmoney-cli</a>
-              <span class="desc">Monarch Money from the terminal — accounts, transactions, budgets, with a multi-tier safety model.</span>
-              <span class="right"><a class="docs" href="https://thedavidweng.github.io/site/monarchmoney-cli/" target="_blank" rel="noopener">docs</a><span class="stars" data-stars><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-star"/></svg><span>30</span></span></span>
-            </li>
-            <li class="cli-row" data-repo="jobs-cli">
-              <a class="name card-link" href="https://github.com/thedavidweng/jobs-cli" target="_blank" rel="noopener">jobs-cli</a>
-              <span class="desc">Agent-native job search and applications for Indeed and LinkedIn.</span>
-              <span class="right"><span class="stars" data-stars><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-star"/></svg><span>1</span></span></span>
-            </li>
-            <li class="cli-row" data-repo="tg-drive-cli">
-              <a class="name card-link" href="https://github.com/thedavidweng/tg-drive-cli" target="_blank" rel="noopener">tg-drive-cli</a>
-              <span class="desc">Turn a Telegram channel into a recoverable, scriptable file tree.</span>
-              <span class="right"><span class="stars" data-stars><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-star"/></svg><span>1</span></span></span>
-            </li>
-            <li class="cli-row" data-repo="flickr-cli">
-              <a class="name card-link" href="https://github.com/thedavidweng/flickr-cli" target="_blank" rel="noopener">flickr-cli</a>
-              <span class="desc">47 commands for photo management, upload, and backup — JSON-first, with safety gates.</span>
-              <span class="right"><a class="docs" href="https://thedavidweng.github.io/site/flickr-cli/" target="_blank" rel="noopener">docs</a><span class="stars" data-stars data-zero><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-star"/></svg><span>0</span></span></span>
-            </li>
-            <li class="cli-row" data-repo="zenodo-cli">
-              <a class="name card-link" href="https://github.com/thedavidweng/zenodo-cli" target="_blank" rel="noopener">zenodo-cli</a>
-              <span class="desc">Record management, file upload, and full InvenioRDM API access for Zenodo.</span>
-              <span class="right"><a class="docs" href="https://thedavidweng.github.io/site/zenodo-cli/" target="_blank" rel="noopener">docs</a><span class="stars" data-stars data-zero><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-star"/></svg><span>0</span></span></span>
-            </li>
-            <li class="cli-row" data-repo="canvas-cli">
-              <a class="name card-link" href="https://github.com/thedavidweng/canvas-cli" target="_blank" rel="noopener">canvas-cli</a>
-              <span class="desc">Canvas LMS with stable JSON, automatic pagination, mutation gates, and audit logging.</span>
-              <span class="right"><a class="docs" href="https://thedavidweng.github.io/site/canvas-cli/" target="_blank" rel="noopener">docs</a><span class="stars" data-stars data-zero><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-star"/></svg><span>0</span></span></span>
-            </li>
-            <li class="cli-row" data-repo="qualtrics-cli">
-              <a class="name card-link" href="https://github.com/thedavidweng/qualtrics-cli" target="_blank" rel="noopener">qualtrics-cli</a>
-              <span class="desc">Qualtrics from the terminal, plus an offline Markdown-to-QSF survey compiler.</span>
-              <span class="right"><span class="stars" data-stars data-zero><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-star"/></svg><span>0</span></span></span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="section" aria-labelledby="work">
+      <h2 class="label" id="work">Work</h2>
+      <ul class="rows">
+        <li><a href="https://bc-ai.ca"><span class="name">BC + AI Ecosystem</span><span class="desc">ContentOps &amp; Graphic Designer</span><span class="meta">Since 2025</span></a></li>
+        <li><div><span class="name">OwO Network</span><span class="desc">Cofounder</span><span class="meta">Since 2025</span></div></li>
+        <li><a href="resume.html"><span class="name">Resume</span><span class="desc">Full work history and education.</span><span class="meta"></span></a></li>
+      </ul>
+    </section>
 
-  <!-- Principles -->
-  <section id="principles" aria-labelledby="principles-title">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <div>
-          <p class="kicker">03 — How I work</p>
-          <h2 id="principles-title">Three rules I don’t <em>break.</em></h2>
-        </div>
-      </div>
-      <div class="principles">
-        <div class="principle reveal">
-          <span class="kicker">i.</span>
-          <h3>Local-first</h3>
-          <p>Your data and your models stay on your machine. On-device inference, encrypted storage, offline compilers — the network is optional, never required.</p>
-        </div>
-        <div class="principle reveal" style="--i:1">
-          <span class="kicker">ii.</span>
-          <h3>Agent-native</h3>
-          <p>Stable contracts, predictable exit codes, dry-runs, and explicit gates. If an AI agent can drive a tool safely, a human can too.</p>
-        </div>
-        <div class="principle reveal" style="--i:2">
-          <span class="kicker">iii.</span>
-          <h3>Designed, not decorated</h3>
-          <p>A background in graphic design and video production taught me that restraint is a feature. Every pixel earns its place — this page included.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="section" aria-labelledby="elsewhere">
+      <h2 class="label" id="elsewhere">Elsewhere</h2>
+      <ul class="rows">
+        <li><a href="https://davidweng.eu.org/"><span class="name">Portfolio</span><span class="desc">Design, video, and creative work.</span><span class="meta">davidweng.eu.org</span></a></li>
+        <li><a href="https://blog.blahaj.uk/"><span class="name">Blog</span><span class="desc">Writing on tech, design, and life in Vancouver.</span><span class="meta">blog.blahaj.uk</span></a></li>
+      </ul>
+    </section>
 
-  <!-- Upstream -->
-  <section id="upstream" aria-labelledby="upstream-title">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <div>
-          <p class="kicker">04 — Upstream</p>
-          <h2 id="upstream-title">A good citizen of <em>other people’s</em> code.</h2>
-        </div>
-        <p><b data-stat="prs">120</b>+ merged pull requests across open-source projects — from Rust GUI toolkits and agent frameworks to Homebrew packaging.</p>
-      </div>
-      <div class="upstream reveal" style="--i:1">
-        <a class="up" href="https://github.com/NousResearch/hermes-agent/pulls?q=is%3Apr+author%3Athedavidweng" target="_blank" rel="noopener"><span class="repo"><span>NousResearch/</span>hermes-agent</span><span class="what">Extensible AI agent framework</span></a>
-        <a class="up" href="https://github.com/emilk/egui/pulls?q=is%3Apr+author%3Athedavidweng" target="_blank" rel="noopener"><span class="repo"><span>emilk/</span>egui</span><span class="what">Immediate-mode GUI in Rust</span></a>
-        <a class="up" href="https://github.com/longbridge/gpui-kit/pulls?q=is%3Apr+author%3Athedavidweng" target="_blank" rel="noopener"><span class="repo"><span>longbridge/</span>gpui-kit</span><span class="what">Rust components for GPUI desktop apps</span></a>
-        <a class="up" href="https://github.com/Homebrew/homebrew-cask/pulls?q=is%3Apr+author%3Athedavidweng" target="_blank" rel="noopener"><span class="repo"><span>Homebrew/</span>homebrew-cask</span><span class="what">Apple Silicon support &amp; packaging</span></a>
-        <a class="up" href="https://github.com/Homebrew/homebrew-core/pulls?q=is%3Apr+author%3Athedavidweng" target="_blank" rel="noopener"><span class="repo"><span>Homebrew/</span>homebrew-core</span><span class="what">New formulae and updates</span></a>
-        <a class="up" href="https://github.com/projectM-visualizer/projectm/pulls?q=is%3Apr+author%3Athedavidweng" target="_blank" rel="noopener"><span class="repo"><span>projectM-visualizer/</span>projectm</span><span class="what">Milkdrop-compatible music visualization (C++)</span></a>
-        <a class="up" href="https://github.com/apache/camel-k/pulls?q=is%3Apr+author%3Athedavidweng" target="_blank" rel="noopener"><span class="repo"><span>apache/</span>camel-k</span><span class="what">Integration platform on Kubernetes</span></a>
-        <a class="up" href="https://github.com/mtkennerly/ludusavi/pulls?q=is%3Apr+author%3Athedavidweng" target="_blank" rel="noopener"><span class="repo"><span>mtkennerly/</span>ludusavi</span><span class="what">Game save manager, Wine/Proton redirects</span></a>
-        <a class="up" href="https://github.com/getpaseo/paseo/pulls?q=is%3Apr+author%3Athedavidweng" target="_blank" rel="noopener"><span class="repo"><span>getpaseo/</span>paseo</span><span class="what">Orchestrate coding agents across devices</span></a>
-        <a class="up" href="https://github.com/mengxi-ream/read-frog/pulls?q=is%3Apr+author%3Athedavidweng" target="_blank" rel="noopener"><span class="repo"><span>mengxi-ream/</span>read-frog</span><span class="what">Language-learning browser extension</span></a>
-        <a class="up" href="https://github.com/openclaw/wacli/pulls?q=is%3Apr+author%3Athedavidweng" target="_blank" rel="noopener"><span class="repo"><span>openclaw/</span>wacli</span><span class="what">WhatsApp CLI: sync, search, send</span></a>
-        <a class="up" href="https://github.com/missuo/koe/pulls?q=is%3Apr+author%3Athedavidweng" target="_blank" rel="noopener"><span class="repo"><span>missuo/</span>koe</span><span class="what">Zero-GUI macOS voice input</span></a>
-      </div>
-      <a class="more-link reveal" href="https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3Athedavidweng+-user%3Athedavidweng" target="_blank" rel="noopener">Browse every merged PR ↗</a>
-    </div>
-  </section>
+    <section class="section" aria-labelledby="contact">
+      <h2 class="label" id="contact">Contact</h2>
+      <ul class="rows">
+        <li><a href="mailto:thedavidweng@gmail.com"><span class="name">Email</span><span class="desc">thedavidweng@gmail.com</span></a></li>
+        <li><a href="https://github.com/thedavidweng"><span class="name">GitHub</span><span class="desc">thedavidweng</span></a></li>
+        <li><a href="https://x.com/thedavidweng"><span class="name">X</span><span class="desc">thedavidweng</span></a></li>
+        <li><a href="https://www.linkedin.com/in/thedavidweng"><span class="name">LinkedIn</span><span class="desc">thedavidweng</span></a></li>
+        <li><a href="https://www.youtube.com/@davyweng"><span class="name">YouTube</span><span class="desc">davyweng</span></a></li>
+        <li><a href="https://www.instagram.com/davidwengpro/"><span class="name">Instagram</span><span class="desc">davidwengpro</span></a></li>
+        <li><a href="https://www.buymeacoffee.com/thedavidweng"><span class="name">Buy Me a Coffee</span><span class="desc">thedavidweng</span></a></li>
+      </ul>
+    </section>
+  </main>
 
-  <!-- Stack -->
-  <section id="stack" aria-labelledby="stack-title">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <div>
-          <p class="kicker">05 — Toolbox</p>
-          <h2 id="stack-title">From <em>pixels</em> to processes.</h2>
-        </div>
-        <p>One person, the whole pipeline: product thinking, systems code, interface, and the video that tells people about it.</p>
-      </div>
-      <div class="stack">
-        <div class="stack-col reveal"><h3>// engineering</h3><ul><li>Rust</li><li>Go</li><li>TypeScript</li><li>React · Next.js</li><li>Tauri · egui</li><li>SQLite</li></ul></div>
-        <div class="stack-col reveal" style="--i:1"><h3>// ai &amp; inference</h3><ul><li>ONNX Runtime</li><li>MLX</li><li>Demucs</li><li>ACE-Step</li><li>Agent tooling</li></ul></div>
-        <div class="stack-col reveal" style="--i:2"><h3>// motion &amp; video</h3><ul><li>Remotion</li><li>HyperFrames</li><li>DaVinci Resolve</li><li>Content strategy</li></ul></div>
-        <div class="stack-col reveal" style="--i:3"><h3>// design</h3><ul><li>Figma</li><li>Adobe Creative Suite</li><li>Brand identity</li><li>Photography</li></ul></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Elsewhere -->
-  <section id="elsewhere" aria-labelledby="elsewhere-title">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <div>
-          <p class="kicker">06 — Elsewhere</p>
-          <h2 id="elsewhere-title">Portfolio, writing <em>&amp;</em> résumé.</h2>
-        </div>
-      </div>
-      <div class="grid" data-spotlight>
-        <article class="card reveal">
-          <div class="card-top"><span class="meta">davidweng.eu.org</span><span class="meta">↗</span></div>
-          <h3><a class="card-link" href="https://davidweng.eu.org/" target="_blank" rel="noopener">Portfolio</a></h3>
-          <p style="margin-top:.8rem">Design work, video production, and creative projects.</p>
-        </article>
-        <article class="card reveal" style="--i:1">
-          <div class="card-top"><span class="meta">blog.blahaj.uk</span><span class="meta">↗</span></div>
-          <h3><a class="card-link" href="https://blog.blahaj.uk/" target="_blank" rel="noopener">Blog</a></h3>
-          <p style="margin-top:.8rem">Bilingual writing on tech, design, and life in Vancouver — a static Astro site on Cloudflare Pages.</p>
-        </article>
-        <article class="card reveal" style="--i:2">
-          <div class="card-top"><span class="meta">resume.html</span><span class="meta">→</span></div>
-          <h3><a class="card-link" href="resume.html">Resume</a></h3>
-          <p style="margin-top:.8rem">Product engineering, content production, and visual design — the full history.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact" aria-labelledby="contact-title">
-    <div class="wrap">
-      <p class="kicker reveal">07 — Contact</p>
-      <h2 id="contact-title" class="contact-big reveal" style="--i:1">Let’s make something <em>worth using.</em></h2>
-      <div class="mail-row reveal" style="--i:2">
-        <a class="btn primary" href="mailto:thedavidweng@gmail.com">thedavidweng@gmail.com</a>
-        <button class="btn copy-btn" type="button" data-copy="thedavidweng@gmail.com">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5.25" y="5.25" width="8.5" height="8.5" rx="1.75"/><path d="M10.75 5.25V3.5a1.25 1.25 0 0 0-1.25-1.25h-6A1.25 1.25 0 0 0 2.25 3.5v6a1.25 1.25 0 0 0 1.25 1.25h1.75"/></svg>
-          <span>Copy</span>
-        </button>
-      </div>
-      <nav class="socials reveal" style="--i:3" aria-label="Social">
-        <a href="https://github.com/thedavidweng" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
-        <a href="https://x.com/thedavidweng" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/></svg>X</a>
-        <a href="https://www.linkedin.com/in/thedavidweng" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>LinkedIn</a>
-        <a href="https://www.youtube.com/@davyweng" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/></svg>YouTube</a>
-        <a href="https://www.instagram.com/davidwengpro/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>Instagram</a>
-        <a href="https://www.buymeacoffee.com/thedavidweng" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 5.5h9v4A3.5 3.5 0 0 1 8 13H6a3.5 3.5 0 0 1-3.5-3.5v-4Zm9 1h.75a1.75 1.75 0 0 1 0 3.5h-.9m-7.1-8.25c0 .75.75.75.75 1.5M7 1.75c0 .75.75.75.75 1.5M9.25 1.75c0 .75.75.75.75 1.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Buy me a coffee</a>
-      </nav>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <span>© <span id="year">2026</span> David Weng · <span class="mono">Vancouver <time id="local-time"></time></span></span>
-    <span class="mono">One HTML file. No framework, no build step, no trackers. <a href="https://github.com/thedavidweng/thedavidweng.github.io" target="_blank" rel="noopener">View source</a></span>
-  </div>
-</footer>
-
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-star" viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .67.42l1.88 3.8 4.2.61a.75.75 0 0 1 .41 1.28l-3.04 2.96.72 4.18a.75.75 0 0 1-1.09.79L8 12.33l-3.75 1.97a.75.75 0 0 1-1.09-.79l.72-4.18L.84 6.37a.75.75 0 0 1 .41-1.28l4.2-.61L7.33.67A.75.75 0 0 1 8 .25Z"/></symbol>
-</svg>
-
-<dialog class="palette" id="palette" aria-label="Command menu">
-  <div class="palette-input">
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="4.75"/><path d="m10.5 10.5 3.25 3.25" stroke-linecap="round"/></svg>
-    <input id="palette-q" type="text" placeholder="Jump to a project, page, or action…" autocomplete="off" spellcheck="false"
-           role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
-  </div>
-  <ul id="palette-list" role="listbox" aria-label="Results"></ul>
-  <div class="palette-foot mono"><span><kbd>↑↓</kbd>navigate</span><span><kbd>↵</kbd>open</span><span><kbd>esc</kbd>close</span></div>
-</dialog>
-
-<script>
-(() => {
-  const $  = (s, r = document) => r.querySelector(s);
-  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const root = document.documentElement;
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const darkMQ  = matchMedia('(prefers-color-scheme: dark)');
-  const USER = 'thedavidweng';
-
-  /* ── Reveal on scroll ─────────────────────────────── */
-  const io = new IntersectionObserver((entries) => {
-    for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-  $$('.reveal').forEach(el => io.observe(el));
-
-  const header = $('.site-header');
-  const onScroll = () => header.classList.toggle('scrolled', scrollY > 8);
-  addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  /* ── Pointer spotlight on cards ───────────────────── */
-  $$('[data-spotlight]').forEach(grid => grid.addEventListener('pointermove', (e) => {
-    const card = e.target.closest('.card');
-    if (!card) return;
-    const r = card.getBoundingClientRect();
-    card.style.setProperty('--mx', `${e.clientX - r.left}px`);
-    card.style.setProperty('--my', `${e.clientY - r.top}px`);
-  }));
-
-  /* ── Theme ────────────────────────────────────────── */
-  const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : darkMQ.matches;
-  function setTheme(next, origin) {
-    const apply = () => {
-      root.dataset.theme = next;
-      try { localStorage.setItem('theme', next); } catch {}
-      dispatchEvent(new Event('themechange'));
-    };
-    if (!document.startViewTransition || reduced.matches) return apply();
-    const x = origin?.x ?? innerWidth / 2, y = origin?.y ?? 0;
-    const r = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
-    document.startViewTransition(apply).ready.then(() => {
-      root.animate(
-        { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${r}px at ${x}px ${y}px)`] },
-        { duration: 520, easing: 'cubic-bezier(.2,0,0,1)', pseudoElement: '::view-transition-new(root)' }
-      );
-    }).catch(() => {});
-  }
-  const toggleTheme = (origin) => setTheme(isDark() ? 'light' : 'dark', origin);
-  $('#theme-toggle').addEventListener('click', (e) => {
-    const r = e.currentTarget.getBoundingClientRect();
-    toggleTheme({ x: r.left + r.width / 2, y: r.top + r.height / 2 });
-  });
-  darkMQ.addEventListener('change', () => dispatchEvent(new Event('themechange')));
-
-  /* ── Copy email ───────────────────────────────────── */
-  async function copy(text, btn) {
-    try { await navigator.clipboard.writeText(text); } catch { return false; }
-    if (btn) {
-      const label = btn.querySelector('span');
-      btn.dataset.copied = '';
-      label.textContent = 'Copied';
-      setTimeout(() => { delete btn.dataset.copied; label.textContent = 'Copy'; }, 1600);
-    }
-    return true;
-  }
-  $$('[data-copy]').forEach(b => b.addEventListener('click', () => copy(b.dataset.copy, b)));
-
-  /* ── Clock & year ─────────────────────────────────── */
-  const clock = $('#local-time');
-  const fmt = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Vancouver', hour: 'numeric', minute: '2-digit' });
-  const tick = () => { clock.textContent = fmt.format(new Date()); };
-  tick(); setInterval(tick, 30_000);
-  $('#year').textContent = new Date().getFullYear();
-
-  /* ── Live GitHub data (cached, degrades to static) ── */
-  const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
-  function ago(iso) {
-    const s = (new Date(iso) - Date.now()) / 1000;
-    const units = [['year', 31536000], ['month', 2592000], ['week', 604800], ['day', 86400], ['hour', 3600], ['minute', 60]];
-    for (const [u, n] of units) if (Math.abs(s) >= n) return 'updated ' + rtf.format(Math.round(s / n), u);
-    return 'updated just now';
-  }
-  const renderPushed = () => $$('time[data-pushed]').forEach(t => {
-    t.dateTime = t.dataset.pushed;
-    t.textContent = ago(t.dataset.pushed);
-  });
-  renderPushed();
-
-  async function cached(key, url, ttl = 3_600_000) {
-    try {
-      const hit = JSON.parse(sessionStorage.getItem(key) || 'null');
-      if (hit && Date.now() - hit.t < ttl) return hit.v;
-    } catch {}
-    const res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
-    if (!res.ok) throw new Error(res.status);
-    const v = await res.json();
-    try { sessionStorage.setItem(key, JSON.stringify({ t: Date.now(), v })); } catch {}
-    return v;
-  }
-
-  const countTo = (el, to) => {
-    const from = parseInt(el.textContent, 10) || 0;
-    if (from === to) return;
-    if (reduced.matches) { el.textContent = to; return; }
-    const t0 = performance.now(), d = 900;
-    const step = (t) => {
-      const p = Math.min(1, (t - t0) / d), e = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(from + (to - from) * e);
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
-
-  cached('gh:repos', `https://api.github.com/users/${USER}/repos?per_page=100&type=owner`).then(repos => {
-    const own = repos.filter(r => !r.fork);
-    const byName = new Map(repos.map(r => [r.name.toLowerCase(), r]));
-    $$('[data-repo]').forEach(el => {
-      const r = byName.get(el.dataset.repo.toLowerCase());
-      if (!r) return;
-      const s = $('[data-stars]', el);
-      if (s) {
-        $('span', s).textContent = r.stargazers_count;
-        s.toggleAttribute('data-zero', r.stargazers_count === 0);
-        s.setAttribute('aria-label', `${r.stargazers_count} stars`);
-      }
-      $$('time[data-pushed]', el).forEach(t => { t.dataset.pushed = r.pushed_at; });
-    });
-    renderPushed();
-    if (repos.length < 100) {
-      $$('[data-stat="repos"]').forEach(el => countTo(el, own.length));
-      $$('[data-stat="stars"]').forEach(el => countTo(el, own.reduce((a, r) => a + r.stargazers_count, 0)));
-    }
-  }).catch(() => {});
-
-  cached('gh:prs', `https://api.github.com/search/issues?q=${encodeURIComponent(`author:${USER} type:pr is:merged -user:${USER}`)}&per_page=1`)
-    .then(d => { if (Number.isFinite(d.total_count)) $$('[data-stat="prs"]').forEach(el => countTo(el, d.total_count)); })
-    .catch(() => {});
-
-  /* ── Stems visual ─────────────────────────────────── */
-  const canvas = $('#stems');
-  const ctx = canvas.getContext('2d');
-  const timecode = $('#timecode');
-  const DURATION = 212;
-  const LOOP_MS = 24_000;
-  const BAR = 3, GAP = 2;
-  let W = 0, H = 0, bars = [], colors = [], faint = '', head = 0.38, hover = null, visible = true, raf = 0, last = 0;
-
-  function rng(seed) {
-    return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
-  }
-  const shapes = [
-    (u, r) => { const phrase = Math.pow(Math.max(0, Math.sin(u * 23 + 1.2)), .6) * (u > .08 ? 1 : .15); return phrase * (.35 + .65 * r()); },
-    (u, r) => { const p = (u * 64) % 1; return (u > .05 ? 1 : 0) * (Math.exp(-p * 7) * .9 + .12 * r()); },
-    (u, r) => .28 + .32 * (.5 + .5 * Math.sin(u * 11)) + .18 * r(),
-    (u, r) => (.18 + .42 * Math.abs(Math.sin(u * 5.3 + .7))) * (.55 + .45 * r()),
-  ];
-
-  function readColors() {
-    colors = $$('.legend [data-stem]').map(el => getComputedStyle(el).color);
-    faint = getComputedStyle(canvas).color;
-  }
-
-  function resize() {
-    const dpr = Math.min(devicePixelRatio || 1, 2);
-    const rect = canvas.getBoundingClientRect();
-    W = rect.width; H = rect.height;
-    canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const n = Math.max(40, Math.floor((W - 32) / (BAR + GAP)));
-    bars = shapes.map((f, i) => { const r = rng(1337 + i * 97); return Array.from({ length: n }, (_, k) => Math.min(1, f(k / n, r))); });
-    draw(performance.now());
-  }
-
-  function draw(now) {
-    ctx.clearRect(0, 0, W, H);
-    const padX = 16, padY = 14, rows = bars.length, rowH = (H - padY * 2) / rows;
-    const n = bars[0].length, pos = hover ?? head;
-    const px = padX + pos * (n * (BAR + GAP));
-    for (let s = 0; s < rows; s++) {
-      const mid = padY + rowH * s + rowH / 2, amp = rowH * .42;
-      for (let k = 0; k < n; k++) {
-        const x = padX + k * (BAR + GAP);
-        const played = x < px;
-        const near = Math.max(0, 1 - Math.abs(x - px) / 60);
-        const live = played && !reduced.matches ? 1 + .18 * near * Math.sin(now / 90 + k * .7 + s) : 1;
-        const h = Math.max(1.5, bars[s][k] * amp * live);
-        ctx.fillStyle = played ? colors[s] : faint;
-        ctx.globalAlpha = played ? .55 + .45 * Math.max(near, .6) : 1;
-        ctx.beginPath();
-        ctx.roundRect ? ctx.roundRect(x, mid - h, BAR, h * 2, 1.5) : ctx.rect(x, mid - h, BAR, h * 2);
-        ctx.fill();
-      }
-    }
-    ctx.globalAlpha = 1;
-    ctx.fillStyle = colors[0];
-    ctx.fillRect(px - .5, 6, 1, H - 12);
-    const secs = Math.floor(pos * DURATION), mm = String(Math.floor(secs / 60)).padStart(2, '0'), ss = String(secs % 60).padStart(2, '0');
-    timecode.textContent = `${mm}:${ss} / 03:32`;
-  }
-
-  function loop(now) {
-    raf = 0;
-    if (!visible || document.hidden) return;
-    if (hover === null && !reduced.matches) head = (head + (now - (last || now)) / LOOP_MS) % 1;
-    last = now;
-    draw(now);
-    if (!reduced.matches || hover !== null) raf = requestAnimationFrame(loop);
-  }
-  const start = () => { if (!raf) { last = 0; raf = requestAnimationFrame(loop); } };
-
-  const scrub = (e) => {
-    const r = canvas.getBoundingClientRect();
-    const n = bars[0].length * (BAR + GAP);
-    hover = Math.min(1, Math.max(0, (e.clientX - r.left - 16) / n));
-    start();
-  };
-  canvas.addEventListener('pointermove', scrub);
-  canvas.addEventListener('pointerdown', scrub);
-  canvas.addEventListener('pointerleave', () => { if (hover !== null) head = hover; hover = null; start(); if (reduced.matches) draw(performance.now()); });
-
-  new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) start(); }).observe(canvas);
-  document.addEventListener('visibilitychange', start);
-  new ResizeObserver(resize).observe(canvas);
-  addEventListener('themechange', () => requestAnimationFrame(() => { readColors(); draw(performance.now()); }));
-  reduced.addEventListener('change', start);
-  readColors();
-
-  /* ── Command palette ──────────────────────────────── */
-  const dialog = $('#palette'), input = $('#palette-q'), list = $('#palette-list');
-  const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
-  if (!isMac) $$('[data-mod]').forEach(k => { k.textContent = 'Ctrl K'; });
-
-  const go = (href) => () => {
-    if (href.startsWith('#')) { dialog.close(); document.querySelector(href)?.scrollIntoView({ behavior: reduced.matches ? 'auto' : 'smooth' }); history.replaceState(null, '', href); }
-    else if (/^(https?:|mailto:)/.test(href) && !href.includes('thedavidweng.github.io')) window.open(href, '_blank', 'noopener');
-    else location.href = href;
-  };
-
-  const commands = [
-    ...$$('section[id] h2').map(h => ({ group: 'Sections', title: h.textContent.trim(), hint: '#' + h.closest('section').id, run: go('#' + h.closest('section').id) })),
-    ...$$('[data-repo] .card-link').map(a => ({ group: 'Projects', title: a.textContent.trim(), hint: a.closest('[data-repo]').querySelector('.desc, p')?.textContent.trim() ?? '', run: go(a.href) })),
-    { group: 'Pages', title: 'Resume', hint: 'resume.html', run: go('resume.html') },
-    { group: 'Pages', title: 'Portfolio', hint: 'davidweng.eu.org', run: go('https://davidweng.eu.org/') },
-    { group: 'Pages', title: 'Blog', hint: 'blog.blahaj.uk', run: go('https://blog.blahaj.uk/') },
-    ...$$('.socials a').map(a => ({ group: 'Social', title: a.textContent.trim(), hint: new URL(a.href).host.replace(/^www\./, ''), run: go(a.href) })),
-    { group: 'Actions', title: 'Toggle dark mode', hint: 'theme', run: () => { dialog.close(); toggleTheme(); } },
-    { group: 'Actions', title: 'Copy email address', hint: 'thedavidweng@gmail.com', run: () => { copy('thedavidweng@gmail.com'); dialog.close(); } },
-    { group: 'Actions', title: 'Send an email', hint: 'mailto:', run: go('mailto:thedavidweng@gmail.com') },
-    { group: 'Actions', title: 'View page source', hint: 'github.com', run: go('https://github.com/thedavidweng/thedavidweng.github.io') },
-  ];
-
-  function score(q, text) {
-    if (!q) return 1;
-    text = text.toLowerCase();
-    const i = text.indexOf(q);
-    if (i !== -1) return 100 - i;
-    let t = 0, s = 0, streak = 0;
-    for (const ch of q) {
-      const j = text.indexOf(ch, t);
-      if (j === -1) return 0;
-      streak = j === t ? streak + 1 : 0;
-      s += 1 + streak; t = j + 1;
-    }
-    return s > q.length ? s : 0;
-  }
-
-  let results = [], active = 0;
-  function render() {
-    const q = input.value.trim().toLowerCase();
-    results = commands
-      .map(c => ({ c, s: Math.max(score(q, c.title) * 2, c.hint.toLowerCase().includes(q) ? 40 : 0, c.group.toLowerCase().startsWith(q) ? 30 : 0) }))
-      .filter(x => x.s > 0)
-      .sort((a, b) => q ? b.s - a.s : 0)
-      .map(x => x.c);
-    active = Math.min(active, Math.max(0, results.length - 1));
-    list.replaceChildren();
-    if (!results.length) {
-      const li = document.createElement('li');
-      li.className = 'empty'; li.textContent = 'No matches. Try “rust”, “cli”, or “resume”.';
-      list.append(li);
-      input.removeAttribute('aria-activedescendant');
-      return;
-    }
-    let group = null;
-    results.forEach((c, i) => {
-      if (!q && c.group !== group) {
-        group = c.group;
-        const g = document.createElement('li');
-        g.className = 'group'; g.textContent = group; g.setAttribute('role', 'presentation');
-        list.append(g);
-      }
-      const li = document.createElement('li');
-      li.className = 'opt'; li.id = 'opt-' + i; li.setAttribute('role', 'option');
-      li.setAttribute('aria-selected', i === active);
-      const title = document.createElement('span'); title.textContent = c.title;
-      const hint = document.createElement('small'); hint.textContent = c.hint;
-      li.append(title, hint);
-      li.addEventListener('pointermove', () => select(i, false));
-      li.addEventListener('click', () => c.run());
-      list.append(li);
-    });
-    input.setAttribute('aria-activedescendant', 'opt-' + active);
-  }
-  function select(i, scroll = true) {
-    if (!results.length) return;
-    active = (i + results.length) % results.length;
-    $$('.opt', list).forEach((el, k) => el.setAttribute('aria-selected', k === active));
-    input.setAttribute('aria-activedescendant', 'opt-' + active);
-    if (scroll) $('#opt-' + active)?.scrollIntoView({ block: 'nearest' });
-  }
-  function openPalette() {
-    if (dialog.open) return;
-    input.value = ''; active = 0; render();
-    dialog.showModal(); input.focus();
-  }
-
-  input.addEventListener('input', () => { active = 0; render(); });
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowDown') { e.preventDefault(); select(active + 1); }
-    else if (e.key === 'ArrowUp') { e.preventDefault(); select(active - 1); }
-    else if (e.key === 'Enter') { e.preventDefault(); results[active]?.run(); }
-  });
-  dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
-  $('#palette-open').addEventListener('click', openPalette);
-  addEventListener('keydown', (e) => {
-    const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName) || document.activeElement?.isContentEditable;
-    if ((e.key === 'k' || e.key === 'K') && (e.metaKey || e.ctrlKey)) { e.preventDefault(); dialog.open ? dialog.close() : openPalette(); }
-    else if (e.key === '/' && !typing && !dialog.open) { e.preventDefault(); openPalette(); }
-  });
-})();
-</script>
+  <footer>
+    <p>Set in Mona Sans.</p>
+    <p><a class="link" href="https://github.com/thedavidweng/thedavidweng.github.io">Source</a></p>
+  </footer>
 </body>
 </html>
