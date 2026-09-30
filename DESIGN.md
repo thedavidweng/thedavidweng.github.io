@@ -40,8 +40,9 @@
 
 | Role | Font Stack | Fallback |
 |------|------------|----------|
-| Primary (UI, Body) | ABC Monument Grotesk Variable | Helvetica, sans-serif |
-| Secondary (Editorial) | Times Now SemiLight | Times New Roman, serif |
+| Everything | Mona Sans (variable, self-hosted) | system-ui, sans-serif |
+
+One family only. No serif, no italics, no monospace.
 
 ### Type Scale
 
@@ -240,16 +241,16 @@ Letter Spacing: -0.01em (slight tightening)
 
 ## Homepage Implementation Notes (`index.html`)
 
-The homepage adapts this system with a few deliberate extensions:
+The homepage is stricter than the rest of this document:
 
-| Aspect | Choice |
-|--------|--------|
-| Fonts | System stacks only (no web fonts); serif italic (`New York` → Georgia) for single accent words in headings |
-| Theme | Light + dark via `light-dark()` tokens; toggle persisted in `localStorage`, defaults to the OS preference |
-| Accent | One accent (`#e2530e` light / `#ff8a4c` dark), used only for status, focus rings, the playhead, and vocals |
-| Muted text | `#62676a` for body-size muted copy (meets WCAG AA); Silver Mist `#a3a3a3` is reserved for faint labels |
-| Grid | 6-column card grid, 1120px max width, fluid gutters |
-| Motion | Blur-in reveals and hover lift follow the timings above; all motion is disabled under `prefers-reduced-motion` |
+| Aspect | Rule |
+|--------|------|
+| Type | Mona Sans at 400 and 500. Two sizes: 1rem for everything, a larger size for the opening paragraph. No tabular figures (Mona Sans swaps in a slashed zero) |
+| Color | Monochrome. Text, muted text, and hairlines only; light and dark follow the OS through `light-dark()` |
+| Layout | A label column and a content column. Rows are name, description, and an optional meta value on a shared subgrid |
+| Decoration | None: no cards, shadows, gradients, icons, pills, badges, or entrance animations. Hover only underlines the name |
+| Copy | Plain sentences. No em or en dashes, no hyphenated compounds (project names excepted), no slogans or "X, not Y" lines |
+| Code | Content in `index.html`, styles in `assets/style.css`, a few lines of JS in `assets/main.js` for live star and pull request counts. The page works without JS |
 
 ---
 
