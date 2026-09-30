@@ -241,16 +241,17 @@ Letter Spacing: -0.01em (slight tightening)
 
 ## Homepage Implementation Notes (`index.html`)
 
-The homepage is stricter than the rest of this document:
+The homepage follows these rules on top of the rest of this document:
 
 | Aspect | Rule |
 |--------|------|
-| Type | Mona Sans at 400 and 500. Two sizes: 1rem for everything, a larger size for the opening paragraph. No tabular figures (Mona Sans swaps in a slashed zero) |
-| Color | Monochrome. Text, muted text, and hairlines only; light and dark follow the OS through `light-dark()` |
-| Layout | A label column and a content column. Rows are name, description, and an optional meta value on a shared subgrid |
-| Decoration | None: no cards, shadows, gradients, icons, pills, badges, or entrance animations. Hover only underlines the name |
+| Type | Mona Sans only, weights 400 to 550. The terminal window uses it too. No tabular figures (Mona Sans swaps in a slashed zero), so the timecode reserves a fixed width instead |
+| Color | Warm neutrals and one orange accent for the pulse dot, the playhead, the prompt, and focus rings. Light and dark through `light-dark()`; the toggle overrides the OS and is saved |
+| Layout | A 70rem column. Section heads pair a numbered title (01 to 06) with a short intro. Projects and work sit on a six column card grid; tools are rows on a shared subgrid inside a terminal window |
+| Decoration | Cards with hairline borders, a pointer spotlight, and a soft shadow on hover. Pill tags, language dots, and the pulse dot, which shows the latest push. No glows or decorative gradients |
+| Motion | A staggered rise on load, reveals driven by scroll position in CSS, and a circular view transition for the theme. Reduced motion turns all of it off, and the canvas draws a still frame |
 | Copy | Plain sentences. No em or en dashes, no hyphenated compounds (project names excepted), no slogans or "X, not Y" lines |
-| Code | Content in `index.html`, styles in `assets/style.css`, a few lines of JS in `assets/main.js` for live star and pull request counts. The page works without JS |
+| Code | Content in `index.html`, styles in `assets/style.css`, one module in `assets/main.js`, icons in `assets/icons.svg`. No dependencies and no build step. Anything that needs JS is hidden without it |
 
 ---
 

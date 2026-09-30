@@ -6,11 +6,13 @@ Portfolio: [davidweng.eu.org](https://davidweng.eu.org/). Blog: [blog.blahaj.uk]
 
 ## Stack
 
-Static HTML and CSS with no build step.
+Static HTML, CSS, and one JavaScript module, with no dependencies and no build step.
 
 - One typeface, [Mona Sans](https://github.com/github/mona-sans), self hosted (Latin subset, variable weight)
-- Light and dark themes follow the OS through `light-dark()`
-- `assets/main.js` updates star counts and the merged pull request count from the public GitHub API; the HTML holds static fallbacks, so the page works without JavaScript
+- Light and dark themes through `light-dark()`, following the OS until you pick one with the toggle
+- Reveals and the header border are scroll driven animations in CSS
+- `assets/main.js` runs the theme toggle, the command palette (Cmd K, Ctrl K, or /), the stem separation canvas, the card spotlight, and live numbers from the public GitHub API
+- The HTML holds static fallbacks, so the page works without JavaScript
 
 ## Structure
 
@@ -19,7 +21,8 @@ Static HTML and CSS with no build step.
 ├── index.html          # homepage content
 ├── assets/
 │   ├── style.css       # all styles
-│   ├── main.js         # live GitHub numbers
+│   ├── main.js         # interactions and live GitHub data
+│   ├── icons.svg       # icon sprite
 │   └── fonts/          # Mona Sans (SIL Open Font License, see OFL.txt)
 ├── resume.html         # rendered resume (built from resume/resume.json)
 ├── resume/             # JSON Resume source and render tooling
