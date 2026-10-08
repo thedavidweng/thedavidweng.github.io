@@ -185,12 +185,10 @@
       "name": "AI & Local Inference",
       "keywords": [
         "ONNX Runtime",
-        "MLX",
-        "Demucs",
-        "ACE-Step",
-        "Agent-Friendly CLI Design",
-        "Prompt Engineering",
-        "AI-Assisted Design"
+        "On-Device Inference",
+        "Agent-Friendly Tooling Design",
+        "REST API Design",
+        "Local-First Systems"
       ]
     },
     {
@@ -239,13 +237,23 @@
   "references": [],
   "projects": [
     {
-      "name": "OpenMusic Series",
-      "summary": "Local-first AI music apps: OpenKara (desktop karaoke) and OpenLoop (text-to-music generation, alpha).",
+      "name": "Desktop Apps",
+      "summary": "Native desktop apps with their own sites, downloads, and tours. All open source.",
       "highlights": [
-        "OpenKara (Rust + Tauri): turn your music library into a karaoke stage. On-device AI stem separation (Demucs, 2/4-stem), synced lyrics with 13-language romanization, and AirPlay casting; ships as full-platform desktop binaries (macOS, Windows, Linux)",
-        "OpenLoop (TypeScript, alpha): local AI music generation from text prompts and lyrics; includes a CLI with streaming output for automation pipelines"
+        "OpenKara (Rust + Tauri): turn your music library into a karaoke stage. On-device AI stem separation, synced lyrics with romanization, and live mixing; ships as signed binaries for macOS, Windows, and Linux",
+        "Sukiru (native macOS): checks and repairs coding agents' skill libraries through npx skills and gh skill; Apple Say (native macOS): speech synthesis and timed text, exporting Plain Text, LRC, and Enhanced LRC with system voices",
+        "SDF Flash GUI: cross-platform front end for MakeMKV's sdftool. Dumps, flashes, and recovers MT1959 Blu-ray drive firmware behind safety gates that refuse the mistakes that brick drives"
       ],
-      "url": "https://github.com/thedavidweng/OpenKara"
+      "url": "https://thedavidweng.github.io/site/"
+    },
+    {
+      "name": "DeckPad & ADP Shifts",
+      "summary": "A Steam Deck plugin and a browser extension, each with its own site.",
+      "highlights": [
+        "DeckPad: Decky Loader plugin that turns a Steam Deck into a Bluetooth game controller (Xbox Wireless Controller layout) for a PC, phone, or tablet",
+        "ADP Shifts: browser extension on the Chrome Web Store that copies an ADP Workforce Now schedule into a Google Calendar it owns and keeps it current. No servers, no analytics; never sees the ADP password"
+      ],
+      "url": "https://thedavidweng.github.io/site/"
     },
     {
       "name": "jobs-cli",
@@ -272,7 +280,7 @@
       "summary": "Local lyrics romanization engine, published on npm.",
       "highlights": [
         "Script detection and romanization across 12 scripts (Japanese, Mandarin/Cantonese, Korean, Cyrillic, Indic, Tamil, Thai), running fully locally with zero API calls",
-        "Powers OpenKara's 13-language synced-lyrics romanization; documented in 9 languages"
+        "Powers OpenKara's synced-lyrics romanization; documented in 9 languages"
       ],
       "url": "https://github.com/thedavidweng/lyric-romanizer"
     },
@@ -289,7 +297,7 @@
   "meta": {
     "canonical": "https://registry.jsonresume.org/thedavidweng",
     "version": "v1.0.0",
-    "lastModified": "2026-09-24T00:00:00",
+    "lastModified": "2026-10-07T00:00:00",
     "pdfRenderOptions": {
       "margin": {
         "top": "0.5in",
