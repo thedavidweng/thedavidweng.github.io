@@ -11,6 +11,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: codeberg-mirror
+  cancel-in-progress: false
+
 jobs:
   mirror:
     name: Mirror
@@ -21,6 +25,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          persist-credentials: false
           fetch-depth: 0
 
       - name: Mirror to Codeberg
@@ -29,4 +34,3 @@ jobs:
           host: https://codeberg.org
           username: thedavidweng
           password: ${{ secrets.CODEBERG_TOKEN }}
-          force_push: true
