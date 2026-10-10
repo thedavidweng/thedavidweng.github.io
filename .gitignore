@@ -11,3 +11,13 @@ resume/*.pdf
 # Temp
 *.tmp
 *.log
+
+# User manual: full CJK fonts downloaded by manual/build.py
+manual/.cache/
+
+# Hairline visual-review sheets (source figures and standalone pages remain tracked)
+manual/figures/hairline-*-look.png
+manual/figures/hairline-*-blind.png
+manual/figures/hairline-*-motion.png
+manual/figures/hairline-*-rest.png
+manual/figures/hairline-*-answer.png
