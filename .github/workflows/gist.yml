@@ -2,6 +2,7 @@ name: Update Resume Gist
 
 on:
   push:
+    branches: ["main"]
     paths:
       - 'resume/resume.json'
 
@@ -14,7 +15,7 @@ concurrency:
 
 jobs:
   update-resume-gist:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
       - name: Checkout Repository
@@ -23,8 +24,6 @@ jobs:
           persist-credentials: false
 
       - name: Update Resume Gist
-        uses: exuanbo/actions-deploy-gist@47697fceaeea2006a90594ee24eb9cd0a1121ef8 # v1.1.4
-        with:
-          token: ${{ secrets.gist_sync_token }}
-          gist_id: 1350e3f706b7d5cb822e2ef251a5ec6b
-          file_path: resume/resume.json
+        env:
+          GH_TOKEN: ${{ secrets.gist_sync_token }}
+        run: gh gist edit 1350e3f706b7d5cb822e2ef251a5ec6b --filename resume.json resume/resume.json
