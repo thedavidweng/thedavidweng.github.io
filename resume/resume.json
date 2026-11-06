@@ -153,7 +153,8 @@
       "area": "Management",
       "studyType": "Master's",
       "startDate": "2026-01-01",
-      "courses": []
+      "courses": [],
+      "endDate": "2026-12-21"
     },
     {
       "institution": "University of British Columbia",
@@ -237,6 +238,16 @@
   "references": [],
   "projects": [
     {
+      "name": "Redlined",
+      "summary": "Before/after UI/UX redesigns of real products. Each redline rebuilds a mature commercial interface 1:1 as a working interactive mock, then applies one small shippable fix.",
+      "highlights": [
+        "17 redlines across Modo, Deliverect, Evo, Lime, and Mobi by Rogers, including 6 for Deliverect covering split orders and payment reconciliation in daily operator workflows",
+        "Each rebuild is a working interactive mock, not a static screenshot, so the fix can be tried before it is described"
+      ],
+      "url": "https://redlined.blahaj.uk",
+      "startDate": "2026-10-11"
+    },
+    {
       "name": "Desktop Apps",
       "summary": "Native desktop apps with their own sites, downloads, and tours. All open source.",
       "highlights": [
@@ -292,12 +303,21 @@
         "Automated releases with changelog and checksums, contribution guidelines, and self-hosting docs"
       ],
       "url": "https://github.com/thedavidweng/opencard-db"
+    },
+    {
+      "name": "Upstream Open Source Contributions",
+      "summary": "Merged pull requests to open-source projects maintained by others.",
+      "highlights": [
+        "170+ merged pull requests upstream, including Homebrew/homebrew-cask, Homebrew/homebrew-core, and emilk/egui",
+        "Homebrew contributions include new casks and formulae and Apple Silicon support; egui contributions include TextEdit fixes and documentation"
+      ],
+      "url": "https://github.com/thedavidweng"
     }
   ],
   "meta": {
     "canonical": "https://registry.jsonresume.org/thedavidweng",
     "version": "v1.0.0",
-    "lastModified": "2026-10-07T00:00:00",
+    "lastModified": "2026-11-05T00:00:00",
     "pdfRenderOptions": {
       "margin": {
         "top": "0.5in",
